@@ -1,0 +1,14 @@
+/* Press is a single crisp pixel step; no scaling, easing blur, or layout shift. */
+.thor-pressed[data-feedback-kind=control],.thor-tapped[data-feedback-kind=control]{translate:0 1px;filter:brightness(1.055);box-shadow:inset 0 2px #a36a36!important}
+.thor-pressed[data-feedback-kind=tab],.thor-tapped[data-feedback-kind=tab]{filter:brightness(1.075)}
+.thor-pressed[data-feedback-kind=slot],.thor-tapped[data-feedback-kind=slot]{outline:2px solid #8a4729;outline-offset:-4px;filter:brightness(1.055)}
+button:disabled,.thor-pressed[aria-disabled=true],.thor-tapped[aria-disabled=true]{translate:none;filter:none}
+@media(prefers-reduced-motion:reduce){.thor-pressed[data-feedback-kind=control],.thor-tapped[data-feedback-kind=control]{translate:none}}
+
+/* Icon-only return controls need their own visible pressed face. */
+#page-back.thor-pressed,#page-back.thor-tapped{background:#e4b36b!important;box-shadow:inset 2px 2px #a56a36,inset -2px -2px #ffe5a2!important;filter:none;translate:none}
+#page-back.thor-pressed img,#page-back.thor-tapped img{transform:translateX(-2px)}
+@media(prefers-reduced-motion:reduce){#page-back.thor-pressed img,#page-back.thor-tapped img{transform:none}}
+
+/* List rows use a complete golden face, never the generic inset top line. */
+.thor-pressed[data-feedback-kind=row],.thor-tapped[data-feedback-kind=row]{background:#ffedaf!important;box-shadow:inset 3px 0 #c28a3d!important;filter:none;translate:none}

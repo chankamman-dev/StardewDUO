@@ -1,0 +1,7 @@
+const assert=require('node:assert/strict'),{manifestJson,field}=require('../tools/inspect-thor-mods.cjs'),{audit}=require('../tools/audit-mod-inventory.cjs');
+const raw='\uFEFF{/* comment */"UniqueId":"Case.Mod", "Description":"https://example.test/a//b/*literal*/", // line\n"Dependencies":[{"UniqueID":"Parent.MOD",},],}';
+const parsed=manifestJson(raw);assert.equal(field(parsed,'UniqueID'),'Case.Mod');assert.equal(parsed.Description,'https://example.test/a//b/*literal*/');assert.equal(parsed.Dependencies.length,1);assert.throws(()=>manifestJson('{"Name":'));assert.equal(manifestJson('{"s":"escaped \\" // still a string"}').s,'escaped " // still a string');
+const mods=[{id:'Parent.Mod',dependencies:[]},{id:'Case.Mod',dependencies:[{UniqueID:'PARENT.MOD'},{UniqueID:'absent',IsRequired:false}]},{id:'disabled',disabledByFolder:true,dependencies:[{UniqueID:'absent'}]}];
+const r=audit({mods,errors:[]},'ID: Parent.Mod)\nID: Case.Mod, assembly');assert.equal(r.active,2);assert.equal(r.disabled,1);assert.deepEqual(r.missingRequired,[]);assert(r.rows.slice(0,2).every(r=>r.state==='loader trace present'));
+mods[1].pack='MissingPackFramework';assert.deepEqual(audit({mods,errors:[]},'').missingRequired,[{mod:'Case.Mod',dependency:'MissingPackFramework'}]);
+console.log('PASS manifest comments, trailing commas, string escapes, case-insensitive IDs, optional/disabled dependencies and pack parent validation');

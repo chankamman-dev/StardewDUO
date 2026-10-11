@@ -1,0 +1,28 @@
+{
+  "name": "stardew-thor-dualscreen",
+  "version": "0.11.1-dev.55",
+  "description": "Independent Stardew Valley SMAPI bridge and Thor companion with native inventory controls and world tracking",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/model.cjs && node tests/version-sync.cjs",
+    "test:bridge": "dotnet run --project tests/BridgeHarness",
+    "preview": "node tools/preview.cjs",
+    "extract:art": "node tools/extract-art.cjs",
+    "test:public": "node tools/public-tests.cjs",
+    "test:frontend": "node tools/test-frontend.cjs",
+    "bench:play": "node tools/bench-churn.cjs --play --seconds 14 --settle 10 && node tools/bench-actions.cjs artifacts/bench/actions-latest.json --rounds 2"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs",
+  "devDependencies": {
+    "playwright": "^1.58.2",
+    "pngjs": "^7.0.0",
+    "xnb": "^1.3.0-a"
+  },
+  "private": true,
+  "license": "MIT"
+}

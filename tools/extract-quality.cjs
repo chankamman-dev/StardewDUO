@@ -1,0 +1,1 @@
+const fs=require('fs'),{PNG}=require('pngjs'),p=PNG.sync.read(fs.readFileSync('evidence/extracted/cursors.png'));for(const [name,x,y]of [['silver',338,400],['gold',346,400],['iridium',346,392]]){const q=new PNG({width:8,height:8});PNG.bitblt(p,q,x,y,8,8,0,0);fs.writeFileSync('android/assets/art/quality-'+name+'.png',PNG.sync.write(q));}

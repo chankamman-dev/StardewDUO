@@ -1,0 +1,18 @@
+const assert=require('node:assert/strict'),L=require('../android/assets/event-labels.js');
+const people=[{id:'Emily',name:'艾米丽'}];
+const e=raw=>({name:'',location:'FarmHouse',conditions:{raw,hearts:[{npc:'emily··',points:0,kind:'Friendship'}]}});
+let v=L.describe(e('f Emily 3500/O Emily/t 2000 2400/p Emily/A emilyFiber'),'zh',people,'农舍');
+assert.equal(v.title,'艾米丽的农舍剧情');assert(v.rows[0].value.includes('14 心'));assert(v.rows[1].value.includes('订婚或结婚'));assert(!JSON.stringify(v).includes('emily··'));assert.equal(v.unknown,1);
+assert.equal(L.describe(e('y 1'),'zh').rows[0].value,'年份 = 1');assert.equal(L.describe(e('y 3'),'zh').rows[0].value,'年份 ≥ 3');
+assert.equal(L.describe(e('w sunny'),'zh').rows[0].value,'当前地点不下雨');assert.equal(L.describe(e('w rainy'),'en').rows[0].value,'Raining at this location');
+assert.equal(L.describe(e('e 10 20'),'zh').rows[0].value,'已看过以下任一事件：10 / 20');
+assert.equal(L.describe(e('!Season spring summer/z winter'),'zh').rows[0].value,'不满足：季节：春季 / 夏季');
+assert.equal(L.describe(e('t 990 1700/Mod.Unknown yes/f Emily bad'),'zh').unknown,3);assert.equal(L.describe({...e(''),name:'Authored title'},'en').title,'Authored title');
+assert.equal(L.describe(e('f "Emily" 1000'),'zh',people).rows[0].value,'艾米丽 ≥ 4 心 (1000 好感)');
+assert.equal(L.describe(e('e "Mod/Story 1"/y 3'),'zh').rows[0].value,'已看过以下任一事件：Mod/Story 1');
+assert.equal(L.describe(e('e "Mod/unfinished'),'zh').rows.length,0);assert.equal(L.describe(e('e "Mod/unfinished'),'zh').unknown,1);
+assert.equal(L.describe(e('e "Mod\\/Story"'),'zh').unknown,1);
+const story={...e('f Emily 1000'),dialogue:[{npc:'Emily',text:'我想和你聊聊我的裁缝梦想。'}]};
+v=L.describe(story,'zh',people,'农舍');assert.equal(v.title,'艾米丽：「我想和你聊聊我的裁缝梦想。」');assert(v.fromDialogue);assert.equal(v.dialogue[0].speaker,'艾米丽');
+assert.equal(L.describe({...story,name:'作者的标题'},'zh',people).title,'作者的标题');
+console.log('PASS event descriptions: exact native aliases, minimum friendship, year special case, non-raining weather, OR prerequisites, negation, unsupported data, authored titles and malformed MH metadata');

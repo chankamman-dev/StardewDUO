@@ -1,0 +1,251 @@
+/* Common controls; preserve the approved frame, sidebar and reading scale. */
+.book-heading{margin-top:-6px}
+body[data-current-page=bag] .hud{display:none}
+body[data-current-page=target] .book-heading{display:none}
+body[data-current-page=manual] .book:has(#manual[data-journal=home]) .book-heading{display:none}
+#page-back{display:flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;min-height:36px;padding:7px;border:0!important;background:none!important;box-shadow:none!important;margin-left:-4px}
+#page-back img{display:block;width:22px;height:22px}
+.book-heading.has-back h1{left:50px;right:50px}
+#person-back,#guide-back,.journal-back,.journal-item-bar{display:none!important}
+.journal-toolbar:has(>.journal-back:only-child){display:none!important}
+.map-toolbar>#page-back{width:36px;min-width:36px;margin:0;padding:7px}
+.hud-date{flex:none;display:flex;align-items:center;gap:4px;min-width:0}
+#date{--pixel-size:18px;line-height:28px}
+.hud-value{gap:4px;height:28px}
+.hud-value.time{margin-left:0}
+#money,html[lang=en] #money{width:auto;min-width:35px;max-width:105px}
+#clock,html[lang=en] #clock{width:auto;min-width:48px}
+.hud-weather{display:flex;align-items:center;justify-content:center;width:20px;height:24px;flex:none}
+.hud-vital{display:flex;align-items:center;gap:3px;height:28px;white-space:nowrap}
+.hud-vital img{width:14px;height:16px;display:block;flex:none}
+.hud-vital>span{--pixel-size:18px;font-size:18px;line-height:28px;white-space:nowrap;display:block}
+.hud-vital.health{color:#8b3a29}.hud-vital.stamina{color:#52622e}
+.hud canvas.raster{transform:translateY(var(--hud-ink-shift,0px))}
+#bag .bag-tools{gap:6px}
+#bag .item-actions{gap:6px}
+#bag .item-actions button{display:flex;align-items:center;gap:4px;padding:0 4px}
+#bag .item-actions button img{width:22px;height:24px;flex:none}
+#bag .item-actions button>span{--pixel-size:18px;font-size:18px;line-height:28px;display:block;white-space:nowrap}
+#bag .bag-tools button:not(.item-actions button){padding:0 3px;gap:4px}
+#bag{position:relative}
+#bag-mode{position:absolute;left:0;right:0;bottom:49px;z-index:4;margin:0;padding:3px 4px;background:var(--paper);border:1px solid var(--rule);pointer-events:none}
+.toolbar-setting{flex-wrap:wrap}
+.toolbar-setting button{min-width:134px}
+.toolbar-setting .toolbar-status{flex:0 0 100%;--pixel-size:18px;line-height:26px}
+/* 0.10.1 layout polish: shared control column and consistent section rhythm.
+   Frame, sidebar, page type scale and refinement.css stay untouched. */
+.settings-row,.settings-row.sound-row{min-height:65px}
+.sound-row h3{color:var(--ink)}
+#setting-language,.settings-row .select-control:has(#text-size),#sound-toggle,#toolbar-toggle{flex:0 0 150px;width:150px;min-width:150px;max-width:150px;height:40px;min-height:40px;--pixel-size:18px;font-size:18px;line-height:30px}
+#toolbar-toggle{padding:0 8px;text-align:center}
+#settings .section-title{margin-top:12px}
+#settings .section-title:first-child{margin-top:0}
+.journal-toolbar:not(:has(.journal-back))>button{flex:1 1 0;width:auto;min-width:0}
+.journal-section-title{color:var(--ink)}
+.crafting-action{justify-content:space-between}
+.crafting-status{order:-1}
+.crafting-submit{margin-left:auto}
+.settings-row #text-size{width:100%;max-width:none;--pixel-size:18px}
+/* HUD grouped like the original DayTimeMoneyBox: date, weather and season sockets and
+   time on the left; energy, health and gold on the right; the demo mark sits between.
+   Weather and season icons sit in the box's recessed socket (1 original px per side). */
+.hud{justify-content:flex-start;gap:14px}
+.hud-status{display:flex;align-items:center;gap:14px;margin-left:auto}
+.hud #source-mark{margin-left:auto}
+.hud-vital.health,.hud-vital.stamina{color:var(--ink)}
+.hud-weather,.hud-season{box-sizing:content-box;flex:none;width:24px;height:16px;border:2px solid;border-color:#5b2b2a #853605 #e7a160 #b14e05;background:#ffd787}
+.hud-weather img{display:block;width:24px;height:16px}
+.hud-season{background:#ffd787 url('art/hud-season.png') 0 calc(var(--season,0) * -16px)/24px 64px no-repeat;image-rendering:pixelated}
+.hud-weather+.hud-season{margin-left:-8px}
+.hud-season[hidden]{display:none}
+
+/* Selected item: per-item sale price, then stack quantity; guide in the action bar. */
+#bag .item-sale{display:inline-flex;align-items:center;gap:5px;flex:none;white-space:nowrap;--pixel-size:18px;font-size:18px;line-height:28px;color:var(--ink)}
+#bag .item-sale[hidden]{display:none}#bag .item-sale>img{width:16px;height:16px;object-fit:contain;flex:none}
+#bag #detail-count{width:auto;min-width:38px;margin-left:8px}
+#bag .bag-tools #related{margin-left:auto;width:36px;height:40px;min-height:40px;display:flex;align-items:center;justify-content:center;padding:4px;flex:none}
+#bag .bag-tools #related[hidden]{display:none}#bag .bag-tools #related img{width:26px;height:26px}
+#bag .bag-tools:has(#related:not([hidden])) #bag-organize{margin-left:0}
+
+/* Split heading: a square identity/back tile and a separate title plaque. */
+.book-heading{isolation:isolate;height:40px;min-height:40px;padding:0;border:0;background:none;gap:4px}
+.book-heading::before{content:'';position:absolute;z-index:-1;left:44px;right:0;top:0;bottom:0;background:#e7c083;border:2px solid #b6894e;box-shadow:inset 1px 1px #fbe2aa;pointer-events:none}
+.book-heading>#page-icon{display:block;box-sizing:border-box;width:40px;height:40px;padding:7px;object-fit:contain;flex:none;background:#e7c083;border:2px solid #b6894e;box-shadow:inset 1px 1px #fbe2aa}
+.book-heading.has-back>#page-icon{display:none}
+.book-heading>#page-back{box-sizing:border-box;width:40px;height:40px;min-height:40px;margin:0;padding:7px;border:2px solid #b6894e!important;background:#e7c083!important;box-shadow:inset 1px 1px #fbe2aa!important}
+.book-heading>#page-back img{width:22px;height:22px}
+.book-heading h1,.book-heading.has-back h1{left:44px;right:0;padding:0 88px;margin:0;line-height:36px;text-align:center;overflow:hidden;text-overflow:ellipsis}
+.book-heading>#page-meta{position:relative;margin-left:auto;margin-right:10px;max-width:82px;z-index:1}
+.book-heading>#page-back.thor-pressed,.book-heading>#page-back.thor-tapped{background:#dcb06e!important;box-shadow:inset 2px 2px #a56a36,inset -1px -1px #ffe5a2!important}
+.toolbar-setting .toolbar-status.is-reason{color:var(--muted)}
+/* Settings → connection facts (connection-info.js). */
+.connection-facts{display:grid;grid-template-columns:180px minmax(0,1fr);gap:0 12px;margin:0;padding:6px 1px 8px;border-bottom:1px solid var(--rule)}
+.connection-facts dt,.connection-facts dd{margin:0;--pixel-size:18px;font-size:18px;line-height:32px;white-space:nowrap;overflow:hidden}
+.connection-facts dt{color:var(--muted)}
+/* Settings → 本机文件: name + current state on the left, one fixed-width button on the right. */
+.local-row{align-items:center}
+.local-copy{flex:1;min-width:0;display:flex;flex-direction:column}
+.local-copy h3{--pixel-size:24px;line-height:32px;white-space:nowrap}
+.local-state{--pixel-size:18px;font-size:18px;line-height:26px;color:var(--muted)}
+.local-state[data-state=ok]{color:#3f6b24;--text-shadow:#d9c37d}
+.local-state[data-state=error]{color:#943b23;--text-shadow:#e7b07a}
+.local-state[data-state=checking]{color:#8a5a1c}
+.local-button{flex:0 0 150px;width:150px;min-width:150px;max-width:150px;height:40px;min-height:40px;--pixel-size:18px;font-size:18px;line-height:30px;padding:0 8px;text-align:center;white-space:nowrap}
+/* Hide undiscovered info (spoiler.js): unmet residents are silhouettes, as in the game. */
+.spoiler-silhouette{filter:brightness(0) opacity(.42)}
+.spoiler-note{margin:10px 1px 0;--pixel-size:18px;font-size:18px;line-height:28px;color:var(--muted);text-align:center}
+.spoiler-gate{display:flex;align-items:center;justify-content:center;width:100%;min-height:40px;margin:6px 0 2px;--pixel-size:18px;font-size:18px;line-height:30px;color:var(--muted)}
+.spoiler-row{min-height:74px!important}
+.spoiler-row h3{--pixel-size:24px;line-height:32px}
+.spoiler-title{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;list-style:none;text-align:left;--pixel-size:24px;min-height:48px}
+.spoiler-title::-webkit-details-marker{display:none}
+.spoiler-title:focus-visible{outline:3px solid var(--muted);outline-offset:2px}
+.spoiler-count{flex:none;--pixel-size:18px;color:var(--muted)}
+.spoiler-option-row>div,.spoiler-row>div{min-width:0;flex:1}
+.spoiler-option-row{gap:16px;min-height:74px!important}
+.spoiler-option-row h3{--pixel-size:24px;line-height:32px}
+.spoiler-portrait{display:flex;align-items:center;justify-content:center;flex:none;width:64px;height:64px;outline:2px solid #b77a3d;background:#b98a52}
+#people .spoiler-portrait strong,#target-content .spoiler-portrait strong{--pixel-size:30px!important;font-size:30px!important;line-height:36px!important;color:#f3d39b;--text-shadow:#7a4f2a}
+#people[data-people-view=compact] .person>.spoiler-portrait{width:36px;height:36px;outline:0}
+#people[data-people-view=compact] .person>.spoiler-portrait strong{--pixel-size:18px!important;font-size:18px!important;line-height:24px!important}
+#person-detail .portrait-large.spoiler-portrait{width:144px;height:144px;margin:3px;outline:3px solid #c39358;outline-offset:2px;background:#b98a52}
+/* Revealed gift tastes (spoiler mode): one row per taste, like the in-game profile. */
+.revealed-tastes{display:flex;flex-direction:column;gap:6px;margin:4px 0 2px}
+.revealed-row{display:flex;flex-direction:column;gap:2px}
+.revealed-kind{--pixel-size:18px;font-size:18px;line-height:26px;color:var(--muted)}
+.revealed-none{--pixel-size:18px;font-size:18px;line-height:28px;color:var(--muted);text-align:center}
+.catalog-item[data-spoiler=hidden] span{color:var(--muted)}
+#guide-detail[data-spoiler=hidden] p{color:var(--muted);text-align:center}
+.spoiler-gate span{white-space:nowrap}
+/* Family and friends (Part of the Community) on a villager's profile */
+.kin-list button{display:flex;align-items:center;gap:8px;text-align:left}
+.kin-copy{display:flex;flex-direction:column;min-width:0;flex:1}
+.kin-copy strong{white-space:nowrap}
+.kin-list .kin-kind{--pixel-size:12px;font-size:12px;line-height:16px;color:var(--muted);white-space:nowrap}
+.kin-list .spoiler-portrait.kin-face{width:32px;height:32px;flex:none;outline-width:1px}
+.kin-list .spoiler-portrait.kin-face strong{--pixel-size:18px!important;font-size:18px!important;line-height:24px!important}
+/* Settings → 模组管理 (mod-manager.js) */
+#settings.mods-open>*:not(.mods-view){display:none!important}
+.mods-row .mods-count{display:block;--pixel-size:18px;font-size:18px;line-height:26px;color:var(--muted)}
+.mods-go{flex:0 0 150px;width:150px;height:40px;min-height:40px;--pixel-size:18px;font-size:18px;line-height:30px;white-space:nowrap}
+.mods-bar{display:flex;gap:6px}
+.mods-bar .journal-back{flex:none}
+.mods-note{--pixel-size:18px;font-size:18px;line-height:26px;color:#943b23;margin:4px 1px}
+.mods-list{display:flex;flex-direction:column}
+.mods-item{border-bottom:1px solid var(--rule)}
+.mods-copy{flex:1;min-width:0;display:flex;flex-direction:column}
+.mods-copy small{--pixel-size:12px;font-size:12px;line-height:18px;color:var(--muted);white-space:nowrap;overflow:hidden}
+.mods-tags{display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex:none}
+.mods-tag{--pixel-size:12px;font-size:12px;line-height:16px;padding:0 4px;white-space:nowrap}
+.mods-tag.is-config{color:#3f6b24;background:#d9e8b0}
+.mods-tag.is-integrated{color:#6d3a9a;background:#e7d6f0}
+.mods-more small{--pixel-size:12px;font-size:12px;line-height:18px;color:var(--muted)}
+.mods-description{--pixel-size:18px;font-size:18px;line-height:26px}
+.mods-config{min-height:40px;--pixel-size:18px;font-size:18px;line-height:30px}
+.mods-status[data-state=error]{color:#943b23}
+.mods-status[data-state=done]{color:#3f6b24}
+/* Rich mod cards and draft controls; native edit fields have a single text layer. */
+.mods-head{display:flex;align-items:center;width:100%;border:0!important;background:none!important;text-align:left;gap:10px;min-height:108px;padding:8px 2px}
+.mods-cover{flex:none;width:76px;display:flex;flex-direction:column;align-items:center;gap:4px;background:#e7bd78;border:1px solid var(--rule);padding:6px 4px}
+.mods-cover img{width:52px;height:48px;object-fit:contain;image-rendering:pixelated}
+.mods-cover small{--pixel-size:12px;font-size:12px;line-height:18px;white-space:nowrap}
+.mods-copy strong{--pixel-size:18px;font-size:18px;overflow:hidden;white-space:normal;overflow-wrap:anywhere;line-height:26px}
+.mods-copy .mods-original{white-space:normal;overflow-wrap:anywhere}
+.mods-copy .mods-summary{--pixel-size:12px;font-size:12px;line-height:18px;color:var(--ink);max-height:54px;overflow:hidden;margin:3px 0}
+.mods-id{overflow-wrap:anywhere}
+.mods-more{display:flex;flex-direction:column;padding:4px 2px 10px;gap:6px}
+.mods-local-actions,.mods-editor-actions{display:flex;gap:6px;flex-wrap:wrap}
+.mods-local-actions button,.mods-editor-actions button,.mods-edit{min-height:36px;--pixel-size:18px;font-size:18px;line-height:28px}
+.mods-local-actions button,.mods-editor-actions button{min-width:108px;flex:none;white-space:nowrap;padding:0 8px}
+.mods-native{font-family:FusionHans,FusionLatin,monospace;font-size:18px!important;--pixel-size:18px;color:var(--ink)!important;text-shadow:none!important;box-sizing:border-box;min-width:0}
+.mods-native::placeholder{color:#97603a!important;text-shadow:none!important;opacity:1}
+.mods-search{flex:1;min-width:0;height:40px;--pixel-size:18px;font-size:18px;width:100%}
+.mods-note-form{display:flex;flex-direction:column;gap:6px;padding:8px;border:1px solid var(--rule)}
+.mods-note-form textarea{resize:vertical;min-height:80px;padding:6px}
+.mods-editor{display:flex;flex-direction:column;gap:8px}
+.mods-editor>[hidden]{display:none!important}
+.mods-editor h2{--pixel-size:24px;font-size:24px;line-height:34px}
+.mods-option-copy strong{--pixel-size:18px;font-size:18px;line-height:26px;display:block;overflow-wrap:anywhere}
+.mods-option-copy small,.mods-original,.mods-locked{--pixel-size:12px;font-size:12px;line-height:18px;color:var(--muted);display:block}
+.mods-option-controls button{min-width:40px;min-height:36px;--pixel-size:18px;font-size:18px;line-height:28px}
+.mods-option-controls button:last-child:not(:first-child){min-width:64px;white-space:nowrap}
+.mods-editor>button{width:100%;white-space:nowrap}
+.mods-option-controls input,.mods-option-controls select{width:100%;max-width:100%}
+.directory-kind{width:100%;height:40px;margin:4px 0 8px;--pixel-size:18px;font-size:18px;color:var(--ink)}
+.mods-identity{display:flex;align-items:center;gap:6px}
+.mods-identity .mods-head{flex:1;min-width:0;width:auto}
+.mods-pin{width:40px;min-width:40px;height:40px;flex:none;padding:6px;opacity:.65}
+.mods-pin img{width:24px;height:24px;image-rendering:pixelated}
+.mods-pin[aria-pressed=true]{opacity:1;background:#efc260;box-shadow:inset 0 0 0 1px var(--ink)}
+
+.game-control.select-control.directory-kind-control{width:100%;max-width:none;height:40px;min-height:40px;margin:4px 0 8px;flex:none}
+.directory-kind-control .directory-kind{height:100%;margin:0}
+.directory-kind-control .control-label{--pixel-size:18px;font-size:18px;line-height:30px}
+/* ---------- Mod manager cards, compact (2026-09-28) ----------
+   Cover tile coloured by purpose (or the real preview), one line each for name, original name
+   and summary, a row of small tags, and a small pin at the top right. */
+#settings .mods-note{--pixel-size:12px;font-size:12px;line-height:18px;color:var(--muted);margin:2px 1px 4px}
+#settings .mods-note[data-tone=warn]{color:#943b23}
+#settings .mods-filter button{min-height:36px;--pixel-size:18px;font-size:18px;line-height:26px;white-space:nowrap}
+#settings .mods-list{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+#settings .mods-identity{display:block}
+#settings .mods-item[data-pinned=true] .mods-head{padding-left:12px}
+/* Cover: 56px tile in the purpose colour; a real preview fills it. */
+#settings .mods-cover{flex:none;width:56px;height:56px;padding:0;gap:0;display:flex;align-items:center;justify-content:center;border:2px solid rgba(80,41,22,.55);background:var(--cat,#e7bd78);box-shadow:inset 2px 2px rgba(255,255,255,.35),inset -2px -2px rgba(0,0,0,.12)}
+#settings .mods-cover img{width:34px;height:34px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(1px 1px 0 rgba(0,0,0,.25))}
+#settings .mods-cover.is-preview{background:#2a1c10}
+#settings .mods-cover.is-preview img{width:100%;height:100%;object-fit:cover;filter:none}
+#settings .mods-item[data-category=world]{--cat:#8fc7a0}
+#settings .mods-item[data-category=people]{--cat:#f0a7a0}
+#settings .mods-item[data-category=story]{--cat:#e8b86a}
+#settings .mods-item[data-category=farm]{--cat:#b6d67a}
+#settings .mods-item[data-category=collection]{--cat:#9cc3e6}
+#settings .mods-item[data-category=visual]{--cat:#d2a8e6}
+#settings .mods-item[data-category=audio]{--cat:#f2d27a}
+#settings .mods-item[data-category=framework]{--cat:#c9b8a0}
+#settings .mods-item[data-category=utility]{--cat:#a8d8d4}
+#settings .mods-item[data-category=other]{--cat:#e0c79e}
+/* Text: one line each; long names and summaries end with an ellipsis instead of wrapping. */
+#settings .mods-copy{gap:0}
+#settings .mods-copy strong{--pixel-size:24px;font-size:24px;line-height:30px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+#settings .mods-copy .mods-original{--pixel-size:12px;font-size:12px;line-height:16px;white-space:nowrap;overflow:hidden;color:var(--muted)}
+#settings .mods-copy .mods-summary{--pixel-size:18px;font-size:18px;line-height:24px;max-height:24px;white-space:nowrap;overflow:hidden;margin:2px 0 4px;color:#5a3418}
+#settings .mods-meta{display:flex;flex-wrap:wrap;gap:4px}
+#settings .mods-meta small,#settings .mods-meta .mods-tag{--pixel-size:12px;font-size:12px;line-height:16px;padding:0 5px;border:1px solid rgba(80,41,22,.35);background:#fff3d2;color:#6b3a1c;white-space:nowrap}
+#settings .mods-meta .is-category{background:var(--cat,#e7bd78)}
+#settings .mods-meta .mods-tag.is-config{background:#d9e8b0;color:#3f6b24}
+#settings .mods-meta .mods-tag.is-integrated{background:#e7d6f0;color:#6d3a9a}
+/* Pin: small, top right; gold when pinned. */
+#settings .mods-pin{position:absolute;top:6px;right:6px;width:32px;min-width:32px;height:32px;padding:4px;opacity:.45;border:0!important;background:none!important;box-shadow:none!important}
+#settings .mods-pin img{width:22px;height:22px}
+#settings .mods-pin[aria-pressed=true]{opacity:1;filter:drop-shadow(0 0 0 #e7b53c) sepia(1) saturate(4) hue-rotate(-10deg)}
+#settings .mods-more{padding:0 10px 10px;border-top:1px dashed rgba(80,41,22,.3);margin-top:0;padding-top:8px}
+#settings .mods-bar{display:flex;gap:6px;align-items:stretch}
+#settings .mods-bar .mods-search{flex:1;min-width:0}
+#settings .mods-bar .directory-kind-control{flex:0 0 196px;width:196px;min-width:0;margin:0}
+/* No illustration covers: the purpose colour is a strip on the card's left edge. */
+#settings .mods-item{position:relative;border:2px solid #d3a063;border-bottom-width:2px;background:#ffe7b4;box-shadow:inset 6px 0 var(--cat,#e7bd78),inset 2px 2px #fff3cf,2px 2px 0 rgba(80,41,22,.15)}
+#settings .mods-identity .mods-head{display:flex;align-items:center;gap:10px;width:100%;min-height:0;padding:6px 44px 6px 8px;border:0!important;border-image:none!important;background:none!important;box-shadow:none!important;padding-left:16px}
+#settings .mods-item[data-pinned=true]{border-color:#c8912e;background:#fff0c0;box-shadow:inset 6px 0 #e7b53c,inset 2px 2px #fff7d8,2px 2px 0 rgba(80,41,22,.2)}
+/* Mod settings editor: a header, then one row per option — name and hint on the left, the control
+   on the right (lists and text take the row below); edited rows marked; switches for on/off. */
+.mods-editor-head{display:flex;flex-direction:column;gap:2px;padding:8px 10px;background:#fbe2aa;border:2px solid #c59556}
+.mods-editor-head h2{margin:0}
+.mods-editor-actions .mods-save.is-ready{background:#b5dc86;border-color:#5f8a3a;color:#2f5a1c}
+.mods-option-page{--pixel-size:18px;font-size:18px;line-height:28px;margin:10px 0 0;padding:4px 10px!important;background:#e7bd78;border-left:6px solid #8b522c}
+.mods-option{border-bottom:1px solid var(--rule);flex-direction:column;gap:6px;display:grid!important;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:6px;padding:10px 8px!important}
+.mods-option.is-wide>.mods-option-controls{grid-column:1 / -1}
+.mods-option.is-changed{background:#fff2c4;box-shadow:inset 4px 0 0 #e0a92e}
+.mods-option-copy{min-width:0}
+.mods-option-copy small{--pixel-size:14px;font-size:14px;line-height:20px;margin-top:2px}
+.mods-option-copy .mods-changed{display:inline-block;white-space:nowrap;width:auto!important;margin-top:4px;padding:0 6px;background:#e0a92e;color:#fff8e0;--pixel-size:12px;font-size:12px;line-height:18px}
+.mods-option-controls{display:flex;gap:6px;align-items:center;justify-content:flex-end}
+.mods-option>.mods-locked{--pixel-size:14px;font-size:14px;line-height:20px;white-space:nowrap;padding:2px 8px;background:#e8d9c0;border:1px solid #bda27c}
+.mods-option-controls .mods-toggle{display:flex;align-items:center;gap:8px;min-width:96px!important;height:36px;padding:0 10px 0 4px!important;white-space:nowrap}
+.mods-toggle .mods-knob{position:relative;width:36px;height:20px;flex:none;background:#c9b39a;border:2px solid #6b4a2a;box-shadow:inset 0 2px 0 rgba(0,0,0,.15)}
+.mods-toggle .mods-knob:after{content:'';position:absolute;top:2px;left:2px;width:12px;height:12px;background:#fff6dc;border:1px solid #6b4a2a}
+.mods-toggle[aria-pressed=true] .mods-knob{background:#6bb43f}
+.mods-toggle[aria-pressed=true] .mods-knob:after{left:auto;right:2px}
+.mods-toggle small{--pixel-size:18px;font-size:18px;line-height:24px}
+.mods-toggle[aria-pressed=false] small{color:var(--muted)}
+.mods-number{min-width:60px;text-align:center;--pixel-size:18px;font-size:18px;line-height:28px;padding:0 4px;background:#fff6dc;border:2px solid #d3a661}

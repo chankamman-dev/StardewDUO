@@ -1,0 +1,5 @@
+const assert=require('assert/strict'),{valid}=require('../android/assets/mod-config.js'),notes=require('../android/assets/mod-notes.js');
+const document={state:'ready',modId:'example.Mod',session:'s',language:'en',token:'a'.repeat(64),options:[{key:'0',page:'',name:'Toggle',tooltip:'',kind:'bool',value:false,editable:true,reason:null,min:null,max:null,step:null,choices:null}],limited:[]};
+assert(valid(document));for(const change of [{token:'x'},{options:[{...document.options[0],value:'true'}]},{options:[document.options[0],document.options[0]]},{options:[{...document.options[0],tooltip:'x'.repeat(1001)}]},{options:[{...document.options[0],key:'128'}]}])assert(!valid({...document,...change}));
+for(const [id,row] of Object.entries(notes)){assert(/^[a-z0-9_.-]+$/.test(id));assert(row.name.length<=80&&row.description.length<=300);assert(['world','people','story','farm','collection','visual','audio','framework','utility','other'].includes(row.category));}
+assert(notes['spacechase0.genericmodconfigmenu'].name.includes('设置'));console.log('PASS mod settings validation and',Object.keys(notes).length,'Chinese identification notes');

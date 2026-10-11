@@ -1,0 +1,384 @@
+/* Secondary guide pages share the approved paper, typography and outer frame. */
+#manual[data-journal]:not([data-journal=items])>:not(.journal-host){display:none!important}
+#manual[data-journal=items]>.journal-host{display:none!important}
+.journal-host{padding:0 2px 10px;min-width:0}
+.journal-toolbar{display:flex;align-items:center;gap:8px;min-height:36px;margin-bottom:5px;border-bottom:1px solid var(--rule);padding-bottom:5px;position:sticky;top:0;background:var(--paper);z-index:2}
+.journal-toolbar button,.journal-item-bar button{--pixel-size:18px;line-height:28px;min-height:34px;height:34px;width:126px;flex:none;padding:0 10px;white-space:nowrap}
+.journal-toolbar .journal-back,.journal-item-bar .journal-back{background:none!important;box-shadow:none!important;border:0!important;padding:0 4px}
+
+.journal-row{display:flex;align-items:center;gap:12px;width:100%;min-height:78px!important;padding:8px 2px!important;border:0!important;border-bottom:1px solid var(--rule)!important;box-shadow:none!important;background:none!important;text-align:left}
+.journal-row>img{width:44px;height:44px;flex:none;object-fit:contain}.journal-row-copy{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.journal-row-copy strong{--pixel-size:24px;font-size:24px;line-height:34px;overflow-wrap:anywhere}.journal-row-copy small{--pixel-size:18px;line-height:28px}
+.journal-arrow{--pixel-size:18px;line-height:28px;flex:none;color:var(--muted);width:24px}.journal-row:disabled{opacity:1;cursor:default}.journal-row:disabled>.journal-arrow{visibility:hidden}@media(hover:hover) and (pointer:fine){.journal-row:not(:disabled):active{background:#ffdfa0!important}}
+.journal-directory{min-height:50px!important;height:50px;padding:5px 2px!important}.journal-directory>img{width:32px;height:32px}.journal-directory .journal-row-copy{display:grid;grid-template-columns:148px minmax(0,1fr);gap:16px;align-items:center}.journal-directory strong,.journal-directory small{white-space:nowrap}.journal-directory strong{--pixel-size:20px;font-size:20px;line-height:28px}.journal-directory small{--pixel-size:14px;font-size:14px;line-height:22px}
+.journal-empty{font-size:24px;--pixel-size:24px;line-height:34px;margin:20px 2px;color:var(--muted)}
+.journal-title{--pixel-size:24px;line-height:34px;margin:8px 0}.journal-description{--pixel-size:24px;line-height:34px;white-space:pre-line;overflow-wrap:anywhere;margin:10px 0}
+.journal-section-title{background:#efbd77;border:1px solid #bd8042;margin:10px 0 6px!important;padding:0 8px;text-align:center;line-height:30px!important}.journal-aux{display:block;--pixel-size:18px;font-size:18px;line-height:28px;color:var(--muted)}
+.journal-month{display:flex;gap:8px;align-items:center;margin:5px 0 8px}.journal-month h2{flex:1;text-align:center;--pixel-size:24px;line-height:34px}.journal-month button{min-height:36px;width:38px;padding:0;line-height:30px;--pixel-size:24px}.journal-month .journal-today{width:70px;--pixel-size:18px}
+.journal-calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.journal-weekday{text-align:center;color:var(--muted);--pixel-size:18px;line-height:24px}
+.journal-day{height:50px!important;min-height:50px!important;border:2px solid #c59556!important;padding:3px!important;background:#edc17e!important;box-shadow:none!important;position:relative;display:flex;justify-content:center;align-items:flex-end;gap:1px}.journal-day[aria-pressed=true]{border-color:#7a4227!important;background:#ffdea0!important}.journal-day.today{box-shadow:inset 0 0 0 2px #fff0b8!important}.journal-day-number{position:absolute;left:4px;top:0;width:42px;white-space:nowrap;--pixel-size:18px;line-height:26px;text-align:left}.journal-day img{width:22px;height:22px;object-fit:contain;margin-bottom:1px}.journal-day img+img{width:18px;height:18px}
+.journal-event{min-height:48px!important}.journal-event>img{width:32px;height:32px}
+.journal-objective{display:flex;align-items:flex-start;gap:8px;padding:10px 0;border-bottom:1px solid var(--rule)}.journal-objective img{width:18px;height:18px;margin-top:8px;flex:none}.journal-objective p{flex:1;--pixel-size:24px;line-height:34px;overflow-wrap:anywhere}.journal-quantity{--pixel-size:18px;line-height:30px;flex:none;color:var(--muted)}.journal-quest-ready{--pixel-size:18px;line-height:28px;color:#58643b}
+.journal-search{width:100%;margin:3px 0 7px;font-size:18px;line-height:30px;height:40px;min-height:40px}.journal-filters{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:5px}.journal-filters button{--pixel-size:18px;line-height:28px;min-height:34px;height:34px;width:112px;flex:none;padding:0 9px;white-space:nowrap}.journal-filters button[aria-pressed=true]{background:#e9b365!important;border-color:#8b522c!important}
+.journal-identity{display:flex;align-items:center;gap:12px;padding:8px 0 12px;border-bottom:1px solid var(--rule)}.journal-identity>img{width:64px;height:64px;flex:none}.journal-identity h2{--pixel-size:24px;line-height:34px;flex:1;overflow-wrap:anywhere}.journal-item-link{--pixel-size:18px;line-height:28px;margin:8px 0;min-height:34px;min-width:140px;white-space:nowrap}.journal-ingredient.missing small{color:#95512f}
+.journal-fact{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:8px 2px;border-bottom:1px solid var(--rule)}.journal-fact>span{--pixel-size:18px;line-height:28px;flex:1}.journal-fact>strong{--pixel-size:24px;line-height:34px;text-align:right;width:45%;flex:none;overflow-wrap:anywhere}
+.journal-saved-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.journal-saved-item{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;min-height:120px!important;padding:8px 5px!important;background:none!important;box-shadow:none!important;border:0!important}.journal-saved-item img{width:48px;height:48px}.journal-saved-item span{display:block;width:100%;--pixel-size:24px;line-height:34px;text-align:center;overflow-wrap:anywhere}
+.journal-save{--pixel-size:18px;line-height:28px;min-height:36px;width:120px;white-space:nowrap;margin-top:10px}.journal-save[aria-pressed=true]{background:#e9b365!important}.journal-item-bar{margin-bottom:4px}
+#manual[data-journal=items] .catalog{gap:8px}#manual[data-journal=items] .catalog-item{padding:6px 8px}#manual[data-journal=items] .catalog-item>span{min-height:68px}.quest-filter{flex:1;min-width:0;--pixel-size:18px;font-size:18px;padding:3px 4px}.quest-filter[aria-pressed=true]{background:#e9b365;border-color:#8b522c}.quest-deadline{color:#984225}.quest-progress::-webkit-progress-bar{background:#dcc38e}.quest-progress::-webkit-progress-value{background:#8f9d50}.quest-reward{display:flex;align-items:center;gap:8px;margin:10px 0}.quest-reward img{width:18px;height:18px;image-rendering:pixelated}
+.quest-pin-toggle{--pixel-size:18px;font-size:18px;padding:2px 10px;min-width:104px;white-space:nowrap;flex-shrink:0}.quest-progress{display:block;width:calc(100% - 36px);height:8px;margin:0 0 12px 36px;border:1px solid #956038;background:#dcc38e;appearance:none;-webkit-appearance:none}
+
+/* Quest detail: one identity row, then a readable journal entry. */
+.journal-host[data-quest-detail=true]{padding:8px 2px 18px}
+.quest-identity{display:flex;align-items:center;gap:12px;padding:4px 0 14px;border-bottom:2px solid var(--rule)}
+.quest-identity-copy{flex:1;min-width:0}.quest-identity .journal-title{margin:0!important;line-height:32px;overflow-wrap:anywhere}
+.quest-person{width:64px;height:64px;min-height:64px!important;padding:0!important;border:2px solid #b68349!important;box-shadow:inset 0 0 0 2px #ffe3a4!important;background:#e6b776!important;flex:none}
+.quest-person img{width:60px;height:60px;object-fit:contain;image-rendering:pixelated}.quest-summary .journal-aux{margin:0;line-height:26px}
+.journal-host[data-quest-detail=true] .journal-description{margin:16px 0 20px!important;line-height:34px}
+.quest-section-label{--pixel-size:18px;font-size:18px;line-height:28px;font-weight:normal;color:var(--muted);margin:0}
+.journal-host[data-quest-detail=true] .journal-objective{padding:6px 0 4px;border:0;align-items:center}.journal-host[data-quest-detail=true] .journal-objective p{margin:0!important}.journal-host[data-quest-detail=true] .journal-objective img{margin:0}
+.journal-host[data-quest-detail=true] .quest-progress{width:calc(100% - 26px);margin:2px 0 14px 26px;height:8px}
+.journal-host[data-quest-detail=true] .quest-reward{border-top:2px solid var(--rule);padding-top:12px;margin:20px 0 4px;gap:8px}.quest-reward-note{margin:0!important}
+.quest-reward .quest-section-label{margin-right:auto;width:140px;flex:0 0 140px;white-space:nowrap}
+
+.quest-identity .quest-pin-toggle{--pixel-size:18px;font-size:18px;line-height:26px;align-self:flex-start;margin-top:2px;width:34px;min-width:34px;height:34px;min-height:34px!important;padding:5px;display:flex;align-items:center;justify-content:center}
+.quest-pin-toggle img{width:22px;height:22px;image-rendering:pixelated;pointer-events:none}
+.quest-pin-toggle[aria-pressed=false] img{opacity:.65;transform:rotate(35deg)}
+.quest-pin-toggle[aria-pressed=true]{background:#e5bd79!important;border-color:#956238!important;box-shadow:inset 2px 2px 0 #986438!important}
+.quest-pin-toggle:active{transform:translateY(1px)}
+
+.recipe-view-toggle{display:flex;justify-content:flex-end;gap:4px;margin-bottom:6px}.recipe-view-toggle button[aria-pressed=true]{background:#dfb575!important;border-color:#8b522c}
+.recipe-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.recipe-grid .journal-row>img{width:48px;height:48px}.recipe-grid .journal-row-copy{width:100%;min-width:0}.recipe-grid .journal-row-copy strong{--pixel-size:18px;line-height:24px}.recipe-grid .journal-row-copy small{--pixel-size:12px;line-height:18px}.recipe-grid .journal-arrow{display:none}
+
+#item-category{display:block;--pixel-size:18px;line-height:26px;margin:-2px 0 6px}#item-category[hidden]{display:none}
+
+.equipment-layout{display:grid;grid-template-columns:64px 128px 64px;gap:8px;justify-content:center;margin:18px auto 8px}.equipment-column{display:grid;grid-template-rows:repeat(3,64px)}.equipment-slot{width:64px!important;height:64px!important;min-height:0!important;border:0!important;background-color:transparent!important;background-size:100% 100%!important;box-shadow:none!important;padding:8px!important;image-rendering:pixelated}.equipment-slot img{width:48px;height:48px;object-fit:contain}.equipment-slot:disabled{opacity:1!important}.equipment-slot[aria-pressed=true]{outline:2px solid #c94a31;outline-offset:-3px}.equipment-portrait>img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated}.equipment-portrait small{--pixel-size:12px;line-height:20px;text-align:center;padding:8px;color:var(--muted)}.equipment-farmer{text-align:center;--pixel-size:24px;line-height:32px;margin:0 0 10px}.equipment-detail{border-top:1px solid var(--rule);padding-top:8px}.equipment-detail .journal-description{--pixel-size:18px;line-height:26px}
+
+.recipe-tools{display:flex;gap:6px;align-items:center;margin:0 0 6px}.recipe-tools .journal-search{flex:1;width:0;min-width:0;margin:0}.recipe-tools .recipe-view-toggle{flex:none;margin:0}.recipe-view-toggle button{--pixel-size:18px;width:66px;min-width:66px;height:36px;min-height:36px!important;white-space:nowrap;padding:2px 4px!important}.recipe-grid .journal-row{display:flex;flex-direction:column;justify-content:flex-start;text-align:center;gap:3px;min-width:0;border:2px solid #c59556!important;padding:6px!important;background:#f7dca0!important}
+
+/* Favorites stay beside the item name, above long descriptions and gift lists. */
+#guide-detail .detail-top>div{flex:1;min-width:0}
+#guide-detail .journal-save{display:flex;align-items:center;justify-content:center;flex:0 0 36px;width:36px;height:36px;min-height:36px!important;margin:0 0 0 auto;padding:6px!important;border:0!important;background:none!important;box-shadow:none!important}
+#guide-detail .journal-save img{width:24px;height:24px;object-fit:contain;image-rendering:pixelated;pointer-events:none}
+#guide-detail .journal-save:focus-visible{outline:2px solid #995a30;outline-offset:1px}
+
+/* Farm overview uses game objects as the primary visual landmarks. */
+
+/* Combined character sheet: original game sprites, no transition or extra polling. */
+.character-skills{min-width:0;display:grid;gap:4px}.character-skill{display:grid;grid-template-columns:minmax(0,1fr) 22px;gap:2px 6px;width:100%;min-height:38px!important;background:transparent;border:1px solid transparent;box-shadow:none;padding:2px 4px!important;text-align:left}.character-skill[aria-pressed=true]{background:#ffe9af;border-color:#b48249}.skill-title img{width:20px;height:20px}.skill-buffed{color:#286b3b}.character-unavailable{--pixel-size:16px;line-height:26px;color:var(--muted)}
+.character-detail{border-top:1px solid var(--rule);padding-top:12px}.skill-detail-title{display:flex;align-items:center;gap:10px}.skill-detail-title img{width:28px;height:28px}.skill-detail-title h2{flex:1;--pixel-size:22px}.skill-detail-title>span,.skill-xp{--pixel-size:16px;color:var(--muted)}.skill-progress{display:block;width:100%;height:9px;margin:5px 0 12px;appearance:none;border:1px solid #ad824c;background:#dbbc84}.skill-progress::-webkit-progress-bar{background:#dbbc84}.skill-progress::-webkit-progress-value{background:#82934c}.skill-profession strong{--pixel-size:18px}.skill-profession p{--pixel-size:15px;line-height:23px;color:var(--muted)}.character-mastery{margin-top:12px;--pixel-size:15px;line-height:24px;color:var(--muted)}.character-mastery summary{min-height:34px}.character-skills .character-skill[aria-pressed=true]{border-color:#b48249!important;background:#ffe9af!important}.character-skills .character-skill.thor-pressed{background:#fff0b4!important}.skill-title{display:flex;gap:6px;align-items:center;line-height:20px;--pixel-size:14px}.skill-levels{display:flex;align-items:center;gap:2px;height:16px}.skill-levels img{object-fit:fill;min-width:0;width:0;flex:1;height:14px}.skill-levels img.skill-node{width:0;flex:1.6}.skill-profession>div{flex:1;min-width:0}.skill-profession strong,.skill-profession p{display:block;width:100%}.character-farmer .equipment-portrait small{--pixel-size:11px;line-height:17px}.skill-title>span{display:block;min-width:0;line-height:20px}.character-skill>strong{align-self:center;--pixel-size:18px;grid-column:3;grid-row:1;line-height:24px}.skill-profession{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--rule);align-items:flex-start}.skill-profession>img{width:28px;height:28px;flex:none;margin-top:3px}
+
+.skill-effect{--pixel-size:15px;line-height:23px;white-space:pre-line;margin:8px 0;color:var(--muted)}
+.quest-claim{display:flex;align-items:center;justify-content:center;gap:8px;min-height:40px;width:190px;max-width:100%;white-space:nowrap;margin-top:12px;--pixel-size:20px}.quest-claim img{width:22px;height:22px}.quest-claim-status{display:block;--pixel-size:15px;line-height:23px;margin:8px 0;color:var(--muted)}
+/* ---- Original-art pass: character and quest pages ---- */
+/* QuestLog special-order bar: framed Cursors2 strip (caps + stretched middle), notched into
+   up to four segments, filled red and green when complete. Drawn at 2x. */
+.game-bar{position:relative;display:block;height:24px;margin:4px 0 12px;image-rendering:pixelated;--fill:#ff0000;--edge:#8b0000;
+ background:url('art/quest-bar-left.png') left top/10px 24px no-repeat,url('art/quest-bar-right.png') right top/10px 24px no-repeat,url('art/quest-bar-mid.png') 10px 0/calc(100% - 20px) 24px no-repeat}
+.game-bar.is-complete{--fill:#32cd32;--edge:#008000}
+.game-bar-fill{position:absolute;z-index:1;left:6px;top:6px;height:12px;width:max(0px,calc((100% - 12px) * var(--p) - 2px));background:var(--fill);box-shadow:2px 0 0 var(--edge)}
+.game-bar-notch{position:absolute;top:0;left:calc(6px + (100% - 12px) * var(--k));width:2px;height:24px;background:url('art/quest-bar-notch.png') 0 0/2px 24px;image-rendering:pixelated}
+.quest-progress.game-bar{width:auto;height:24px!important;margin:0 0 12px 36px;border:0;padding:0}
+/* Skill XP, UI Info Suite 2 style: each skill fills in its own colour. */
+.skill-progress.game-bar{width:auto;height:24px!important;margin:6px 0 12px;border:0;padding:0}
+.game-bar[data-skill="0"]{--fill:#fdf46f;--edge:#b0a520}.game-bar[data-skill="1"]{--fill:#5d88ea;--edge:#1b3f9c}.game-bar[data-skill="2"]{--fill:#5ed84c;--edge:#1f8a17}
+.game-bar[data-skill="3"]{--fill:#b08a5c;--edge:#6b4a26}.game-bar[data-skill="4"]{--fill:#de4b34;--edge:#8c1310}
+
+/* InventoryPage: the farmer stands in front of daybg (before 19:00) or nightbg. */
+.equipment-portrait.is-day,.equipment-portrait.is-night{border:0!important;background:url('art/portrait-day.png') 0 0/100% 100% no-repeat;image-rendering:pixelated}
+.equipment-portrait.is-night{background-image:url('art/portrait-night.png')}
+.equipment-portrait.is-day small,.equipment-portrait.is-night small{color:#fff6d8;text-shadow:none;--text-shadow:#3b6ea0}
+/* Tooltip stat icons (Cursors 428 row). */
+.journal-fact>img{width:20px;height:20px;flex:none;image-rendering:pixelated}
+
+/* QuestLog list: each quest in the light Cursors 384,396 box; DONE badge replaces the icon. */
+.journal-row.quest-row{border:10px solid transparent!important;border-image:url('art/quest-row-box.png') 5 fill / 10px stretch!important;background:none!important;box-shadow:none!important;margin:0 0 6px;padding:0 4px!important;min-height:72px!important;image-rendering:pixelated}
+.journal-row.quest-row>img{width:36px;height:36px;object-fit:contain;image-rendering:pixelated}
+.journal-row.quest-row.is-done>img{width:46px;height:18px}
+.journal-row.quest-row.thor-pressed,.journal-row.quest-row.thor-tapped{background:none!important;box-shadow:none!important;filter:sepia(.35) brightness(.96)}
+/* Quest detail: clock before the deadline, reward box with the coin stack. */
+.quest-summary>img{width:24px;height:24px;flex:none;image-rendering:pixelated;margin-right:-4px}
+.quest-summary{display:flex;align-items:center;min-height:0;gap:4px 12px;flex-wrap:wrap;margin-top:4px;justify-content:flex-start!important}
+.quest-reward-box{display:flex;flex:none;align-items:center;justify-content:center;width:48px;height:48px;background:url('art/quest-reward-box.png') 0 0/48px 48px;image-rendering:pixelated}
+.quest-reward .quest-reward-box img{width:32px;height:32px}
+.quest-reward-amount{--pixel-size:24px;font-size:24px;line-height:34px;white-space:nowrap}
+/* Character header: equipment block and skill list share top and bottom edges. 44px slots
+   keep 16px item art at an exact 2x; the skill rows share the left block's height. */
+.character-top{display:grid;gap:14px;padding:14px 0 12px;padding-top:10px;grid-template-columns:190px minmax(0,1fr);align-items:stretch}
+.character-farmer{display:flex;flex-direction:column;align-items:center}
+.character-farmer .equipment-layout{grid-template-columns:44px 94px 44px;gap:4px;margin:0 0 6px}
+.character-farmer .equipment-column{grid-template-rows:repeat(3,44px);gap:4px}
+.character-farmer .equipment-slot{width:44px!important;height:44px!important;padding:6px!important}
+.character-farmer .equipment-slot img{width:32px;height:32px}
+.character-farmer .equipment-portrait{width:94px;height:140px}
+.character-farmer .equipment-farmer{--pixel-size:18px;height:26px;line-height:26px;margin:0}
+.character-top>.character-skills{grid-template-rows:repeat(5,minmax(0,1fr));gap:3px;align-content:stretch;contain:size}
+.character-top>.character-unavailable{align-self:center}
+/* Quest filters: a light tag strip (not a second row of buttons). Selected = the light
+   filled bar used by section titles; empty filters fade. */
+.quest-filters{margin-bottom:8px;display:flex!important;gap:4px!important;margin:0 0 8px!important;padding:0 0 6px;border-bottom:1px solid var(--rule)}
+.quest-filters .quest-filter{--pixel-size:16px;flex:1 1 auto;display:flex!important;align-items:center;justify-content:center;gap:4px;min-width:0;min-height:32px!important;height:32px;padding:0 6px!important;background:none!important;border:1px solid transparent!important;box-shadow:none!important;white-space:nowrap}
+.quest-filters .quest-filter>img{width:18px;height:18px;flex:none;object-fit:contain;image-rendering:pixelated}
+.quest-filter-label{--pixel-size:18px;font-size:18px;line-height:26px;white-space:nowrap}
+.quest-filters .quest-filter:not(:has(img))::before{content:none}
+.quest-filter-count{--pixel-size:12px;font-size:12px;line-height:18px;color:var(--muted);white-space:nowrap}
+.quest-filters .quest-filter[aria-pressed=true]{background:#efbd77!important;border-color:#bd8b4e!important}
+.quest-filters .quest-filter.is-empty{opacity:.5}
+.quest-filters .quest-filter.thor-pressed,.quest-filters .quest-filter.thor-tapped{background:#f6d28f!important;box-shadow:none!important}
+/* Billboard "!" bob (Town.draw: 4px * sin(t/250)), shown on the notice tab. */
+.journal-quest-tabs button.has-alert{display:flex;align-items:center;justify-content:center;gap:6px}
+.board-alert{width:24px;height:24px;flex:none;image-rendering:pixelated;animation:board-bob 1.57s ease-in-out infinite}
+@keyframes board-bob{0%,100%{transform:translateY(-4px)}50%{transform:translateY(4px)}}
+@media(prefers-reduced-motion:reduce){.board-alert{animation:none}}
+.journal-quest-tabs button>span{white-space:nowrap}
+/* Skill rows: the name column fits the longest name per language (zh 62px, en 92px measured),
+   and the level pips keep their native 8x9 / 14x9 shape, growing to fill the bar. */
+.character-skills .character-skill{align-items:center;border:1px solid transparent!important;box-shadow:none!important;background:transparent!important;line-height:24px;height:auto!important;min-height:0!important;padding:2px 4px!important;grid-template-columns:96px minmax(0,1fr) 22px}
+html[lang="zh-CN"] .character-skills .character-skill{grid-template-columns:66px minmax(0,1fr) 22px}
+.character-skills .skill-levels{height:auto;gap:2px}
+.character-skills .skill-levels img{flex:8 1 0;width:0;height:auto;aspect-ratio:8/9;object-fit:fill}
+.character-skills .skill-levels img.skill-node{flex:14 1 0;aspect-ratio:14/9;object-fit:contain}
+/* Older mod: the missing-farmer note sits on a paper label, not straight on the sky art. */
+.equipment-portrait{width:128px;height:192px;border:4px ridge #ac622c;background:#dca863;display:flex;align-items:center;justify-content:center;box-sizing:border-box;position:relative}
+.equipment-portrait small.portrait-note{position:absolute;left:5px;right:5px;bottom:8px;padding:3px 4px;background:#ffdfa0;border:2px solid #ba874b;box-shadow:inset 1px 1px #fff0bc;color:var(--ink);--text-shadow:#e6c286;--pixel-size:12px;font-size:12px;line-height:16px;text-align:center}
+/* Manual → 图鉴 (collections.js) */
+.collection-list{display:flex;flex-direction:column}
+.collection-row .journal-row-copy{min-width:0}
+.collection-bar{display:block;height:8px;margin-top:4px;background:#e3b36e;outline:2px solid #b77a3d;outline-offset:-2px}
+.collection-fill{display:block;height:100%;background:#5a9a3a}
+.collection-head{display:flex;align-items:center;gap:10px;margin:4px 1px}
+.collection-head>img{width:48px;height:48px;image-rendering:pixelated;object-fit:contain}
+.collection-filter{display:flex;gap:6px;margin:8px 0}
+.collection-filter button{flex:1;min-height:40px;--pixel-size:18px;font-size:18px;line-height:30px}
+.collection-filter button[aria-pressed=true]{filter:brightness(.92);outline:2px solid #943b23;outline-offset:-3px}
+.collection-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.collection-entry{display:flex;flex-direction:column;align-items:center;gap:2px;min-height:86px;padding:4px 2px}
+.collection-entry img{width:40px;height:40px;image-rendering:pixelated;object-fit:contain}
+.collection-entry span{--pixel-size:18px;font-size:18px;line-height:24px;text-align:center;max-width:100%}
+.collection-entry .collection-donated{--pixel-size:12px;font-size:12px;line-height:16px;color:#3f6b24}
+.collection-missing{opacity:.45}
+.collection-entry:disabled{opacity:1}
+.collection-entry>span,.collection-entry>small{align-self:stretch;text-align:center}
+.collection-head>div{flex:1;min-width:0}
+.collection-head small{--pixel-size:18px;font-size:18px;line-height:26px;color:var(--muted);white-space:nowrap}
+/* SpaceCore skills (journal renderSkills): same row as the game's five, professions below. */
+.custom-skills-title{margin-top:6px}
+.custom-skill .skill-name-long{--pixel-size:12px;font-size:12px;line-height:18px;white-space:nowrap}
+/* Runtime story directory and Community Center bundles. Keep long mod names inside paper cards. */
+.directory-head,.bundle-room-head{display:flex;align-items:center;gap:8px;margin:8px 0}
+.directory-head>img,.bundle-room-head>img{width:32px;height:32px;object-fit:contain;image-rendering:pixelated;flex:none}
+.directory-head h2,.bundle-room-head h2{min-width:0;flex:1;margin:0;overflow-wrap:anywhere}
+.directory-note{--pixel-size:14px;font-size:14px;line-height:22px;color:var(--muted);margin:6px 0}
+.directory-tag{display:inline-block;--pixel-size:12px;font-size:12px;line-height:18px;padding:3px 5px;background:#e8bc79;white-space:nowrap}
+.directory-reveal{width:100%;min-height:42px}
+.directory-pages{display:flex;gap:8px;align-items:center;margin-top:8px}
+.directory-pages button{flex:1;min-width:0;white-space:nowrap;--pixel-size:16px;font-size:16px}
+.directory-pages>span{--pixel-size:14px;font-size:14px;white-space:nowrap}
+/* Story events: progress, portrait rows, the stage, dialogue boxes and condition tiles. */
+.event-progress{display:flex;align-items:center;gap:10px;margin:6px 0 8px;padding:8px 10px;background:#fbe2aa;border:2px solid #c59556;box-shadow:inset 0 -3px 0 #efcd8a}
+.event-progress>img{width:28px;height:28px;flex:none;image-rendering:pixelated}
+.event-progress-copy{flex:1;min-width:0;display:grid;grid-template-columns:auto auto;justify-content:space-between;align-items:center;column-gap:10px}
+.event-progress-copy>small{--pixel-size:14px;font-size:14px;line-height:20px;color:var(--muted);white-space:nowrap}
+.event-progress-copy>strong{--pixel-size:14px;font-size:14px;line-height:20px;color:#5a3418;white-space:nowrap}
+.event-progress-track{grid-column:1/-1;display:block;height:12px;margin-top:4px;background:#e0b06a;border:2px solid #8b522c;box-shadow:inset 0 2px 0 #c28a4a}
+.event-progress-fill{display:block;height:100%;min-width:2px;background:linear-gradient(#9ada62 0 50%,#6bb43f 50%)}
+.event-tools{display:flex;gap:6px;align-items:stretch;margin:0 0 6px}.event-tools>:first-child{flex:1 1 auto;width:0;min-width:0}.event-tools .journal-search{width:100%;margin:0}.event-tools .game-control.select-control.directory-kind-control{flex:0 0 34%;width:34%;max-width:none;margin:0}
+.event-filters button{min-height:36px;--pixel-size:16px;font-size:16px;line-height:26px;white-space:nowrap}
+.event-row{gap:10px!important;min-height:74px!important}
+.event-face{position:relative;flex:none;width:52px;height:52px;display:grid;place-items:center;background:#e2b877;border:2px solid #8b522c;box-shadow:inset 0 0 0 2px #f4d49c}
+.event-face>img:not(.event-badge){width:44px;height:44px;object-fit:cover;image-rendering:pixelated}
+.event-face.is-unknown{background:#6b4a36;box-shadow:inset 0 0 0 2px #86604a}
+.event-face.is-unknown>small,.event-portrait.is-unknown>small{--pixel-size:24px;font-size:24px;line-height:30px;color:#f3d39b;--text-shadow:#3b2413}
+.event-badge{position:absolute;right:-6px;bottom:-6px;width:20px;height:20px;object-fit:contain;image-rendering:pixelated}
+.event-row .journal-row-copy{min-width:0;flex:1;display:flex;flex-direction:column;align-items:stretch;gap:1px}
+.event-chips,.event-tags,.event-sign{align-self:flex-start}
+.event-kicker{--pixel-size:12px;font-size:12px;line-height:18px;color:var(--muted);white-space:nowrap;overflow:hidden;max-width:100%}
+.event-row strong{--pixel-size:18px;font-size:18px;line-height:26px;overflow-wrap:anywhere}
+.event-row[data-state=hidden] strong{color:#8a6a4c}
+.event-chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}
+.event-chip{display:inline-flex;align-items:center;gap:4px;padding:1px 6px 1px 4px;background:#fbe2aa;border:1px solid #d3a661}
+.event-row .directory-tag{flex:none}
+.event-status[data-tone=seen],.event-status[data-tone=checkedTag]{background:#b5dc86;color:#2f5a1c}
+.event-status[data-tone=unseen],.event-status[data-tone=candidateTag]{background:#f5c76a;color:#6b3a1c}
+.event-status[data-tone=disabled]{background:#d8c6ac;color:#6f5a44}
+.event-stage{display:flex;gap:12px;align-items:center;margin:6px 0 4px;padding:10px;background:linear-gradient(#fcebc0,#f2cf92);border:2px solid #8b522c;box-shadow:inset 0 0 0 2px #fff3d0,3px 3px 0 rgba(90,50,20,.22)}
+.event-cast{display:flex;gap:6px;flex:none}
+.event-actor{display:flex;flex-direction:column;align-items:center;gap:3px}
+.event-portrait{position:relative;width:72px;height:72px;flex:none;display:grid;place-items:center;overflow:hidden;background:#c98c52;border:2px solid #6b3a1c;box-shadow:inset 0 0 0 2px #e2b877}
+.event-portrait>img{width:64px;height:64px;image-rendering:pixelated}
+.event-cast:has(.event-actor:nth-child(3)) .event-portrait{width:58px;height:58px}.event-cast:has(.event-actor:nth-child(3)) .event-portrait>img{width:52px;height:52px}
+.event-portrait.is-unknown{background:#5a3c2c;box-shadow:inset 0 0 0 2px #7a5640}
+.event-name{--pixel-size:12px;font-size:12px;line-height:16px;padding:0 4px;background:#fff1cc;border:1px solid #8b522c;white-space:nowrap}
+.event-stage-copy{flex:1;min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:4px}
+.event-sign{display:inline-flex;align-items:center;gap:4px;padding:1px 8px 1px 4px;background:#9a5b2c;border:2px solid #5a2e14;box-shadow:inset 0 -2px 0 #7a4220}
+.event-sign img{width:16px;height:16px}
+.event-sign .event-location{--pixel-size:14px;font-size:14px;line-height:20px;color:#fff3d6;--text-shadow:#4a2410;white-space:nowrap}
+.event-stage .journal-title{margin:0;--pixel-size:18px;font-size:18px;line-height:28px;overflow-wrap:anywhere;color:#3b2413}
+.event-tags{display:flex;gap:4px}
+.event-section{display:flex;align-items:center;gap:6px;margin:14px 0 6px;padding:0 0 4px;border-bottom:2px solid #c59556}
+.event-section img{width:22px;height:22px;object-fit:contain;image-rendering:pixelated}
+.event-section span{--pixel-size:18px;font-size:18px;line-height:26px;color:#5a3418}
+.event-dialogue{display:flex;align-items:stretch;margin:6px 0;padding:0;background:#fff6dc;border:4px solid #a4582a;box-shadow:inset 0 0 0 2px #f2c983,3px 3px 0 rgba(90,50,20,.22)}
+.event-dialogue>p{flex:1;min-width:0;margin:0;padding:10px 12px;--pixel-size:18px;font-size:18px;line-height:28px;color:#3b2413;overflow-wrap:anywhere}
+.event-speaker{flex:none;width:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:6px 4px;background:#f6d59a;border-left:4px solid #a4582a}
+.event-speaker .event-portrait{width:64px;height:64px}.event-speaker .event-portrait>img{width:60px;height:60px}
+.event-speaker>small{--pixel-size:12px;font-size:12px;line-height:18px;padding:0 5px;background:#fff1cc;border:1px solid #8b522c;white-space:nowrap}
+.event-dialogue[data-narration=true] .event-speaker{width:auto;padding:6px 10px}
+.event-conditions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.event-condition{display:flex;align-items:flex-start;gap:8px;min-width:0;padding:8px;background:#fbe2aa;border:2px solid #d3a661}
+.event-condition.is-wide{grid-column:1/-1}
+.event-condition>img{width:22px;height:22px;flex:none;margin-top:2px;object-fit:contain;image-rendering:pixelated}
+.event-condition-copy{flex:1;min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:2px}
+.event-hearts,.event-links{align-self:flex-start}
+.event-condition-copy>small{--pixel-size:12px;font-size:12px;line-height:16px;color:var(--muted)}
+.event-hearts{display:flex;flex-wrap:wrap;align-items:center;gap:3px;margin-top:2px}
+.event-hearts img{width:14px;height:12px;image-rendering:pixelated}
+.event-hearts small{margin-left:6px;--pixel-size:12px;font-size:12px;line-height:16px;color:var(--muted);white-space:nowrap}
+.event-links{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.event-link{display:inline-flex;align-items:center;gap:4px;min-height:28px!important;padding:2px 8px 2px 4px!important}
+.event-link img{width:16px;height:16px;image-rendering:pixelated}
+.event-link small{--pixel-size:12px;font-size:12px;line-height:18px;white-space:nowrap}
+.event-meta{display:flex;flex-direction:column;gap:4px;margin-top:16px;padding-top:8px;border-top:2px dashed #d3a661}
+.event-meta .directory-note{margin:0;--pixel-size:12px;font-size:12px;line-height:18px}
+.event-condition.is-meta{padding:0;background:none;border:0;gap:6px;align-items:baseline}
+.event-condition.is-meta>small,.event-condition.is-meta>span{--pixel-size:12px;font-size:12px;line-height:18px;color:var(--muted)}
+.event-meta .event-raw summary{--pixel-size:14px;font-size:14px;line-height:28px;min-height:28px}
+.event-meta .event-raw{padding:4px 8px}
+.event-raw{--pixel-size:14px;font-size:14px;line-height:22px;padding:8px;background:#fbe2aa;border:1px solid var(--rule);overflow-wrap:anywhere}
+
+.event-raw summary{cursor:pointer;min-height:32px}
+.event-raw p{white-space:pre-wrap;--pixel-size:12px;font-size:12px;line-height:18px}
+.bundle-room{margin:8px 0 16px;padding:8px;border:2px solid var(--rule);background:#f9dda0}
+.bundle-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:8px}
+.bundle-card{display:grid;grid-template-columns:32px minmax(0,1fr);gap:4px 8px;text-align:left;padding:8px;min-width:0}
+.bundle-card>img{width:32px;height:32px;grid-row:1 / 3;image-rendering:pixelated;object-fit:contain}
+.bundle-card strong{--pixel-size:18px;font-size:18px;line-height:26px;overflow-wrap:anywhere}
+.bundle-card small{--pixel-size:12px;font-size:12px;line-height:18px;color:var(--muted)}
+.bundle-card .collection-bar{grid-column:1 / -1;width:100%}
+.bundle-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0}
+.bundle-item{display:flex;align-items:center;gap:8px;min-width:0;padding:8px;text-align:left;min-height:60px}
+.bundle-item:disabled{opacity:1;cursor:default}
+.bundle-item>img{width:32px;height:32px;flex:none;image-rendering:pixelated;object-fit:contain}
+.bundle-item-copy{min-width:0;flex:1;display:flex;flex-direction:column}
+.bundle-item-copy strong{--pixel-size:18px;font-size:18px;line-height:26px;overflow-wrap:anywhere}
+.bundle-item-copy small{--pixel-size:12px;font-size:12px;line-height:18px;color:var(--muted)}
+.bundle-item>img.bundle-donation{width:18px;height:18px}
+@media(max-width:460px){.bundle-grid,.bundle-items{grid-template-columns:1fr}.event-conditions{grid-template-columns:minmax(0,1fr)}}
+/* Where content comes from: a small crate and the mod's name. */
+.mod-chip{display:inline-flex;align-items:center;gap:4px;align-self:flex-start;padding:1px 6px 1px 4px;background:#e9dcf6;border:1px solid #9a7cc0;color:#4a3470}
+.mod-chip img{width:14px;height:14px;image-rendering:pixelated}
+.mod-chip small{--pixel-size:12px;font-size:12px;line-height:18px;white-space:nowrap;color:#4a3470}
+.mod-chip.is-small{padding:1px 5px 1px 3px}.mod-chip.is-small img{width:12px;height:12px}
+.detail-top .mod-chip{margin-top:4px}
+.detail-top .mod-chip img{width:14px!important;height:14px!important;margin:0!important;flex:none}
+/* Readable where it matters: event row chips (hearts, time) and condition values at the page's
+   normal sizes; decorative labels (who·where, tile captions, mod chip) stay small. */
+.event-chip small{white-space:nowrap;--pixel-size:14px;font-size:14px;line-height:20px}
+.event-chip img{object-fit:contain;image-rendering:pixelated;width:16px;height:14px}
+.event-condition-copy>span{white-space:pre-wrap;overflow-wrap:anywhere;--pixel-size:18px;font-size:18px;line-height:26px}
+/* Dialogue preview folds away; the heading is the toggle. */
+.event-fold>summary{cursor:pointer;list-style:none;margin-top:8px}
+.event-fold>summary::-webkit-details-marker{display:none}
+.event-fold>summary:after{content:'';margin-left:auto;width:0;height:0;border:6px solid transparent;border-top-color:#8b522c;border-bottom:0;transition:none}
+.event-fold[open]>summary:after{border-top:0;border-bottom:6px solid #8b522c}
+/* Character sheet (nothing selected): status, skill progress, professions, gear bonuses. */
+.char-sheet{display:flex;flex-direction:column;gap:6px}
+.char-tip{--pixel-size:14px;font-size:14px;line-height:20px;color:var(--muted);margin:2px 0 2px}
+.char-sheet-title{display:flex;align-items:center;gap:8px;margin:10px 0 2px;padding-bottom:4px;border-bottom:2px solid #c59556}
+.char-sheet-title img{width:22px;height:22px;object-fit:contain;image-rendering:pixelated}
+.char-sheet-title span{--pixel-size:18px;font-size:18px;line-height:26px;color:#5a3418}
+.char-status{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.char-stat{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:8px;padding:8px 10px;background:#fbe2aa;border:2px solid #d3a661}
+.char-stat>small{--pixel-size:18px;font-size:18px;line-height:24px;white-space:nowrap}
+.char-stat>strong{--pixel-size:18px;font-size:18px;line-height:24px;font-weight:normal;white-space:nowrap}
+.char-stat.is-money{grid-column:1/-1;grid-template-columns:auto auto minmax(0,1fr)}
+.char-stat.is-money>img{width:22px;height:22px}
+.char-stat.is-money>strong{justify-self:end}
+.char-bar{display:block;height:12px;min-width:0;background:#e0b06a;border:2px solid #8b522c;box-shadow:inset 0 2px 0 #c28a4a}
+.char-bar i{display:block;height:100%}
+.char-stat.is-health .char-bar i{background:linear-gradient(#ff6a5a 0 50%,#d8342a 50%)}
+.char-stat.is-energy .char-bar i{background:linear-gradient(#9ada62 0 50%,#4fa23a 50%)}
+.char-bar.is-xp i{background:linear-gradient(#ffd23a 0 50%,#e8a52a 50%)}
+.char-xp-row>img{grid-area:icon;width:26px;height:26px;object-fit:contain;image-rendering:pixelated}
+.char-xp-name{grid-area:name;--pixel-size:18px;font-size:18px;line-height:24px;white-space:nowrap}
+.char-xp-level{grid-area:level;--pixel-size:18px;font-size:18px;line-height:24px;font-weight:normal;white-space:nowrap}
+.char-xp-row>.char-bar{grid-area:bar}
+.char-xp-left{grid-area:left;justify-self:end;--pixel-size:14px;font-size:14px;line-height:20px;color:var(--muted);white-space:nowrap}
+
+.char-professions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.char-profession{display:flex!important;align-items:center;gap:8px;min-height:44px!important;padding:6px 10px!important;text-align:left}
+.char-profession img{width:28px;height:28px;flex:none;image-rendering:pixelated}
+.char-profession span{flex:1;min-width:0;--pixel-size:18px;font-size:18px;line-height:24px;white-space:nowrap;overflow:hidden}
+.char-profession small{--pixel-size:12px;font-size:12px;line-height:16px;color:var(--muted);white-space:nowrap}
+.char-none{--pixel-size:14px;font-size:14px;line-height:22px;color:var(--muted);margin:2px 0}
+.char-gear{display:flex;flex-wrap:wrap;gap:6px}
+.char-gear-stat{display:flex;align-items:center;gap:6px;padding:6px 10px;background:#fbe2aa;border:2px solid #d3a661}
+.char-gear-stat img{width:20px;height:20px;image-rendering:pixelated}
+.char-gear-stat small{--pixel-size:14px;font-size:14px;line-height:20px}
+.char-gear-stat strong{--pixel-size:18px;font-size:18px;line-height:24px;font-weight:normal}
+/* Mod skills: a full-width two-column grid of cards (full names, level cells, professions) instead
+   of rows squeezed into the right-hand column. */
+.custom-skills{width:auto;margin:4px 0 8px;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.custom-skill .skill-title{grid-area:title;display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden}
+.custom-skill .skill-title>img{width:26px;height:26px;flex:none;object-fit:contain;image-rendering:pixelated}
+.custom-skill>strong{grid-area:total;--pixel-size:18px;font-size:18px;line-height:24px}
+.custom-skill .custom-professions{grid-column:1 / -1;color:var(--muted);grid-area:pro;--pixel-size:14px;font-size:14px;line-height:20px}
+/* Skill progress in the sheet: compact single lines, not cards. */
+.char-xp{display:flex;flex-direction:column;gap:0}
+.char-xp-row{display:grid!important;grid-template-columns:28px 64px 56px minmax(0,1fr) 104px;align-items:center;column-gap:8px;row-gap:0;width:100%;text-align:left;grid-template-areas:"icon name level bar left"!important;min-height:38px!important;padding:4px 2px!important;border:0!important;border-bottom:1px solid var(--rule)!important;background:none!important;box-shadow:none!important}
+.character-skills .custom-skill{cursor:default;display:grid!important;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"title total" "bar bar" "pro pro";align-items:center;row-gap:4px;height:auto!important;min-height:0!important;padding:8px 10px!important;background:#fbe2aa!important;border:2px solid #d3a661!important;box-shadow:none!important}
+.custom-skill .skill-title>span{--pixel-size:18px;font-size:18px;line-height:24px;white-space:nowrap;overflow:hidden;flex:1 1 auto;min-width:0;align-self:stretch}
+.custom-skill .skill-levels{grid-area:bar;display:flex;align-items:center;width:auto!important;gap:3px}.custom-skill .skill-levels img{height:14px;width:auto;flex:none;image-rendering:pixelated;margin:0!important}
+.char-gear-stat small,.char-gear-stat strong{white-space:nowrap}
+.character-skills .character-skill.custom-skill{grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"title total" "bar bar" "pro pro"!important}
+/* The game's own trigger judgement: a verdict under the stage, status on each condition tile. */
+.event-verdict{display:flex;flex-direction:column;gap:2px;margin:8px 0 4px;padding:8px 12px;border:2px solid #b8844a;background:#fbe2aa}
+.event-verdict strong{--pixel-size:18px;font-size:18px;line-height:26px;font-weight:normal}
+
+.event-verdict.is-ready{background:#dff0c4;border-color:#6bb43f}.event-verdict.is-ready strong{color:#2f5a1c}
+.event-verdict.is-ready.is-chance{background:#fbeab0;border-color:#e0a92e}
+.event-verdict.is-blocked{background:#fbe0d2;border-color:#c86a44}.event-verdict.is-blocked strong{color:#8a2c1c}
+.event-condition.is-pass{border-color:#8fc46a;background:#eef7dc}
+.event-condition.is-fail{border-color:#d0735a;background:#fbe4d8}
+.event-condition.is-chance{border-color:#e0a92e;background:#fbefc4}
+.event-condition.is-unknown{border-style:dashed}
+.event-check{align-self:flex-start;margin-left:auto;flex:none;padding:0 6px;--pixel-size:12px;font-size:12px;line-height:18px;white-space:nowrap;background:#e8d9c0;color:#5a3418}
+.is-pass>.event-check{background:#8fc46a;color:#fff}.is-fail>.event-check{background:#c86a44;color:#fff}.is-chance>.event-check{background:#e0a92e;color:#fff}
+.event-status[data-tone=readyTag]{background:#b5dc86;color:#2f5a1c}
+.event-status[data-tone=chanceTag]{background:#f5d77a;color:#6b3a1c}
+/* Quest filters: five equal cells, each an icon, its label and a readable count. */
+.quest-filters{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))}
+.quest-filters .quest-filter{padding:0 4px!important}
+.quest-filter-count{--pixel-size:18px;font-size:18px;line-height:26px}
+/* Filter rows fill their line in equal cells instead of fixed 112px buttons with a gap at the end. */
+.journal-filters button{flex:1 1 0;width:auto;min-width:0}
+/* Condition cards in one column: a short card next to a full-width one left half a row empty. */
+.event-conditions{grid-template-columns:minmax(0,1fr)}
+/* Secondary numbers at the 18px auxiliary size, not 12–14px. */
+.event-progress-copy>small{--pixel-size:18px;font-size:18px;line-height:26px}
+.char-xp-left{--pixel-size:18px;font-size:18px;line-height:26px}
+/* Directory rows: the name on the left, a count (if any) at the right beside the arrow. */
+.journal-directory .journal-row-copy{grid-template-columns:minmax(0,1fr) auto}
+.journal-directory .journal-row-copy>small{--pixel-size:18px;font-size:18px;line-height:26px;color:var(--muted);padding-right:10px}
+/* Story events: who / where / what kind, three equal pickers under the search. */
+.event-picks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0 0 6px}
+.event-picks .game-control.select-control.directory-kind-control{margin:0;min-width:0}
+.event-picks .control-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* A villager's story on their profile: heart level, the event, where it stands. */
+.resident-events{margin-top:12px}
+.resident-event{display:flex;align-items:center;gap:10px;width:100%;min-height:44px;margin:4px 0 0;padding:4px 10px;text-align:left;background:#fff1c8;border:2px solid #d8a867;box-shadow:inset -2px -2px #efcf93}
+.resident-event-heart{display:flex;align-items:center;gap:3px;flex:none;width:44px}
+.resident-event-heart img{width:20px;height:20px;object-fit:contain;image-rendering:pixelated}
+.resident-event-heart small{--pixel-size:18px;font-size:18px;line-height:24px;white-space:nowrap}
+.resident-event-title{flex:1;min-width:0;--pixel-size:18px;font-size:18px;line-height:24px;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.resident-event-title.is-hidden{color:#9a7350}
+.resident-event .event-status{flex:none}
+.resident-events-all{display:block;width:100%;min-height:40px;margin-top:6px;--pixel-size:18px;font-size:18px;line-height:28px}
+.resident-events-all>span{display:block;white-space:nowrap;text-align:center}
+.event-status[data-tone=needHearts]{background:#f6c4cf;color:#7a2a3c}.event-status[data-tone=blockedTag]{background:#e6d2b0;color:#6b4a2a}
+/* Manual home (journal.js renderHome): six section cards, two across, filling the screen. */
+#manual[data-journal=home]>.journal-host{height:100%}
+.journal-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:8px;height:100%;margin:0;padding:2px 0}
+.journal-tile{position:relative;display:flex;align-items:center;gap:16px;min-height:0;height:auto;margin:0;padding:0 16px 0 12px;text-align:left}
+.journal-tile-slot{display:grid;place-items:center;flex:none;width:64px;height:64px}
+.journal-tile-slot>img{width:64px;height:64px;object-fit:contain;image-rendering:pixelated}
+.journal-tile>strong{flex:1;min-width:0;--pixel-size:24px;font-size:24px;line-height:30px;white-space:nowrap}

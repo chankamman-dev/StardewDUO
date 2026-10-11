@@ -1,0 +1,186 @@
+/* Morning briefing (briefing.js) on the context page. TVs reuse the farm page's .farm-tv. */
+.brief-head{display:flex;align-items:center;gap:10px;padding:6px 0 8px;margin-bottom:6px;border-bottom:2px solid #bd8b4e}
+.brief-head>img{width:42px;height:28px;object-fit:contain;image-rendering:pixelated;flex:none}
+.brief-head-copy{display:flex;flex-direction:column;min-width:0}
+.brief-head-copy h2{margin:0;line-height:34px;white-space:nowrap}
+.brief-head-copy small{--pixel-size:18px;line-height:26px;color:var(--muted);white-space:nowrap}
+.brief-tvs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.brief-tv{display:flex;align-items:center;gap:10px;min-width:0;padding:6px 8px;background:#ffdfa0;border:2px solid #ba874b;box-shadow:inset 2px 2px #fff0bc,inset -2px -2px #dbaf6d}
+.brief-tv-copy{display:flex;flex-direction:column;min-width:0}
+.brief-tv-copy small{--pixel-size:18px;line-height:24px;color:var(--muted);white-space:nowrap}
+.brief-tv-copy strong{--pixel-size:24px;font-size:24px;line-height:30px;font-weight:normal;white-space:nowrap}
+.brief-tv[data-level="2"] strong,.brief-tv[data-level="1"] strong{color:#4f7a2a}.brief-tv[data-level="-1"] strong,.brief-tv[data-level="-2"] strong{color:#a8442a}
+.brief-quote{margin:6px 2px 0;--pixel-size:18px;font-size:18px;line-height:26px;color:var(--muted)}
+.brief-row>img{width:32px;height:32px;flex:none;object-fit:contain;image-rendering:pixelated}
+.brief-row.is-birthday>img{object-fit:cover;object-position:top}
+.brief-row-copy{display:flex;flex-direction:column;min-width:0;flex:1}
+.brief-row-copy p{margin:0;--pixel-size:18px;font-size:18px;line-height:26px}
+.brief-row-copy small{--pixel-size:18px;line-height:24px;color:var(--muted)}
+.brief-row.is-warn .brief-row-copy p{color:#a8442a}
+.brief-chores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.brief-chore{display:flex;align-items:center;gap:8px;min-width:0;min-height:44px;padding:4px 8px;background:#ffdfa0;border:2px solid #ba874b;box-shadow:inset 2px 2px #fff0bc,inset -2px -2px #dbaf6d}
+.brief-chore>img{width:26px;height:26px;flex:none;object-fit:contain;image-rendering:pixelated}
+.brief-chore small{flex:1;min-width:0;--pixel-size:18px;line-height:24px;white-space:nowrap}
+.brief-chore strong{--pixel-size:24px;font-size:24px;line-height:28px;font-weight:normal;white-space:nowrap}
+.brief-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+.brief-button{min-height:40px;padding:0 14px!important}
+.brief-button>span{--pixel-size:18px;line-height:28px;white-space:nowrap}
+.brief-button.is-primary{background:#e9b365!important;border-color:#8b522c!important}
+.brief-hint{text-align:right}
+.brief-open{display:flex!important;align-items:center;gap:8px;margin-top:12px;min-height:40px;padding:0 14px!important}
+.brief-open>img{width:22px;height:22px;image-rendering:pixelated}
+.brief-open>span{--pixel-size:18px;line-height:28px;white-space:nowrap}
+/* Night scene. */
+.night-phase{color:#5a4a8a!important}.night-phase.is-levelup{color:#4f7a2a!important}
+.night-total>img{width:32px;height:32px;flex:none}
+.night-weather{margin:4px 0 2px}
+.brief-head>img[src*="portrait-night"]{width:42px;height:42px;object-fit:cover}
+/* Settings → 情境页 (context-follow.js): same checkbox art as the other toggles. */
+.follow-row{min-height:52px!important;padding:3px 1px!important}
+.follow-row h3{--pixel-size:18px!important;font-size:18px;line-height:28px!important}
+.follow-toggle,.spoiler-toggle{flex:0 0 150px;width:150px;min-width:150px;max-width:150px;height:40px;min-height:40px;--pixel-size:18px;display:flex;align-items:center;justify-content:flex-start;gap:12px;padding:0;border:0!important;background:none!important;box-shadow:none!important;text-align:left}
+.follow-toggle:before,.spoiler-toggle:before{content:'';flex:none;width:36px;height:36px;background:url('art/check-off.png') 0 0/100% 100% no-repeat;image-rendering:pixelated}
+.follow-toggle[data-checked=true]:before,.spoiler-toggle[data-checked=true]:before{background-image:url('art/check-on.png')}
+/* ---------- Morning briefing hero (briefing.js hero()) ---------- */
+.brief-hero{position:relative;height:138px;margin:2px 0 8px;overflow:hidden;border:2px solid #8b522c;box-shadow:inset 0 0 0 2px #e8b56a;image-rendering:pixelated}
+/* The painted scene (152x36, shown at 4x) and falling weather over it. */
+.hero-scene{position:absolute;inset:0;overflow:hidden;background:#86cdf0}
+.hero-picture{position:absolute;left:50%;bottom:0;transform:translateX(-50%);max-width:none;image-rendering:pixelated}
+.hero-fx{position:absolute;inset:0;pointer-events:none;background-size:128px 128px;image-rendering:pixelated}
+.hero-fx.is-rain{animation:hero-rain .4s steps(4) infinite}
+.hero-fx.is-snow{animation:hero-snow 3.2s steps(16) infinite}
+.hero-fx.is-wind{animation:hero-wind 2.8s steps(14) infinite}
+@keyframes hero-rain{to{background-position:-16px 128px}}
+@keyframes hero-snow{to{background-position:16px 128px}}
+@keyframes hero-wind{to{background-position:-128px 32px}}
+/* Tear-off calendar page. */
+.hero-calendar{position:absolute;left:12px;top:14px;width:86px;height:106px;display:flex;flex-direction:column;align-items:center;background:#fff4d8;border:2px solid #6b3a1c;box-shadow:3px 3px 0 rgba(80,41,22,.35),inset 0 -4px 0 #ecd2a0}
+.hero-calendar:before,.hero-calendar:after{content:'';position:absolute;z-index:2;top:-6px;width:8px;height:10px;background:#7a4a24;border:2px solid #4a2812}
+.hero-calendar:before{left:18px}.hero-calendar:after{right:18px}
+.hero-cal-band{align-self:stretch;height:26px;display:flex;align-items:center;justify-content:center;background:#6aa84f;border-bottom:2px solid #6b3a1c}
+[data-season=summer]>.hero-cal-band{background:#e0a92e}[data-season=fall]>.hero-cal-band{background:#c96b2c}[data-season=winter]>.hero-cal-band{background:#6f9fc9}
+.hero-cal-band small{--pixel-size:18px;font-size:18px;line-height:24px;color:#fffaf0;--text-shadow:#3b2413;white-space:nowrap}
+.hero-calendar strong{--pixel-size:30px;font-size:30px;line-height:44px;margin-top:4px;white-space:nowrap;color:#502916;--text-shadow:#e2b877}
+.hero-cal-week{--pixel-size:18px;font-size:18px;line-height:24px;color:#89552e;white-space:nowrap}
+/* Greeting on a paper ribbon sized to its text, readable on any sky; chips sit on the grass. */
+.hero-copy{position:absolute;left:112px;top:12px;max-width:calc(100% - 180px);display:flex;flex-direction:column;align-items:flex-start;gap:0;padding:4px 12px 6px;background:rgba(255,246,222,.9);border:2px solid #8b522c;box-shadow:3px 3px 0 rgba(58,32,14,.3)}
+.hero-copy h2{margin:0;--pixel-size:30px;font-size:30px;line-height:36px;color:#3b2413;--text-shadow:#e9c790;white-space:nowrap;overflow:hidden;max-width:100%}
+.hero-copy p{margin:0;--pixel-size:18px;font-size:18px;line-height:26px;color:#5a3418;--text-shadow:#efd6a6;white-space:nowrap;overflow:hidden;max-width:100%}
+.hero-chips{position:absolute;left:114px;bottom:8px;display:flex;gap:6px}
+.hero-chips small{--pixel-size:12px;font-size:12px;line-height:18px;padding:0 6px;background:#fff1cc;border:2px solid #8b522c;color:#6b3a1c;white-space:nowrap}
+/* The fortune teller's words as a speech bubble from the luck TV (right column). */
+.brief-bubble{position:relative;margin:10px 2px 4px;padding:6px 10px;background:#fff4d8;border:2px solid #b07a42;box-shadow:2px 2px 0 rgba(80,41,22,.2)}
+.brief-bubble:before{content:'';position:absolute;top:-10px;right:25%;width:12px;height:10px;background:#b07a42;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.brief-bubble:after{content:'';position:absolute;top:-6px;right:calc(25% + 2px);width:8px;height:7px;background:#fff4d8;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.brief-bubble .brief-quote{margin:0;color:#6b3a1c}
+/* "Today" as small cards with an icon tile; birthdays carry a gift badge. */
+.brief-list{display:flex;flex-direction:column;gap:4px}
+.brief-row{display:flex;align-items:center;gap:10px;min-height:48px;border-bottom:0;background:#ffe3a8;border:2px solid #d3a063;box-shadow:inset 2px 2px #fff0c4;padding:4px 8px 4px 4px}
+.brief-icon{position:relative;flex:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#f7cf88;border:2px solid #c28a4a}
+.brief-icon>img{width:32px;height:32px;object-fit:contain;image-rendering:pixelated}
+.brief-row.is-birthday .brief-icon>img:first-child{width:36px;height:36px;object-fit:cover;object-position:top}
+.brief-badge{position:absolute;right:-6px;bottom:-6px;width:18px!important;height:16px!important}
+.brief-row.is-birthday{background:#ffd9c2;border-color:#d08a6a}
+.brief-row.is-warn{background:#ffd4b8;border-color:#c86a44}
+/* Entrance: once per day, sections step in. --brief-t resumes it after a re-render. */
+[data-briefing].brief-animate>*{animation:brief-in .42s steps(6) both;animation-delay:calc(var(--brief-t,0s) + var(--base,0s) + var(--d,0s))}
+[data-briefing].brief-animate>*:nth-child(2){--d:.08s}[data-briefing].brief-animate>*:nth-child(3){--d:.16s}[data-briefing].brief-animate>*:nth-child(4){--d:.24s}[data-briefing].brief-animate>*:nth-child(5){--d:.32s}[data-briefing].brief-animate>*:nth-child(n+6){--d:.4s}
+@keyframes brief-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* Waking up from the night page (under the daybreak picture as it dissolves): the farm brightens, yesterday's calendar page is torn off, then the greeting drops in and the rest follows. */
+[data-briefing].brief-wake-up{position:relative;--base:1s}
+
+[data-briefing].brief-wake-up>.brief-hero{animation:none}
+.brief-wake-up .hero-picture{animation:wake-sun 1.3s steps(8) both;animation-delay:calc(var(--brief-t,0s) + .2s)}
+@keyframes wake-sun{from{filter:brightness(.4) saturate(.55) hue-rotate(-12deg)}to{filter:none}}
+.hero-cal-sheet{position:absolute;left:-2px;top:-2px;right:-2px;bottom:-2px;z-index:1;display:flex;flex-direction:column;align-items:center;background:#fff4d8;border:2px solid #6b3a1c;box-shadow:inset 0 -4px 0 #ecd2a0;transform-origin:14px 0}
+.brief-wake-up .hero-cal-sheet{animation:cal-tear 1s steps(10) both;animation-delay:calc(var(--brief-t,0s) + .8s)}
+@keyframes cal-tear{0%{transform:none}20%{transform:rotate(-5deg)}35%{transform:rotate(3deg);opacity:1}70%{opacity:1}100%{transform:translate(26px,150px) rotate(38deg);opacity:0}}
+.brief-wake-up .hero-copy{animation:wake-drop .5s steps(5) both;animation-delay:calc(var(--brief-t,0s) + 1.1s)}
+.brief-wake-up .hero-chips{animation:brief-in .42s steps(6) both;animation-delay:calc(var(--brief-t,0s) + 1.4s)}
+@keyframes wake-drop{from{opacity:0;transform:translateY(-24px)}60%{opacity:1;transform:translateY(3px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.hero-fx,.brief-animate>*,.brief-wake-up *{animation:none!important}.hero-cal-sheet{display:none}}
+/* The night page's head is a little night sky: stars twinkle, the moon bobs, Zzz drift up while
+   asleep, dots bounce while saving, a gold pulse on level up. Coins pop from the shipping total. */
+.night-head .brief-head-copy{position:relative;z-index:1}
+.night-head .brief-head-copy h2{color:#fff3d6;--text-shadow:#14173e}
+.night-head .night-phase{color:#d4ceff!important;--text-shadow:#14173e}.night-head .night-phase.is-levelup{color:#b8f08a!important}
+.night-twinkle{position:absolute;inset:0;background-image:inherit;background-size:320px 440px;background-position:-97px -61px;image-rendering:pixelated;animation:night-twinkle 2.6s steps(2) infinite}
+.night-moon{position:relative;z-index:1;animation:night-bob 3s steps(6) infinite}
+.night-zzz{position:absolute;right:28px;top:26px;width:34px;height:34px;pointer-events:none;z-index:1}
+.night-zzz i{position:absolute;left:0;bottom:0;width:10px;height:10px;background:url(art/night-z.svg) 0 0/100% 100%;image-rendering:pixelated;opacity:0;animation:night-z 3s steps(12) infinite}
+.night-zzz i:nth-child(2){animation-delay:1s}.night-zzz i:nth-child(3){animation-delay:2s}
+.night-dots{display:flex;gap:4px;margin-top:4px}.night-dots i{width:4px;height:4px;background:#d4ceff;animation:night-dot 1.2s steps(2) infinite}.night-dots i:nth-child(2){animation-delay:.2s}.night-dots i:nth-child(3){animation-delay:.4s}
+.night-head[data-phase=levelup]{animation:night-levelup 1s steps(4) infinite}
+.night-coins{position:absolute;left:20px;top:16px;width:0;height:0;pointer-events:none}
+.night-coins img{position:absolute;left:0;top:0;width:16px!important;height:16px!important;opacity:0}
+.night-total[data-revealed=true]:not(.is-settled) .night-coins img{animation:night-coin .9s steps(8) both;animation-delay:calc(var(--k,0) * .12s)}
+.night-coins img:nth-child(1){--x:-16px;--k:0}.night-coins img:nth-child(2){--x:8px;--k:1}.night-coins img:nth-child(3){--x:22px;--k:2}.night-coins img:nth-child(4){--x:-4px;--k:3}
+@keyframes night-twinkle{0%{opacity:0}100%{opacity:.85}}
+@keyframes night-bob{0%,100%{transform:none}50%{transform:translateY(-3px)}}
+@keyframes night-z{0%{opacity:0;transform:translate(0,0) scale(.6)}15%{opacity:1}100%{opacity:0;transform:translate(-14px,-26px) scale(1.3)}}
+@keyframes night-dot{50%{transform:translateY(-3px)}}
+@keyframes night-levelup{0%,100%{box-shadow:inset 0 0 0 2px #3b3a7e}50%{box-shadow:inset 0 0 0 2px #ffe27a,0 0 0 2px #ffe27a}}
+@keyframes night-coin{0%{opacity:0;transform:translate(0,0)}25%{opacity:1;transform:translate(calc(var(--x) * .5),-26px)}100%{opacity:0;transform:translate(var(--x),-4px)}}
+@media(prefers-reduced-motion:reduce){.night-twinkle,.night-moon,.night-zzz i,.night-dots i,.night-head,.night-coins img{animation:none!important}.night-zzz,.night-coins{display:none}}
+/* One stage for the night: what shows follows the phase, so nothing is rebuilt between phases. */
+[data-scene=night]{position:relative}
+.night-head:not([data-phase=sleeping]):not([data-phase=saving]) .night-zzz,.night-head:not([data-phase=saving]) .night-dots{display:none}
+.night-in{animation:night-in .36s steps(6) both}.night-items.night-in>*{animation:scene-pop .3s steps(5) both;animation-delay:calc(.1s + var(--i,0) * .03s)}
+@keyframes night-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+/* The night head as daybreak starts: the stars go out, the moon sets, the sky warms. */
+.night-dawn{position:absolute;inset:0;background:linear-gradient(transparent 0 34%,rgba(164,90,136,.6) 34% 56%,rgba(216,114,126,.8) 56% 76%,#f29a6c 76%);opacity:0;transition:opacity 1s steps(6)}
+.night-sun{position:absolute;right:96px;bottom:-40px;width:36px;height:36px;background:#ffe27a;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);transition:transform 1.1s steps(8) .3s}
+.night-head[data-phase=waking] .night-dawn{opacity:1}
+.night-head[data-phase=waking] .night-sun{transform:translateY(-92px)}
+.night-head[data-phase=waking] .night-twinkle{animation:none;opacity:0;transition:opacity .6s steps(3)}
+.night-head[data-phase=waking] .night-moon{animation:none;opacity:0;transform:translateY(36px);transition:transform .9s steps(6),opacity .9s steps(3)}
+.night-head .night-phase.is-waking{color:#ffe6a8!important}
+@media(prefers-reduced-motion:reduce){.night-dawn,.night-sun,.night-in,.night-items.night-in>*{transition:none!important;animation:none!important}}
+/* Night: sleep → shipping → (level up) → save. */
+.night-head{position:relative;overflow:hidden;padding:10px 12px!important;border:2px solid #14173e!important;background-color:#23285e;background-size:320px 440px;box-shadow:inset 0 0 0 2px #3b3a7e;image-rendering:pixelated;flex-wrap:wrap}
+.night-steps{position:relative;z-index:1;flex-basis:100%;display:flex;align-items:center;margin:6px 0 0 52px}
+.night-step{display:flex;align-items:center;gap:5px;flex:none}
+.night-step+.night-step:before{content:'';width:18px;height:2px;margin:0 6px;background:#4b4890}
+.night-step i{width:8px;height:8px;background:#4b4890;box-shadow:0 0 0 2px #14173e}
+.night-step small{--pixel-size:12px;font-size:12px;line-height:16px;color:#8f89c9;--text-shadow:#14173e;white-space:nowrap}
+.night-step.is-done i{background:#8fd35a}.night-step.is-done small{color:#c6e7a8}
+.night-step.is-now i{background:#ffe27a;animation:night-now 1s steps(2) infinite}.night-step.is-now small{color:#fff3d6}
+@keyframes night-now{50%{box-shadow:0 0 0 2px #14173e,0 0 0 4px #ffe27a}}
+/* The shipping summary, grouped like the game's own. */
+.night-total{display:flex;align-items:center;gap:12px;padding:8px 10px;margin-bottom:6px;background:#ffdfa0;border:2px solid #ba874b;box-shadow:inset 2px 2px #fff0bc,inset -2px -2px #dbaf6d;position:relative;flex-wrap:wrap}
+.night-ledger{flex-basis:100%;display:flex;flex-direction:column;gap:4px;margin-top:8px;padding-top:8px;border-top:2px dashed #d3a661}
+.night-cat-name{--pixel-size:14px;font-size:14px;line-height:20px;color:#5a3418;white-space:nowrap}
+.night-cat-bar{display:block;height:10px;background:#f3d49a;border:2px solid #b8844a}
+.night-cat-bar i{display:block;height:100%;background:linear-gradient(#ffd23a 0 50%,#e8a52a 50%)}
+.night-cat>strong{--pixel-size:14px;font-size:14px;line-height:20px;text-align:right;white-space:nowrap;font-weight:normal}
+.night-cat[data-empty=true]{opacity:.45}
+/* The shipment is revealed with the game's own summary: bars grow from nothing, the sum counts up. */
+.night-cat-bar i{transition:width .8s steps(8)}.night-total.is-settled .night-cat-bar i{transition:none}
+.night-total[data-revealed=false] .night-cat-bar i{width:0!important}
+.night-items .scene-card.is-best{background:#fff2b8;border-color:#e0a92e;box-shadow:inset -2px -2px #f3cf6a,0 0 0 2px #ffe27a}
+@media(prefers-reduced-motion:reduce){.night-step i,.night-cat-bar i{animation:none!important}}
+/* Readable where it matters: the shipping categories and their gold; the stepper stays small. */
+.night-cat{display:grid;align-items:center;gap:8px;grid-template-columns:28px 64px 64px minmax(0,1fr) 112px}
+.night-cat>img{object-fit:contain;image-rendering:pixelated;width:28px;height:28px}
+.night-cat-name,.night-cat>strong{--pixel-size:18px;font-size:18px;line-height:26px}
+.night-cat-count{color:var(--muted);white-space:nowrap;--pixel-size:14px;font-size:14px;line-height:20px}
+/* Today in numbers on the night page: skill experience, level ups, villagers talked to. */
+.night-today{margin:6px 0 4px;padding:8px 10px;background:#fbe2aa;border:2px solid #c59556}
+.night-today-title{display:block;margin-bottom:6px;--pixel-size:14px;font-size:14px;line-height:20px;color:var(--muted)}
+.night-gains{display:flex;flex-wrap:wrap;gap:6px}
+.night-gain{display:inline-flex;align-items:center;gap:6px;padding:3px 8px 3px 4px;background:#fff1c8;border:2px solid #d8a867}
+.night-gain img{width:20px;height:20px;object-fit:contain;image-rendering:pixelated}
+.night-gain small{--pixel-size:18px;font-size:18px;line-height:24px;white-space:nowrap}
+.night-gain.is-up{background:#dff0c4;border-color:#6bb43f}
+/* Shipped items: two per row, so name and "× count · total" fit at 18px. */
+.night-items.scene-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+.night-items .scene-card-copy small{overflow:hidden;text-overflow:ellipsis}
+
+/* Daybreak: the full-screen pixel sunrise between the night and the morning (briefing.js). */
+.daybreak{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;touch-action:none}
+.daybreak>canvas{display:block;image-rendering:pixelated}
+.daybreak-copy{position:absolute;left:0;right:0;top:16%;display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;transition:opacity .36s steps(3);pointer-events:none}
+.daybreak.is-day .daybreak-copy{opacity:1}
+.daybreak-copy h2{margin:0;white-space:nowrap;--pixel-size:36px;font-size:36px;line-height:44px;color:#fff8e0;--text-shadow:#7a4a2c}
+.daybreak-copy small{white-space:nowrap;--pixel-size:18px;font-size:18px;line-height:24px;color:#5b2b1a;padding:2px 12px;background:#fff1c8;box-shadow:inset 0 -2px #d8a867,0 2px #7a4a2c}
+@media(prefers-reduced-motion:reduce){.daybreak{display:none}}

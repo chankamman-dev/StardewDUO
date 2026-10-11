@@ -1,0 +1,103 @@
+/* Functional additions only. Do not override approved page geometry or typography. */
+#slots,#slots *{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+#slots img{-webkit-user-drag:none;pointer-events:none}
+.slot.pending-select{box-shadow:inset 0 0 0 3px #dc9d37}
+#sound-toggle,#retry{width:134px;height:40px;min-height:40px;white-space:nowrap;--pixel-size:18px;line-height:30px;text-align:center}
+#detail-count{width:90px;white-space:nowrap}
+.bag-tools{position:sticky;bottom:0;z-index:3;background:var(--paper);box-shadow:0 -4px var(--paper)}
+.slot .count{white-space:nowrap;min-width:48px;text-align:right}.schedule-list span{--pixel-size:18px;line-height:28px}.map-region-control select{width:100%}
+.catalog-more{width:100%;--pixel-size:18px;min-height:38px;margin:8px 0}
+.item-metrics{display:flex;gap:12px;flex-wrap:wrap;--pixel-size:18px;line-height:28px;color:var(--muted)}
+.gift-people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.gift-people button{display:flex;align-items:center;gap:7px;min-height:42px;--pixel-size:18px;text-align:left;padding:4px}.gift-people img{width:32px;height:32px}.gift-people span{flex:1;min-width:0}.guide-extra h3{margin-top:12px}
+.item-actions{display:flex;gap:12px;margin-top:5px;flex-wrap:wrap}.item-actions button{--pixel-size:18px;min-height:34px;padding:0 8px}
+.slot{touch-action:none}.slot.equipped:after{inset:auto 9px 5px 9px!important;pointer-events:none;content:'';position:absolute;height:3px;background:#5095d5;bottom:5px;left:9px;right:9px;border:1px solid #6a422e}.slot.dragging{opacity:.4}.slot.drop-target{outline:3px solid #ffbd3d}.drag-ghost{position:fixed;width:80px;height:80px;object-fit:contain;transform:translate(-50%,-60%);image-rendering:pixelated;z-index:9999;pointer-events:none}
+.item-dialog{position:absolute;inset:0;width:460px;max-width:90%;max-height:90%;margin:auto;background:var(--paper);color:var(--ink);border:16px solid transparent;border-image:url('art/frame-main.png') 48 stretch;padding:14px}.item-dialog::backdrop{background:#36211299}.item-dialog h2{margin-bottom:16px}.item-dialog label{display:flex;align-items:center;gap:14px}.item-dialog input{width:130px;font-size:24px;color:#653c20}.dialog-buttons{display:flex;justify-content:flex-end;gap:12px;margin-top:20px}.dialog-buttons button{--pixel-size:24px;padding:5px 12px}
+.resident-extra{margin-top:12px}.resident-extra h3{margin:12px 0 4px;border-bottom:2px solid #bf8b4c}.resident-location{--pixel-size:18px;width:100%;padding:5px;text-align:left}.schedule-list p{display:grid;grid-template-columns:80px 1fr;--pixel-size:18px;line-height:28px;margin:2px 0}.taste-tabs{display:flex;gap:4px;margin:6px 0}.taste-tabs button{flex:1;--pixel-size:18px;padding:2px 0;min-height:32px}.taste-tabs button[aria-pressed=true]{background:#efbd77!important;box-shadow:inset 2px 2px #a06c36!important}.gift-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.gift-grid button{display:flex;align-items:center;gap:4px;text-align:left;--pixel-size:18px;line-height:25px;min-height:50px;padding:4px}.gift-grid img{width:28px;height:28px;object-fit:contain;flex:none}.gift-grid span{flex:1;min-width:0}.gift-grid+button{--pixel-size:18px;margin:6px 0;padding:4px 14px}.map-live-layer{position:absolute;image-rendering:pixelated;pointer-events:none}.map-regions{max-width:160px;--pixel-size:18px;font-size:18px;height:36px;min-height:36px}.map-pin.live-pin:before{display:none}.live-pin img{width:100%;height:100%;object-fit:cover;display:block}.map-pin.player-pin{background:#ffdf73;border-color:#ec9a0a;z-index:3}.player-pin img{object-fit:contain}.map-pin.live-pin span{--pixel-size:12px}
+
+/* Marker visuals override the old portrait badges above. */
+#notice:empty,#bag-placeholder>p:empty{display:none}
+.map-pin.live-pin{transform:translate(-50%,-50%);padding:0;z-index:2;border-radius:0;width:44px;height:48px;min-height:48px;display:flex;align-items:center;justify-content:center;background:transparent;border:0;box-shadow:none}
+.map-pin.live-pin>img{width:36px;height:40px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(1px 0 #fff0bd) drop-shadow(-1px 0 #fff0bd) drop-shadow(0 1px #603923)}
+.map-pin.player-pin>img{width:36px;height:40px;filter:drop-shadow(1px 0 #ffd954) drop-shadow(-1px 0 #ffd954) drop-shadow(0 1px #603923)}
+.map-cluster-count{position:absolute;border:1px solid #683b22;right:2px;bottom:2px;pointer-events:none;--pixel-size:12px;font-size:12px;line-height:12px;min-width:10px;height:12px;padding:1px;color:#603923;background:#ffdb94;border-color:#986036;display:flex;justify-content:center;overflow:hidden;white-space:nowrap}
+.map-cluster-count>.raster{flex-shrink:0;transform:translateY(-4px)}
+.map-avatar-pending{width:6px;height:6px;background:#ffe19c;border:1px solid #6a422e;transform:rotate(45deg)}
+#map>.detail{display:none}
+.map-state{--pixel-size:18px;line-height:30px;white-space:nowrap;min-width:44px;color:var(--muted)}
+.map-toolbar .map-region-control{flex-basis:160px;flex-shrink:0;flex:1;max-width:none}
+
+/* Bag: one reading area and one anchored action row. */
+#bag{overflow:hidden}
+#bag #detail{min-height:0;overflow-y:auto;flex:1;padding-bottom:8px}
+#bag .detail-top>div{flex:1;min-width:0}
+#bag #detail-count{margin-left:0;flex:none}
+#bag #related{width:38px;height:38px;min-height:38px;padding:5px;flex:none;border:0;background:none;box-shadow:none}
+#bag #related img{display:block;width:26px;height:26px}
+#bag .detail-foot:has(#notice:empty),#bag .item-metrics:empty{display:none}
+#bag .bag-tools{gap:8px;min-height:46px;margin:0;padding:5px 0 0;align-items:center}
+#bag .item-actions{gap:8px;margin:0;flex:none;flex-wrap:nowrap}
+#bag .item-actions button{height:40px;min-height:40px;padding:0 8px;border:2px solid #b77a3d;background:#ffdfa0;box-shadow:inset 1px 1px #fff0bd,inset -1px -1px #dba456;white-space:nowrap}
+#bag-organize{margin-left:auto}
+#bag-mode{order:9;flex:none;--pixel-size:18px;line-height:28px;margin:2px 0;color:var(--muted)}
+#bag-mode:empty{display:none}
+
+/* Shift the whole tab column one frame step (3 logical / 6 Thor pixels) right.
+   Selection still moves the entire tab 14 physical pixels inward. */
+/* Fill the reserved right gutter with a larger native 16px tab (4x logical).
+   Upright icons use integer physical source-pixel scales on Thor. */
+.tabs button,.tabs button[aria-current=true]{margin-left:-0.5px;width:64px;height:64px;min-height:64px;background-size:64px 64px}
+.tabs img,.tabs [data-page=manual] img,.tabs button[aria-current=true] img{left:24px;top:32px;width:32px;height:32px}
+.tabs [data-page=bag] img,.tabs [data-page=bag][aria-current=true] img{width:28px;height:38.5px}
+.tabs [data-page=map] img,.tabs [data-page=map][aria-current=true] img{width:28px;height:35px}
+.tabs [data-page=people] img,.tabs [data-page=people][aria-current=true] img{width:28px;height:32px}
+.tabs [data-page=settings] img,.tabs [data-page=settings][aria-current=true] img{width:35px;height:35px}
+
+.map-cluster-picker{position:absolute;bottom:0;left:0;right:0;overflow:auto;flex-wrap:wrap;background:var(--paper);padding:5px;border:3px solid #ac743c;z-index:10;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;max-height:180px}
+.map-cluster-picker button{display:flex;align-items:center;gap:4px;--pixel-size:18px;min-width:0;width:100%;min-height:34px;justify-content:flex-start;padding:4px 6px;white-space:nowrap}
+.map-cluster-picker img{width:24px;height:24px;object-fit:contain;flex:0 0 24px}
+.map-cluster-picker button>span:not(.raster-copy){flex:1;min-width:0;text-align:left}
+.map-cluster-picker button:last-child,.map-cluster-picker .map-local-open{grid-column:1/-1;justify-content:center}
+
+.item-dialog .quantity-row{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}.item-dialog .quantity-label{--pixel-size:18px;flex:1;min-width:0;white-space:nowrap}.item-dialog .item-quantity{display:block;width:64px;flex:none;text-align:center;--pixel-size:24px;line-height:40px;white-space:nowrap}.item-dialog .quantity-minus,.item-dialog .quantity-plus{width:40px;min-width:40px;height:40px;padding:0;--pixel-size:24px}.item-dialog .quantity-max{width:68px;min-width:68px;height:40px;padding:0 4px;--pixel-size:18px;white-space:nowrap}.item-dialog .dialog-buttons button{width:104px;min-width:104px;min-height:40px;padding:4px 8px;white-space:nowrap;--pixel-size:18px}
+/* Keep the gift expansion label and count together, including rasterized text. */
+#people .gift-more{display:block;width:170px;max-width:100%;height:38px;min-height:38px;--pixel-size:18px;line-height:28px;white-space:nowrap;padding:3px 12px;margin-top:6px;text-align:center}
+.item-stat{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;flex:none}.item-stat>img{width:20px;height:20px;object-fit:contain;image-rendering:pixelated}.item-stat>strong{font-weight:normal;--pixel-size:20px;line-height:28px}.guide-price,.guide-recovery,.item-metrics{display:flex;align-items:center;flex-wrap:wrap;gap:10px 24px}.guide-price{padding:8px 0 2px}.guide-recovery{padding:4px 0 10px}.item-metrics:empty{display:none}
+/* Bag detail: item tooltip lines (MeleeWeapon/Boots.drawTooltip, food buffs) with their
+   original 10px Cursors icons at 2x and the tooltip's own colours. */
+.item-lines{display:flex;flex-direction:column;gap:2px;margin:4px 0 6px}
+.item-lines[hidden]{display:none}
+.item-line>img{width:20px;height:20px;flex:none;object-fit:contain;image-rendering:pixelated}
+.item-line.no-icon{padding-left:28px}
+.item-line[data-tone=enchanted]{color:#007878}
+.item-line[data-tone=negative]{color:#8b0000}
+.item-line[data-tone=enchantment]{color:#7800d2}
+.item-line[data-tone=secondary]{color:#783264}
+/* Two columns so a weapon's lines fit the detail panel; long enchantment names span both. */
+.item-line[data-tone=enchantment],.item-line[data-tone=secondary],.item-line.no-icon{grid-column:1/-1}
+.item-metrics[hidden]{display:none!important}
+.item-line{display:flex;align-items:center;gap:8px;min-height:24px}.item-line>span{--pixel-size:18px;font-size:18px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:24px}
+.item-line-energy>span,.item-line-health>span{color:var(--muted)}
+.item-lines:not([hidden]){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 10px}
+/* Bag pages: pips under the grid (original 8x9 level pips at 2x), no pager row. */
+#bag .inventory-bottom{display:none!important}
+
+.bag-dots{display:flex;justify-content:center;gap:4px;margin:4px 0 0;flex:none}
+.bag-dots[hidden]{display:none}
+.bag-dot{display:flex!important;align-items:center;justify-content:center;width:36px!important;min-width:36px!important;height:26px!important;min-height:26px!important;padding:0!important;border:0!important;background:none!important;box-shadow:none!important}
+.bag-dot>img{width:16px;height:18px;image-rendering:pixelated}
+.bag-dot[aria-current=false]>img{opacity:.8}
+#detail-count[hidden]{display:none!important}
+.gift-grid .gift-variants{flex:none;position:relative;width:34px;height:28px}.gift-grid .gift-variants img{position:absolute;width:22px;height:22px}.gift-grid .gift-variants img:first-child{left:0;top:0}.gift-grid .gift-variants img+img{left:12px;top:6px}
+/* Item detail: villagers as a compact three-column face list; quality prices; wiki link. */
+.gift-people.gift-faces{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gift-faces button{min-height:40px!important;gap:6px!important;padding:3px 6px!important}
+.gift-faces img{width:28px!important;height:28px!important;flex:none}
+.gift-faces span{white-space:nowrap;overflow:hidden}
+.guide-price.has-quality{gap:10px 20px}
+.guide-price .item-stat-quality>img{width:22px;height:22px;image-rendering:pixelated}
+.guide-wiki{display:flex!important;align-items:center;gap:8px;width:100%;min-height:44px;margin-top:12px;padding:4px 8px!important;text-align:left;--pixel-size:18px;line-height:28px}
+.guide-wiki>img{width:28px;height:28px;flex:none;image-rendering:pixelated}
+.guide-wiki>span{flex:1;min-width:0;white-space:nowrap}
+
+/* The profile's lower half is built in parts (features.js extraPart); the wrappers do not lay out. */
+.resident-part{display:contents}

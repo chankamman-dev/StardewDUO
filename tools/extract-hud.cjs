@@ -1,0 +1,7 @@
+// Original clock-box weather icons, copied at their native resolution.
+const fs=require('fs'),path=require('path'),crypto=require('crypto'),{unpackToFiles}=require('xnb'),{PNG}=require('pngjs');
+(async()=>{const entries=[];async function source(name){const p=path.join(path.join(process.env.STARDEW_GAME_PATH,'Content/LooseSprites'),name+'.xnb'),b=fs.readFileSync(p),files=await unpackToFiles({buffer:b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength)},{fileName:name+'.xnb'}),f=files.find(f=>f.extension==='png');entries.push({path:p,sha256:crypto.createHash('sha256').update(b).digest('hex')});return PNG.sync.read(Buffer.from(f.data instanceof Blob?await f.data.arrayBuffer():f.data));}
+ const cursor=await source('Cursors');for(const [name,index] of Object.entries({wedding:0,festival:1,sun:2,wind:3,rain:4,storm:5,snow:7})){const p=new PNG({width:12,height:8});PNG.bitblt(cursor,p,317+12*index,421,12,8,0,0);fs.writeFileSync('android/assets/art/weather-'+name+'.png',PNG.sync.write(p));}
+ const c16=await source('Cursors_1_6'),p=new PNG({width:12,height:8});PNG.bitblt(c16,p,243,293,12,8,0,0);fs.writeFileSync('android/assets/art/weather-green-rain.png',PNG.sync.write(p));
+ fs.writeFileSync('evidence/hud-source-0.10.0.json',JSON.stringify({originalReadOnly:true,rectangleSource:'DayTimeMoneyBox.draw',entries},null,2));console.log('Extracted eight original weather icons');
+})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,0 +1,1257 @@
+{
+  "version": "0.11.1-dev.55",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "sha256": "abcd41698192a77b105f5ec3d6ec00f597eaf98e4413a266c6060505caef7528"
+    },
+    {
+      "path": ".github/workflows/source-checks.yml",
+      "sha256": "53786930390fe0c5de84ff72bc6e81b5c86993af39476d4909b5ca078fa99b5a"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "b69502c9231b54b09fd632e8842f71293b5b2f00b456d083da3acfab98c1420d"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "6fb5fbc131ce77932bb274148a2f912e6e85978283246b89ca74e6ce91c918f4"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "5b6b75e08f3c3b524606aafa06c58f6798add33d4179c6b1961fe265d9dd6c7b"
+    },
+    {
+      "path": "PRIVACY.md",
+      "sha256": "ae3878067e3aae3fa67005c0cd44cf0f08bead4534bffad29eafd5adb99ad4ef"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f0ece9d55afc72c0ddaf4d1ecafee2b06bbf4678949450904d0dda7acf2ec445"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "6f3bb8609d2ed9931ddadaa09eaeaf7e31795cd8258fd39f37925124963fba6d"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "eee7f1079953717b86c8cd7597f436704c16b16d7203396b342732c4d287a012"
+    },
+    {
+      "path": "android/AndroidManifest.xml",
+      "sha256": "d3ccd7958efa39b293b18007e0cdda5892a8e901246ce340f17d76ba3d1de6fa"
+    },
+    {
+      "path": "android/assets/app.js",
+      "sha256": "19516c3d7eb477aa8e2b684090d7415e19faa139e6d3e1ca83e01d92b3f059f6"
+    },
+    {
+      "path": "android/assets/art/action-back.svg",
+      "sha256": "5eb79537adbbc2cf3bca05bcbe312ab3b2acdcdef49afda56ae388098b8c4341"
+    },
+    {
+      "path": "android/assets/art/action-drop.svg",
+      "sha256": "6c5861cc4a83e1fad907e9474a173fb48f8359ae54bdcb8276bd36858b73522a"
+    },
+    {
+      "path": "android/assets/art/action-split.svg",
+      "sha256": "bd630aa60f3a869a095f1edc2ff65b27692de457d07fd8e6b2635249c77cfc9d"
+    },
+    {
+      "path": "android/assets/art/chest-transfer.svg",
+      "sha256": "646505463c1b75e1a30feb2f9ed231522e27aeb8c7e278a34afdfb7b7b655434"
+    },
+    {
+      "path": "android/assets/art/collection-birds.svg",
+      "sha256": "96b87886c042ccc19a28c9fe49e7c40406a26b46bcbc167bcd14de3319a9c6ff"
+    },
+    {
+      "path": "android/assets/art/event-new.svg",
+      "sha256": "3fe00d9aba444ba2f52e876c50e670be236464276c97c9514e6187741abccce9"
+    },
+    {
+      "path": "android/assets/art/event-seen.svg",
+      "sha256": "aac70f5336d3dd6c3d1bfaa63b1d6ac75b85158ad1e266a684f2dca603ebfbe8"
+    },
+    {
+      "path": "android/assets/art/hud-clock.svg",
+      "sha256": "9f411ff9e9da8af52dfdb43f1d0ff7febebec49ba0023cb026df25b1f87c4c8e"
+    },
+    {
+      "path": "android/assets/art/hud-coin.svg",
+      "sha256": "a82c513719c679d35682bed8c65c446076931e275d321d90cf2b58128f918b7d"
+    },
+    {
+      "path": "android/assets/art/hud-stamina.svg",
+      "sha256": "ac5999e7e54ff2ae25473a31d7c1d730c532c104c236e8e23b51a3f909e7e636"
+    },
+    {
+      "path": "android/assets/art/map-reset.svg",
+      "sha256": "e4aa42e113837dcfdce1320c6cacd3e135171c25244fce4ec9a0a280f6f5e74e"
+    },
+    {
+      "path": "android/assets/art/map-zoom.svg",
+      "sha256": "6dd1c0e2dff74c9f99a5409ed7f262478c77de45b4403362dd37d8b31428d800"
+    },
+    {
+      "path": "android/assets/art/mod-badge.svg",
+      "sha256": "4bd1ed82a18fde27cfc6149e3a6f17ee75b10654776aee70b40819c0b804c224"
+    },
+    {
+      "path": "android/assets/art/night-z.svg",
+      "sha256": "4cc466cea7d0ae9bea60bea9c0b43bc5e7d32b80b11e404adc930f04410b5edf"
+    },
+    {
+      "path": "android/assets/art/pin.svg",
+      "sha256": "fb060ce8923563b7ff90f69398e44f49da00cde602573fc2b63868fc5baa116c"
+    },
+    {
+      "path": "android/assets/art/scene-bobber.svg",
+      "sha256": "3de9fe04a73e19460f666ef474994e4f9c93e1efebc2d6b6b9f91f491508e397"
+    },
+    {
+      "path": "android/assets/art/scene-sparkle.svg",
+      "sha256": "9bb219c2b3bbab5d8fd5fe6dbb812b1ae67c0d8bc8ea32d7608579088ef306de"
+    },
+    {
+      "path": "android/assets/art/stardewds-mark.svg",
+      "sha256": "a50adfedc0047c3081d9e56b7384738ba3d60c47fcd54c08678a0cc2d4f24226"
+    },
+    {
+      "path": "android/assets/bag-input.js",
+      "sha256": "c26997a73d422b2ab064b2e3ab8a1301bdb9786320af136c1796e20f03bcc1b4"
+    },
+    {
+      "path": "android/assets/briefing.css",
+      "sha256": "29e72ded16add116dc1111b3a6981dcc1e69a2db599842f2bf2bcfcda86109e0"
+    },
+    {
+      "path": "android/assets/briefing.js",
+      "sha256": "5bc271d6d756da8e1d33cc31b71a54d430c9fe640bc0eb06067ef4a37813f85b"
+    },
+    {
+      "path": "android/assets/bundles.js",
+      "sha256": "5790a9f9802912af6e0fcf9121d16924a661eaa013c8eb3b3087e562f036ebfe"
+    },
+    {
+      "path": "android/assets/collections.js",
+      "sha256": "aa521bd7e569702680a4191e2776c193cab192125a1a7a21dc566778c96f88b1"
+    },
+    {
+      "path": "android/assets/connection-info.js",
+      "sha256": "8db6296d4a374ee922d2e8b71c3eed0aa679d14265acf01d48d1b253aaa00c5f"
+    },
+    {
+      "path": "android/assets/context-follow.js",
+      "sha256": "afb4bddf493754fe071da11f6ac1df3e5a75340c24c09077de6a5332d2cf5b22"
+    },
+    {
+      "path": "android/assets/crafting.css",
+      "sha256": "6a8dc32974e9ff2e4de8133a7a07d368defd2da9081259a03acd5d4e88d3314a"
+    },
+    {
+      "path": "android/assets/crafting.js",
+      "sha256": "b27372b0bfdd932d05040ccb19bce7132472e0c2cffa099699178c63e25efdbb"
+    },
+    {
+      "path": "android/assets/crop-math.js",
+      "sha256": "269e108823f97c20b76f711380a87e30b27aa49d1d8781112df78a570819794a"
+    },
+    {
+      "path": "android/assets/crop-planner.css",
+      "sha256": "46bcf2358d6200017e55890612eda4434cb623b474e201e2a13538d4d8d02fc2"
+    },
+    {
+      "path": "android/assets/crop-planner.js",
+      "sha256": "b44308943472bb6b69599e61ccf31385b253cc45a222752846962903d474b94e"
+    },
+    {
+      "path": "android/assets/event-filter.js",
+      "sha256": "4bb478de88d52b64bc7f8526eff0f7c37d1b392ea784da642cef07e5a07f36a3"
+    },
+    {
+      "path": "android/assets/event-labels.js",
+      "sha256": "b4bcb4b5a91836ff532a683e1207300bc4cb739f9157b57f5bbf6bda6b4fe2fe"
+    },
+    {
+      "path": "android/assets/events.js",
+      "sha256": "eb286d1c8414eba6ab752a4ae1b1d83b760af48ea52cc80101cd59c97098acb3"
+    },
+    {
+      "path": "android/assets/farm.css",
+      "sha256": "fc5370b235b16e0cfbcbff6aeb8b618c9c97249455f6ef737d533334f00c80c5"
+    },
+    {
+      "path": "android/assets/farm.js",
+      "sha256": "4c612e1289ff20a9cb8a7b714ab0f876c1f0a8dfd5fb645d50d39eab2f6ad335"
+    },
+    {
+      "path": "android/assets/features.css",
+      "sha256": "c5e5395ecae0fa71a373cd32bd5ec00a53f057e0cfc294c4504966de99b6412e"
+    },
+    {
+      "path": "android/assets/features.js",
+      "sha256": "ff592e71bd827747f0e61a71f8d26afad65ff6d461ef491b28774505b74fd6d7"
+    },
+    {
+      "path": "android/assets/feedback.css",
+      "sha256": "088d20ace2a5faffb8b9bf5df4db2ce95ec9296e4f9a713f2bda1c23bbd5023e"
+    },
+    {
+      "path": "android/assets/feedback.js",
+      "sha256": "7e2ad1394ae446a2bac9aa3f5afe1a2a3d57716132d05adea2520eb3ed1c00bd"
+    },
+    {
+      "path": "android/assets/fonts/LICENSES/ark-pixel/OFL.txt",
+      "sha256": "4a00d01d435e17171b2f28a2691058046abd3583f6db29bd78d4679621fb966d"
+    },
+    {
+      "path": "android/assets/fonts/LICENSES/cubic-11/OFL.txt",
+      "sha256": "ba7cc65080c1005cf7f7ca09364bb58f84b4de5ee273988d878eb4fd5a03f87a"
+    },
+    {
+      "path": "android/assets/fonts/LICENSES/galmuri/LICENSE.txt",
+      "sha256": "76b3f3dd55b1f37c31e440e7224ef732f8d1d0db23ca9c4a610f575261c49a4c"
+    },
+    {
+      "path": "android/assets/fonts/OFL.txt",
+      "sha256": "9291281eaa1275afe06285d010362c175efcf8766a37c9bac274a770550fe4fc"
+    },
+    {
+      "path": "android/assets/fonts/fusion-bitmap-0.png",
+      "sha256": "357bb65b9cbd77071cace0fdecbc8822ef2b119c2873a101f57131dd34da9164"
+    },
+    {
+      "path": "android/assets/fonts/fusion-bitmap-1.png",
+      "sha256": "834808ce4a0d78c06ad6567eeb4c87225023f74610f5feb56a885b1cadf47876"
+    },
+    {
+      "path": "android/assets/fonts/fusion-bitmap-2.png",
+      "sha256": "815e80f36dbd4c21e395b01e92c9ff1b555c7bea5dbccac70bccdb7ec2b5f0d9"
+    },
+    {
+      "path": "android/assets/fonts/fusion-bitmap.json",
+      "sha256": "1ecf08d9c950e19660a6d2ac5b1d8c165f056b8fb4af3e7b313adbb3ea41269a"
+    },
+    {
+      "path": "android/assets/fonts/fusion-latin.woff2",
+      "sha256": "ca35d7b86fb90b2b2b057089dca883800383158d77a5c1d0ffda8a24e2ad488b"
+    },
+    {
+      "path": "android/assets/fonts/fusion-zh.woff2",
+      "sha256": "de421b3da7b20e045f0712ee838f30c225f4610b348efb37e2b31baa98860cbf"
+    },
+    {
+      "path": "android/assets/game-font.js",
+      "sha256": "5bd1b69493e9be86314ea66d0e189aecf53e2d38af57a21b0ef8ec2d31dc6615"
+    },
+    {
+      "path": "android/assets/harvest-calendar.css",
+      "sha256": "1f00d810281755fe33970d0caf1f24ead891d087da602a13f3ac9b5b4779a34b"
+    },
+    {
+      "path": "android/assets/index.html",
+      "sha256": "1638ea3cc1f3ed46c25049c6bbba458d0974200c4faf0c9fde05c7389b329bce"
+    },
+    {
+      "path": "android/assets/interface.css",
+      "sha256": "cc2e94f1263039833712fa581ddb9f33932bc8d286f3378e5c917309b92615ee"
+    },
+    {
+      "path": "android/assets/interface.js",
+      "sha256": "e588900430dfc1465825444642bc63d490c51ac048fe25d29d3a86a5e19f0d7d"
+    },
+    {
+      "path": "android/assets/item-render.css",
+      "sha256": "e6e2f8590cf559538ba1d0913cd4f8ac2b4b0c3cd9b0b44303b12fca64ccbae0"
+    },
+    {
+      "path": "android/assets/item-render.js",
+      "sha256": "05ab4afba5f044893d05f3c4aff9ade44615b85ae2b71da299e0d02990023354"
+    },
+    {
+      "path": "android/assets/journal-character.js",
+      "sha256": "d88edea3481c463182e79f495cf7eee85dbb36ba7f3f3fcef56ee7872b750f26"
+    },
+    {
+      "path": "android/assets/journal.css",
+      "sha256": "ad7f32bf54c33d865a51018537eadbe20e283211571d08ab8a2513fd448eddbd"
+    },
+    {
+      "path": "android/assets/journal.js",
+      "sha256": "b3f0b2077846f3b4fc19619fbf6c9b71302fe341bb9c0b7686ef0031363ff08b"
+    },
+    {
+      "path": "android/assets/live-data.js",
+      "sha256": "f01a68159b7f8d506d08185b4da529046dd86555d25a103be20873552e433355"
+    },
+    {
+      "path": "android/assets/local-import.js",
+      "sha256": "c8b4b775dd06c8ee63a710496384f0f56b5a2e5669c81d49039375f88a9d08c3"
+    },
+    {
+      "path": "android/assets/local-map.css",
+      "sha256": "6d1bac6ec4c43d1338488e4175d7e036c6c97047f0909696195472e1a1d94770"
+    },
+    {
+      "path": "android/assets/local-map.js",
+      "sha256": "00feefa673b49cbb48343206ccb2c1dd6e36691b70d00b5e682d2f2a67531b5c"
+    },
+    {
+      "path": "android/assets/map-names.js",
+      "sha256": "c241b807583b003f0aaf443870ed1e48cfdb9584c7f8e34776f0dd3db70ccde1"
+    },
+    {
+      "path": "android/assets/map-view.js",
+      "sha256": "64e66bbbe1961cd0af7073675e0cc066514e248de6ccf8798091bfd2a0dea678"
+    },
+    {
+      "path": "android/assets/mod-config.js",
+      "sha256": "b1ba8ac8e7045c1fdbd069010cc95f13847207fc2cd4cc0aed88f2c17877ad86"
+    },
+    {
+      "path": "android/assets/mod-library.js",
+      "sha256": "d2fab2e659d3a1826e4fd3ec1916ca26d85c672e290260a52bd18baeb690e001"
+    },
+    {
+      "path": "android/assets/mod-manager.js",
+      "sha256": "53ec7525e74fab17cf9527912116f09170b3d2263b6e20fe4c7fa160a083794c"
+    },
+    {
+      "path": "android/assets/mod-notes.js",
+      "sha256": "c7e8aa3917cc590a1118faeb16de906f85beb19cdc371bd1ffe1d17a744b88bb"
+    },
+    {
+      "path": "android/assets/model.js",
+      "sha256": "422af2cd086a7578a21091e4cd8049e42462bfceb0d2015002596cfe1e8734c6"
+    },
+    {
+      "path": "android/assets/navigation.js",
+      "sha256": "6a632457ec4ee5b42bef237fe8a2cefd501e4c1d0a275c48198badb597429f8a"
+    },
+    {
+      "path": "android/assets/original-art.css",
+      "sha256": "67ed7caac7a9421b5248f842fdbe727382ec83f61323a9a65012c0b26f0aba4a"
+    },
+    {
+      "path": "android/assets/original-art.js",
+      "sha256": "f5d69995543a30df556c08e14dd431a609723159c833b5c33228c477ee72dad6"
+    },
+    {
+      "path": "android/assets/people-order.js",
+      "sha256": "e00c4aea813b9d2314efac36aff85e52ad31d3444bea4f2335e2077d1cc2865b"
+    },
+    {
+      "path": "android/assets/people-view.css",
+      "sha256": "8916f28ac0f10cadb540f11e034eaca82754219a77ae41482910804fe6f70bdf"
+    },
+    {
+      "path": "android/assets/people-view.js",
+      "sha256": "e72507746df44ea8fdefe5a8ae4cfcbde14dcccc2f8f084a5380d5ca9ba0bb89"
+    },
+    {
+      "path": "android/assets/perf-log.js",
+      "sha256": "7986fd4b83573c205a8323a989ce787c250832d80427c44b7e2b4af39eec703a"
+    },
+    {
+      "path": "android/assets/polish.css",
+      "sha256": "e939212dcc5078083191d8312ff76eba08a04b2f51fe28f8227911a5dcac58fe"
+    },
+    {
+      "path": "android/assets/polish.js",
+      "sha256": "4c5a2ec13318ba5e043629a0cc5a86b8d86186e8ef93217fba03ab9bd03b3302"
+    },
+    {
+      "path": "android/assets/pond.js",
+      "sha256": "24bd3688f8f47951fc50226053c27a9ff4bd8e60d190eb378c1ced482e2bba98"
+    },
+    {
+      "path": "android/assets/portraits.js",
+      "sha256": "1bf725e2b5348949b17361160c487b1807ed5ebb0f2a1a142f8eb0ac2029fa68"
+    },
+    {
+      "path": "android/assets/quantity-font.css",
+      "sha256": "d165ce05532d86e763ee5563960dcd3b72e080f8aa4afdb93e612ae124ca5576"
+    },
+    {
+      "path": "android/assets/quantity-font.js",
+      "sha256": "a7ba182f78e4d0235fd8c3c9c5f157036ccf39309a4460cd3322c9bd89c489d4"
+    },
+    {
+      "path": "android/assets/quantity-font.json",
+      "sha256": "b6ee90183a81423fa73f9a646d8ed647544546ed5bd9662bce35a1d690ac990c"
+    },
+    {
+      "path": "android/assets/quest-board.css",
+      "sha256": "9e5cfa156c1458754e5ac6fadfabfec8d0252f74beb2fbc0bd454637e7b21cf3"
+    },
+    {
+      "path": "android/assets/quest-board.js",
+      "sha256": "e55630392fd9e4911bf4d9612a63bc902fad29755473b2d15f14be7a0d2dd5bd"
+    },
+    {
+      "path": "android/assets/reel.js",
+      "sha256": "ab57ec2457041884b6642a413047abb69205aaee947d6db6967de5aa1476964d"
+    },
+    {
+      "path": "android/assets/refinement.css",
+      "sha256": "06870a2b00132940c929d5451f2ed16fcca2a8aa4a8cf2bf03defc2dac86a24c"
+    },
+    {
+      "path": "android/assets/runtime-catalog.js",
+      "sha256": "80ca2a30dbe88efb25355b8b28e65496b1a80730a9632438d2ba9ca844277966"
+    },
+    {
+      "path": "android/assets/scene.css",
+      "sha256": "7afedcf170fc19528816f762a523f460c201837beb907e6aaa054ec51df16df3"
+    },
+    {
+      "path": "android/assets/scene.js",
+      "sha256": "64bc8031f6727a5be9f4fb1814f536b95cf5b7a61af5e6354035bf32b3e6a6af"
+    },
+    {
+      "path": "android/assets/setup.css",
+      "sha256": "54ea113b45f53fd9d563559f5511c8614fde929e31469257c283f7628d1f956c"
+    },
+    {
+      "path": "android/assets/setup.html",
+      "sha256": "adc2389c2a2a50d053deb42047550e87aba6eda27536567c98a45326307dbeb1"
+    },
+    {
+      "path": "android/assets/setup.js",
+      "sha256": "059980de67aa5b8cf2887930bc4578a84ba197d38a7210876b3b738102dd6047"
+    },
+    {
+      "path": "android/assets/sound.js",
+      "sha256": "5186a490985c2aa34c9b4f557359ed39f39d244afd4834f8614417aea19fe179"
+    },
+    {
+      "path": "android/assets/spoiler.js",
+      "sha256": "27b7fee1974cf5ba493c35ea673ff08669e925004ca10a808015cbfdbe233a20"
+    },
+    {
+      "path": "android/assets/state-box.css",
+      "sha256": "e9326f39c9126bc3c26226fdcae1933f92ee308422ea631ddef8cbad340accae"
+    },
+    {
+      "path": "android/assets/state-box.js",
+      "sha256": "6f674bad386dfdb6d21279d0a9a947bc338051c29d1cb5b46a2d03eae4c69585"
+    },
+    {
+      "path": "android/assets/stream.js",
+      "sha256": "8f176da555466397250bb365ef79d2dbd2273f0bae0633c42c7d56fa95cbacaa"
+    },
+    {
+      "path": "android/assets/style.css",
+      "sha256": "2828d8376ecaf8cf0772cd5fee745fec3f024ac61cde3f371367ae64951b265f"
+    },
+    {
+      "path": "android/assets/target-demand.js",
+      "sha256": "b4e2f7297e19b580bf6d6f139375710f4d2d50c3fa84e0f50d8fb53ed98c27f6"
+    },
+    {
+      "path": "android/assets/target.css",
+      "sha256": "1ea928a463709b2617f29c9d3ed248bef62f939eaff3f188fb95c122935640dc"
+    },
+    {
+      "path": "android/assets/target.js",
+      "sha256": "093e323f56676e6811212b0b3f83447d06661532177e341e1da0554b95a4e575"
+    },
+    {
+      "path": "android/assets/thor-buddy.css",
+      "sha256": "984a4468734c19b90c6f6e4bcb165c9ea7e3fdd70227f99672181a5abe7e1abe"
+    },
+    {
+      "path": "android/assets/thor-buddy.js",
+      "sha256": "636157769a026fae74a9c17053bca309510f427ce12bb92f7e6bfca091dd8fa2"
+    },
+    {
+      "path": "android/assets/tracking-demand.js",
+      "sha256": "8a29f7f01ec2683122c6033496a3c1b8f3d3e43bd411ff22b6bc647410bae53e"
+    },
+    {
+      "path": "android/assets/tracking-display.js",
+      "sha256": "278e5b049592b39f1a612bd4e65305c526fbdb6043bd187e7580367507647c30"
+    },
+    {
+      "path": "android/assets/version.js",
+      "sha256": "79b6e938d4ea18947ba2411b408ae4e4aa1d89e8fe774280fcc9704e4e5a5c9b"
+    },
+    {
+      "path": "android/assets/view-nodes.js",
+      "sha256": "3841b07e2372a39ba0fc7c93661d8a7ee4789b645d36c58fdbd5529158d5606a"
+    },
+    {
+      "path": "android/assets/wiki.css",
+      "sha256": "e56668912efd1558fc16f7597c26ca90f010ec18aaa0fd56e03d7b6d6eeba306"
+    },
+    {
+      "path": "android/assets/wiki.js",
+      "sha256": "0cce7e4952cd599b0e4e3091ea7c9ac6231ba80c1f9f23258838f9b6d95d9256"
+    },
+    {
+      "path": "android/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "sha256": "5884fd3f4eef1013cf773710bc5d80f08f6b8b40c4b9beea314a8794b7dad463"
+    },
+    {
+      "path": "android/res/mipmap-hdpi/ic_launcher_foreground.png",
+      "sha256": "701e8e9b22607b549d3fb8222f23f7e2309805adc3ae24da1aaff40079ddb504"
+    },
+    {
+      "path": "android/res/mipmap-mdpi/ic_launcher_foreground.png",
+      "sha256": "4881d079abe6d58b8a17f527da511557ef9334fc17f85bf18617d9d02860187c"
+    },
+    {
+      "path": "android/res/mipmap-xhdpi/ic_launcher_foreground.png",
+      "sha256": "7f0e613fb0b6bebbb47aea3f36da545f9feb9ff00243dad019a800e3a44c6902"
+    },
+    {
+      "path": "android/res/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "sha256": "9b683d69c2f4e213ac273f807908bab69fb60695b53a74c610d8c377fadca532"
+    },
+    {
+      "path": "android/res/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "sha256": "47476ed02ecf41d226cb99b7aa32469f1535eba3390e3493b5c04b6a41dfc486"
+    },
+    {
+      "path": "android/res/values/ic_launcher.xml",
+      "sha256": "c8cc24f7019b5776defd70dcdd14507653b3b3c9a0a063d27c74be48977bae91"
+    },
+    {
+      "path": "android/src/io/github/chankamman_dev/stardewds/AssetPackStore.java",
+      "sha256": "700328b79f519cf3e1936bfd7732e1c96d67bfda61fabde431173ddaaee72334"
+    },
+    {
+      "path": "android/src/io/github/chankamman_dev/stardewds/MainActivity.java",
+      "sha256": "3afae896e2d8e152eb210a245bbf37c82868420d878096458a01ee5e2b2ba356"
+    },
+    {
+      "path": "android/src/io/github/chankamman_dev/stardewds/ModPreviewImage.java",
+      "sha256": "6342fcc65b6be22b0c3e0eb35934924466d9db45ebbac005f192c4671a4dd3e5"
+    },
+    {
+      "path": "android/src/io/github/chankamman_dev/stardewds/PairingFile.java",
+      "sha256": "4628629d0147a118d516d809985fd602d2b521315447e80ac52490291dcf8875"
+    },
+    {
+      "path": "android/src/io/github/chankamman_dev/stardewds/ReadOnlyDataRoutes.java",
+      "sha256": "fd8e765aa1f04fa3b254c4011e9945d247b2d8beeadad3f678ae01e5b415f113"
+    },
+    {
+      "path": "android/src/io/github/chankamman_dev/stardewds/WikiReaderActivity.java",
+      "sha256": "706f95c169f632240d885d4e04fea817b88148b78f231523de8627fced49e452"
+    },
+    {
+      "path": "android/src/io/github/chankamman_dev/stardewds/WikiUrlPolicy.java",
+      "sha256": "8d300b0f72397b8e8177420c28ef21b4422efb72ac6a5ce46f89545d002c01ca"
+    },
+    {
+      "path": "bridge/BoundedCache.cs",
+      "sha256": "8091f0a1067234a38c37e457172d726e3edf00bde6e88f58d56cbf07038643d8"
+    },
+    {
+      "path": "bridge/BridgeServer.cs",
+      "sha256": "db36544102e914d2a915f0575f63112001dc5f5dcf10fb5d4ee256ae487fff60"
+    },
+    {
+      "path": "bridge/BundleContracts.cs",
+      "sha256": "91714c51e95a62d730018b5fc5aedebc8b8f37d36962bbe851f7097aeec05aab"
+    },
+    {
+      "path": "bridge/CatalogContracts.cs",
+      "sha256": "02514538dc3b8defde610657c3f271a1a59406957cc34f36d3ed52ea10939f1f"
+    },
+    {
+      "path": "bridge/CollectionContracts.cs",
+      "sha256": "363179f1d03ff43af758f858ccad466faa5140d0c41d073213ccda108247a3ee"
+    },
+    {
+      "path": "bridge/ContentDependencies.cs",
+      "sha256": "e65d66148b060ee9e7e5147b958ea4ad5fbc06c96589b9fe1b65a16d747895d6"
+    },
+    {
+      "path": "bridge/ContentRevision.cs",
+      "sha256": "3799a0db7e291cb25c5b104001b28961920ce2866886a8b13bce6b0bbeb7545d"
+    },
+    {
+      "path": "bridge/ControlHub.cs",
+      "sha256": "ccfc593b104a63e2e25174a3e8e16fa92ef0a2af476fee7327e28b4f4f12f20c"
+    },
+    {
+      "path": "bridge/DemandDocument.cs",
+      "sha256": "c1a03f9b0f508e0593d0cd1799836f03a98458c12dd8184a503e6123b229c933"
+    },
+    {
+      "path": "bridge/EventContracts.cs",
+      "sha256": "bbc6cd175b754cf42f8788c75403d2fec461f30fecff99e20c83e0b5a33abb76"
+    },
+    {
+      "path": "bridge/EventPreview.cs",
+      "sha256": "57a2b2f35c646d8caa127f9e0065b050c13a6227f892fc91e60b1cf96337a2d8"
+    },
+    {
+      "path": "bridge/FarmExtrasContracts.cs",
+      "sha256": "b741ab078c2a9a2153f8b9dc5de445bd31154bd149998f9c05824e98ed4f5ca1"
+    },
+    {
+      "path": "bridge/FarmModels.cs",
+      "sha256": "972791e8ca5924e4f6759291b9a1ed04e061e0f0552383f7c3052006fd74710f"
+    },
+    {
+      "path": "bridge/JournalModels.cs",
+      "sha256": "6a5429b752f31d2ce1c8f001c102704392374758c49efd0135cd3fc384cd3ff9"
+    },
+    {
+      "path": "bridge/ModConfigContracts.cs",
+      "sha256": "d281ffb06a6633cfd9d79efd0614fc29a4f7c5d064e4ad8d5106bef297c66c7c"
+    },
+    {
+      "path": "bridge/ModManagementContracts.cs",
+      "sha256": "f1d3f85021e651e4760e1c165169e394cb4c1a1d80ef7356a8071d3bc11d4952"
+    },
+    {
+      "path": "bridge/ModPreviewStore.cs",
+      "sha256": "dd339b24631f9c8faf8b07e7d67b5d8514b406e4c6f081331e9e3d4b2d7093b8"
+    },
+    {
+      "path": "bridge/PerfStats.cs",
+      "sha256": "c8a4a47b404f192386c13556ffd77caa886c98ae9203a19ba68be20708334042"
+    },
+    {
+      "path": "bridge/ProgressContracts.cs",
+      "sha256": "27ef74acef9b7dd78798faf49a09e13a38d84a150b35ca0ee153135de9bc91ff"
+    },
+    {
+      "path": "bridge/ResidentRelation.cs",
+      "sha256": "2945637bc2683b9f9a17e95fefa6d96a0046fcfd2f11b885cbb0733d1492be96"
+    },
+    {
+      "path": "bridge/RunLog.cs",
+      "sha256": "dece3b58aec6ccedfccb44fbd1d766ec4d3b932f929cf4b26a3300256a27fc0e"
+    },
+    {
+      "path": "bridge/StardewThor.Bridge.csproj",
+      "sha256": "aa71bb3b42ed3933a72012ab22636bd5699342623d36a9f3925f255f9ef8a68e"
+    },
+    {
+      "path": "bridge/StreamHub.cs",
+      "sha256": "4e8745e170516481b59e298e14991af662b919eda19487238bd8deebf9209e16"
+    },
+    {
+      "path": "docs/public/BACKEND-READERS.md",
+      "sha256": "c39cc6bc3377329864e9d61c920198e12c6d9be013a4db961cb2b65f172738ef"
+    },
+    {
+      "path": "docs/public/BUILD.md",
+      "sha256": "810c6ea7a9bc1962e1bc8e5ca84fbe4218bbb2e827607e6fa8ffc01a4ad2cf1e"
+    },
+    {
+      "path": "docs/public/CACHE-POLICY.md",
+      "sha256": "c996f41ea634490417ce85b8c292dc0c268c48a7d3cddffcec9b2c25e4d355c5"
+    },
+    {
+      "path": "docs/public/DEV6-20260927.md",
+      "sha256": "e7d7ae78134d3cc80e5a72fbc469511e1c176165f96c2c4678fc729e6b419695"
+    },
+    {
+      "path": "docs/public/DIRECTORY-READS.md",
+      "sha256": "53dabbea45cfbdf327b75094673fdb6476cd8e3a004cb98a7a7924b6ce965ad9"
+    },
+    {
+      "path": "docs/public/EVENT-PREVIEWS.md",
+      "sha256": "9a2b8a443725ed4f6d040125ea47cbbd24df029a22aa1430651c0093fe4fa16e"
+    },
+    {
+      "path": "docs/public/EVENTS-AND-MOD-PERFORMANCE.md",
+      "sha256": "b2b146c983128c7c3f6a98e0395bde0b1a93fe1129bfae1b0465c58b3c92ef8e"
+    },
+    {
+      "path": "docs/public/FILTERS.md",
+      "sha256": "edd736721b9e4060cf425d8f4151a73fcb65e8b1daf1662e9b2f9702accbb7bc"
+    },
+    {
+      "path": "docs/public/GITHUB.md",
+      "sha256": "d78fe204f08eee8cd00a47015bf2d27d76cda174f1c2fa12f6ac521c4ae4269d"
+    },
+    {
+      "path": "docs/public/INSTALL.md",
+      "sha256": "d7c2c261a26003d39ea0ccc7edb2a6789dcf7982a7774cb4c6db5539597caa5a"
+    },
+    {
+      "path": "docs/public/MOD-MANAGEMENT.md",
+      "sha256": "7b90b826ad1e973dcb699e75f6f6c1649ad994bb307c0aeda84a446c43a2a3d0"
+    },
+    {
+      "path": "docs/public/NAVIGATION.md",
+      "sha256": "ed2e24eeaa1a402bb2537a1d2b29caae36437abb9131be78d5bf7e923e7d2fd4"
+    },
+    {
+      "path": "docs/public/PORTRAITS.md",
+      "sha256": "795b04bcbd5120b8e8eb69c30f3093ef016eae113f9466630685405bf6b80aff"
+    },
+    {
+      "path": "docs/public/RELEASE.md",
+      "sha256": "261845648f616da87d939535623c60c4117af23f9f5a29c211e7e5ec1311da14"
+    },
+    {
+      "path": "docs/public/SPOILER-SETTINGS.md",
+      "sha256": "6104734091ccb14989e8f54f291888cae1e7e2682aad712ffca4b18d260fa8d5"
+    },
+    {
+      "path": "docs/public/TESTING.md",
+      "sha256": "0a766621bc7bf5b488b927978266882bce34745b5756a1610be7b071c8572091"
+    },
+    {
+      "path": "docs/public/THOR-BETA1-20260927.md",
+      "sha256": "a94bbcbc1c0d7cb189672e9f3c2cd48e2caaa5ae9e9e8f39aeee1009dfda9773"
+    },
+    {
+      "path": "mod/BundleCollector.cs",
+      "sha256": "f027d1a2c94bd2a567d42aa86513a3934c18bd78392068a746adfe86375f08f6"
+    },
+    {
+      "path": "mod/CachedEventDefinitions.cs",
+      "sha256": "970ad78bbcef4ddf6e9b18a0f3242f11c431553db54dc99c3a59d575dad101e8"
+    },
+    {
+      "path": "mod/CatalogAssets.cs",
+      "sha256": "ab884f83db46bae3eddaf2387b91bc783435d5db0588e3839e908a54a1c5ce69"
+    },
+    {
+      "path": "mod/CatalogCollector.cs",
+      "sha256": "94ae71be36f1b238998f32fce962f19a2ca5aa67027793f49294e63f60c84575"
+    },
+    {
+      "path": "mod/CollectionCollector.cs",
+      "sha256": "de9f45f32dc4e807fba0edacfa6d15f0261d51760da2b57e8bf4578e72dff767"
+    },
+    {
+      "path": "mod/CommandRejected.cs",
+      "sha256": "7bdb49be5f4dd7b4c7b7fae87582df3a71a317de3daaa4921354fd883f0a08a9"
+    },
+    {
+      "path": "mod/CraftingControl.cs",
+      "sha256": "36b7776b2092995f53bd0518f4c75aa22447f0cbc8547b32e2599f358997969c"
+    },
+    {
+      "path": "mod/CustomSkillCollector.cs",
+      "sha256": "8a6015c0b4a65577b0648e99a7675f32ea8bffbdb081932e05d9e1524bdf6bb2"
+    },
+    {
+      "path": "mod/EventCollector.cs",
+      "sha256": "070cff037fed75f8bbc6a326736204e16c2b3386b4d0252f4ca6dc4c0aaf450e"
+    },
+    {
+      "path": "mod/EventTriggerReader.cs",
+      "sha256": "7130c6c26d205a6f7c45e7c9377667ec8d87d6a4b72b45a29e13d6be018cebcd"
+    },
+    {
+      "path": "mod/FarmCollector.cs",
+      "sha256": "e343b6417a183aac867aaebf338ae75e8a2bd57db675c9700d7438e821d79bae"
+    },
+    {
+      "path": "mod/FarmExtrasCollector.cs",
+      "sha256": "fdb1fce30013ae0419706f02ee9740baf91296d60971a637778ca202c5463caa"
+    },
+    {
+      "path": "mod/FishingLive.cs",
+      "sha256": "55058e54ea4fe0dc576a2a00652ea5def1e2ace2ed8e0195ee0c2e7827a23b25"
+    },
+    {
+      "path": "mod/GmcmAdapter.cs",
+      "sha256": "b79cf9d18a3df8a18186a4d959d5405c09b3ed8069729b80e9cd758736885a16"
+    },
+    {
+      "path": "mod/InventoryControl.cs",
+      "sha256": "e271821a89b6e2bc4470b10f1e87a030bb39c2cffb79150a6a0df7604932e3b3"
+    },
+    {
+      "path": "mod/ItemStats.cs",
+      "sha256": "cd3139d2ba3a15cf4fec844b8a66ce77419f7163340293ef252298d66604fdcf"
+    },
+    {
+      "path": "mod/JournalCollector.cs",
+      "sha256": "5962db9c7b60b408ff9b7f7b6da1be17d73bbc2e6780d774bd75d0f7ef264bf3"
+    },
+    {
+      "path": "mod/LocalMapCollector.cs",
+      "sha256": "441676127276c1433b835fbf77183345358a155441ece337e470e1dd6888fb57"
+    },
+    {
+      "path": "mod/LocalMapTerrain.cs",
+      "sha256": "c8290760f5c3b9b9fc46fc05386b26189a48e8508bc3b0d08988de30812326f5"
+    },
+    {
+      "path": "mod/MapAvatar.cs",
+      "sha256": "2308dcdbe6feb982408411dbcfd6ebd8e0140d074a3b36b9c57f43b9b0ddc686"
+    },
+    {
+      "path": "mod/MapAvatarRaster.cs",
+      "sha256": "d9c1909d12519aaad6272f1eb2d2e22a627b5ebf2f5dc5ee01ffc38121762e0d"
+    },
+    {
+      "path": "mod/MineMonsterReader.cs",
+      "sha256": "288ac15848f76f2fd66d51cfb561e26f5f156c46bc9c5c3c0eb786149b5fd734"
+    },
+    {
+      "path": "mod/ModConfigEditor.cs",
+      "sha256": "87e4fc26bb17b77f04b84d555e37a71b860c17e0595ce3064c51b910caade1c4"
+    },
+    {
+      "path": "mod/ModEntry.cs",
+      "sha256": "bcaafaa4dbea2b3fbd13544136467eeb6cda67479c995372c3dd691e7bd01773"
+    },
+    {
+      "path": "mod/ModManagementCollector.cs",
+      "sha256": "6d669e6b6ec901bdcb41657eb3f5c535308ba6c3d3f7dbf492d62212bdedccb8"
+    },
+    {
+      "path": "mod/ModSettingsCommand.cs",
+      "sha256": "18572f39223ee3db2315e0b6645019e3a48da799dbc5ebb8d7c897e941916980"
+    },
+    {
+      "path": "mod/NativeNpcIndex.cs",
+      "sha256": "9a9212dbfd88d48576f13472eb38f0b0934c3a3e038eea2b9a4266808d7a877b"
+    },
+    {
+      "path": "mod/NightScene.cs",
+      "sha256": "07118c62f0c7e24c2de28b2937a83b74566db69e5090babf7dca87f39cdd6555"
+    },
+    {
+      "path": "mod/Png.cs",
+      "sha256": "cfecba2b5205e5a643dcbfd0b5c2647f7300af2dedab6b6df0e2edcb3317192b"
+    },
+    {
+      "path": "mod/PortraitPixels.cs",
+      "sha256": "9f5c05a7d5918fdd8ea096951fbb36ef831299447d5d7f4b3e747af44a671bbe"
+    },
+    {
+      "path": "mod/PortraitReader.cs",
+      "sha256": "fbc30f481aed15892bad6f0981a708c2a3597253fb65f1c4a6b04e5c0efdff96"
+    },
+    {
+      "path": "mod/PortraitureAdapter.cs",
+      "sha256": "d419262ab4144b919a6f877eba24059f2964126049ce492cfa4c09f8639de340"
+    },
+    {
+      "path": "mod/ProgressCollector.cs",
+      "sha256": "88d0a7d409237988a1469a9b3f63d09c51ee7f23ffc0657f3f442b6e1416b008"
+    },
+    {
+      "path": "mod/QuestBoard.cs",
+      "sha256": "ed6fc9377ca36b4deaed6fac39f11d63a1364d7e1d0571ba0f5ad525f2477814"
+    },
+    {
+      "path": "mod/QuestRewards.cs",
+      "sha256": "d5c210fe01d8550216cd1950d18d2c3389cf96c9361a93b9758e621a56880b6f"
+    },
+    {
+      "path": "mod/ReadOnlyMetadata.cs",
+      "sha256": "691a44bdca9f7d1a4336a4ffa5a570556c048af490e7171e483b99e9ca99dbaf"
+    },
+    {
+      "path": "mod/ReadOnlyModAdapter.cs",
+      "sha256": "cccd51dbb6bdc538b0f2711116ca9812fdaa665eebca88e4236ea5f8b676df05"
+    },
+    {
+      "path": "mod/ReadOnlyReflection.cs",
+      "sha256": "edf969bd77d770ae784f8cad4b3a7af0aaf21e342449c0b7f7d60d69764db22e"
+    },
+    {
+      "path": "mod/RelationsCollector.cs",
+      "sha256": "f355e0be6aea06f06d5be4712521162ceec0e05ffac031b4bc8dd537e37ca12d"
+    },
+    {
+      "path": "mod/SafeProgressQuery.cs",
+      "sha256": "dd0974c43c74dd8807da37f86a518fe9605e4315796838e46fa94364fe5c79f9"
+    },
+    {
+      "path": "mod/SceneControl.cs",
+      "sha256": "841b9decda07a352c50a8af17a36b7312ccc5fa510d9f1f29ca0102369c414ab"
+    },
+    {
+      "path": "mod/SceneOutdoors.cs",
+      "sha256": "50f0b1ab6eadce22e1cfa610e3c441d2c552ad07e9be6cae5d9a3a2db7e96e2e"
+    },
+    {
+      "path": "mod/SheetPixels.cs",
+      "sha256": "ebdb597a0f39b60574df587736960ec5da8cb3af16048b3630e793bcb2f678e6"
+    },
+    {
+      "path": "mod/StardewThor.ReadOnly.csproj",
+      "sha256": "ccd5ede9deb2f6bc8ce1902beb394e05f7f4a2248e8630b6b3d0e8f8c18b433b"
+    },
+    {
+      "path": "mod/TargetCollector.cs",
+      "sha256": "26ca28c154ea7624a234513d2002fc7cd3989a0cb519e7903d79e9fe878cb613"
+    },
+    {
+      "path": "mod/ToolbarDisplay.cs",
+      "sha256": "3c646dd8b59e18f0c6cbe96f8ca279d207e1126131ba55e137ad4a6b4af48902"
+    },
+    {
+      "path": "mod/WorldCollector.cs",
+      "sha256": "51db5cff57749ca1c9ca22180efb2d06973ca5dd0e8c45d6cbf882bf91dc118e"
+    },
+    {
+      "path": "mod/manifest.json",
+      "sha256": "027a6f9146e1dcab5ba3c320b1b643167ea11698ab4277c137fc42db48236ece"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "3be503614c41c8f6f17cf7a58af9fde8fd70f63d817354b11548edfd1fca9b5f"
+    },
+    {
+      "path": "package.json",
+      "sha256": "73ef9c3c4107510b634936e74dd004247b9c221a0b2ef24c8df5fa685237c257"
+    },
+    {
+      "path": "tests/AssetPackStoreTest.java",
+      "sha256": "48bbea9c89c23a6e062d02822ece35993506f43d08bbfbee7601cc43b9c7d0fa"
+    },
+    {
+      "path": "tests/BridgeHarness/Backend28Contract.cs",
+      "sha256": "07b43e84a6f686813fdff5fcd237f6bcf56607e19da9ceca6aa9d38a29bedea1"
+    },
+    {
+      "path": "tests/BridgeHarness/BridgeHarness.csproj",
+      "sha256": "11f6c545a258eefcc5b7ffe01d69ba4f1aa42d0c40b8e77fc0cfe3ddad9543f8"
+    },
+    {
+      "path": "tests/BridgeHarness/CatalogProgressContract.cs",
+      "sha256": "6ecced43fe0473442c38db6309f2e9b8b57ab66bf402c2c4fb7dc04cf5b96e8d"
+    },
+    {
+      "path": "tests/BridgeHarness/CollectionContract.cs",
+      "sha256": "de632c6a60ab8fc753f9a51550972798ae539b3ad9320d6831333840937adf5f"
+    },
+    {
+      "path": "tests/BridgeHarness/Controls.cs",
+      "sha256": "36b747004f3a7f6b2a3fc2a8cfc3b85d300c9a9175e56a12c16d660f94229072"
+    },
+    {
+      "path": "tests/BridgeHarness/CraftingContract.cs",
+      "sha256": "4e3ba5e995138f1bc534c7b73ce8d5a40f2256d7229c167b60f4667853f3090a"
+    },
+    {
+      "path": "tests/BridgeHarness/EventBundleContract.cs",
+      "sha256": "20aecfd48b77bbd511bb8fd118410f29ddfb3bbb206fa7f91d8603557bad4dd1"
+    },
+    {
+      "path": "tests/BridgeHarness/EventPreviewContract.cs",
+      "sha256": "41866aa396dec3e0835d95acbe666ad04228984f6de37a9edc3b93714e313e60"
+    },
+    {
+      "path": "tests/BridgeHarness/FarmExtrasContract.cs",
+      "sha256": "dbb8cd4eead804ebb123547836564f4c39f295f16ed63076b21fe1a4191e25ea"
+    },
+    {
+      "path": "tests/BridgeHarness/LocalMapContract.cs",
+      "sha256": "f0aa042d952b87580bbd8710970d0c5bad6372c4586075a341dc21b986daaa37"
+    },
+    {
+      "path": "tests/BridgeHarness/ModConfigContract.cs",
+      "sha256": "adff90bb544e55f89de6e93c23bc57b7aa04f3fcd4f3a8e06692d74e766420f1"
+    },
+    {
+      "path": "tests/BridgeHarness/ModManagementContract.cs",
+      "sha256": "713f696720138d39bc6f115e532a869367f85bbf5ceca606e30345997a40bc1e"
+    },
+    {
+      "path": "tests/BridgeHarness/PerfContract.cs",
+      "sha256": "8da541028f5598e3dec96934be513baa83b654b9f63ddf1eaf91adfff9aeca78"
+    },
+    {
+      "path": "tests/BridgeHarness/Program.cs",
+      "sha256": "fc7e1b01bb9ec14d3559636ffaca0f76aa202c49bfbc32e0d7ca591f3754b3fd"
+    },
+    {
+      "path": "tests/BridgeHarness/QuestBoardContract.cs",
+      "sha256": "f1d31d9c4227c9729164d759ed642324c81fb18f10421d53684485ae2ff55aee"
+    },
+    {
+      "path": "tests/BridgeHarness/QuestRewardContract.cs",
+      "sha256": "4d75df6492f8c7e5953fa8a158e020a464c08caa7c9cfc0d4cdfcfb27878b495"
+    },
+    {
+      "path": "tests/BridgeHarness/RunLogContract.cs",
+      "sha256": "1dafe4edfba3e4b1e85dec9853134414dfa837528062e4ddded2f6d9988f223c"
+    },
+    {
+      "path": "tests/BridgeHarness/SafetyStabilityContract.cs",
+      "sha256": "7e50367bb69109461525af9639c330a7a3c320d759a9f04fedbbbede197e8501"
+    },
+    {
+      "path": "tests/BridgeHarness/StreamContract.cs",
+      "sha256": "19824294808c2058f10006bcbe2cf8d253e022e2e83345eda37c52d29c974873"
+    },
+    {
+      "path": "tests/BridgeHarness/ToolbarContract.cs",
+      "sha256": "40639280a36372794504c4d38df252b3cd3c0c48ef7ed21a30cad3a697cba1d1"
+    },
+    {
+      "path": "tests/GameProbe/Exporter.cs",
+      "sha256": "6e4c404dfe2ae5624825681b6a117084c54e9cad6f75f7cad3403703d67b0378"
+    },
+    {
+      "path": "tests/PairingFileTest.java",
+      "sha256": "9db61b908be4feb4ff58bc0cb62175352a440a69c575b5d31958e660449e085c"
+    },
+    {
+      "path": "tests/PortraitHarness/PortraitHarness.csproj",
+      "sha256": "54b2ade5379f0752394f9a58ca398b5534fb52eebd9597b846796a65ee0fe78f"
+    },
+    {
+      "path": "tests/PortraitHarness/Program.cs",
+      "sha256": "99a3b198069f2e3086a96edc1d4afbff42397b2fec562a6cfb944284269f37b5"
+    },
+    {
+      "path": "tests/ReadOnlyDataRoutesTest.java",
+      "sha256": "1647b001a0e549e2d3d15d819c654a1feeeee6b600746be50cf939b6aecb383e"
+    },
+    {
+      "path": "tests/WikiUrlPolicyTest.java",
+      "sha256": "98468a2d17e313276a224f5b58e0b62ff6b5611ad5e6a389f065e9130693acea"
+    },
+    {
+      "path": "tests/asset-pack.cjs",
+      "sha256": "0dd21edced9a7653138e8ee3b991b7795371865372befd3771ce058d954d4553"
+    },
+    {
+      "path": "tests/crop-math.cjs",
+      "sha256": "3bcb0170caa0b0044679cff6bfec1b1cb6e766c6288508668921a6a773c1cc95"
+    },
+    {
+      "path": "tests/directory-demand.cjs",
+      "sha256": "c17e4465c9feb317134a62f864170f6b229137f79a2e9dac386f978ef880aac0"
+    },
+    {
+      "path": "tests/event-filter.cjs",
+      "sha256": "4b304d7e09d3bbdb9fa4e9bf8c1e23f8f38439bc86a1f66b258ff8510a84fec0"
+    },
+    {
+      "path": "tests/event-labels.cjs",
+      "sha256": "0c05f5f49a5455a6a6a53127b9c3932d4888c52a73957168c814dcb370182691"
+    },
+    {
+      "path": "tests/farm-demand.cjs",
+      "sha256": "a8431b350cca5c46d0f7c0724cb41eac7f55a3a907acc3dce576e8ffc4f36fd2"
+    },
+    {
+      "path": "tests/farm-extras-model.cjs",
+      "sha256": "da7edcca87e07e053a78fae360ee0baa17a2b0b3afe83d10c54b192c81c340fb"
+    },
+    {
+      "path": "tests/live-data.cjs",
+      "sha256": "f14540d03f499f8a56a33f506ccacf47eb0461c56676d7966084795845b55e20"
+    },
+    {
+      "path": "tests/map-names.cjs",
+      "sha256": "205f4003029095e731096e710a679d008462e9df51ef06494753e924dc83b156"
+    },
+    {
+      "path": "tests/mod-config-model.cjs",
+      "sha256": "e17da4daa311372a61fb045757978a55bc6cb0fc64aeb5b4565edf4a0b22b59b"
+    },
+    {
+      "path": "tests/mod-inventory.cjs",
+      "sha256": "d9c82d71b0032f5aa5a66df49244a8cc74207e4e5f90f7bb449d066d7a8b49a0"
+    },
+    {
+      "path": "tests/model.cjs",
+      "sha256": "9d11ab61857a4da6b0c4fe50bc6954b119f58d4c1f8567e031f3e2853d343a29"
+    },
+    {
+      "path": "tests/pairing-file.cjs",
+      "sha256": "54c29a9d7eaf228aea4072ac79046e3fd3833cafc83e2933f8148a62d9656767"
+    },
+    {
+      "path": "tests/perf-analysis.cjs",
+      "sha256": "278a05598c94d6edbc90977fb662986deb74fb6f09b326e58fd327414ed35f24"
+    },
+    {
+      "path": "tests/portrait-cache.cjs",
+      "sha256": "43eb481441e82029512c00dac9fdcaf1216d4cc7a7b9ff4003c6b0506f544d2a"
+    },
+    {
+      "path": "tests/read-only-routes.cjs",
+      "sha256": "17bdb083dbad983d081699e5259723992d3cd219cf0a963e0c0cd94b04cf1f72"
+    },
+    {
+      "path": "tests/spoiler-prefs.cjs",
+      "sha256": "811a866604cdd4b4d274feb5a487557df5f961dcbc8cda9199d98081a62a0561"
+    },
+    {
+      "path": "tests/target-portrait-contract.cjs",
+      "sha256": "98267df611b971a1c0bdca1357b1756251bf03f4119d02d5920f0c358868a882"
+    },
+    {
+      "path": "tests/tracking-demand.cjs",
+      "sha256": "37cf253f3c6ff23cd681e3b7d1f55df52362589274dde126b8a34ec6b94da77d"
+    },
+    {
+      "path": "tests/view-cache.cjs",
+      "sha256": "27ca6844c29b4a732726ab3ff8739d4c29c1e7c703387ac84d469c06e4766972"
+    },
+    {
+      "path": "tests/wiki-policy.cjs",
+      "sha256": "1fcc30d662126082039be10d39dc00e71525de55f640aa9079ce4ba4cbb4f756"
+    },
+    {
+      "path": "tools/AssetExporter/AssetExporter.csproj",
+      "sha256": "709b7089380ba444d1c144d9e71160aa944b907538886a57cf2e67bc6affb7b5"
+    },
+    {
+      "path": "tools/AssetExporter/ModEntry.cs",
+      "sha256": "21f2c794c539851c23ccb3eb19736fb94b03ea2b799027b42807b93faf0a3853"
+    },
+    {
+      "path": "tools/AssetExporter/manifest.json",
+      "sha256": "05b9ad589499add6b3fe819950ce301aa672e300c98dd90a8cb6224f04294bd5"
+    },
+    {
+      "path": "tools/analyze-perf.cjs",
+      "sha256": "c38faa6e56b1136dc09d30ac3a78d447c06ec168cc578f22d772868901cfa6f8"
+    },
+    {
+      "path": "tools/asset-pack.cjs",
+      "sha256": "7bdc93c05916f8450025175396930b573c221090a9e9b77ffe365ecc5b48e6bd"
+    },
+    {
+      "path": "tools/audit-mod-inventory.cjs",
+      "sha256": "913b121e68d681569cb6d0f73b693c125679834c0b730e5ad94d6071cc54641c"
+    },
+    {
+      "path": "tools/build-android.ps1",
+      "sha256": "a57712e6d39834980328445b501b0ddc4c80c50f2903e1fd010c33ee01a769fc"
+    },
+    {
+      "path": "tools/build-icon.cjs",
+      "sha256": "19b2981e607ea29655d729b89225727769e7069c56b642843d3f2237a1349773"
+    },
+    {
+      "path": "tools/build-ui-v5.cjs",
+      "sha256": "2c01dd2af9f5145e41834d9ebc892744a6d1394d9c4deb39e2c470673f251706"
+    },
+    {
+      "path": "tools/check-distribution.cjs",
+      "sha256": "6f8253b0bf8800141785320aabbe3b41f9607f32692955a32be665d5561fde5d"
+    },
+    {
+      "path": "tools/export-public-source.cjs",
+      "sha256": "a8f92dc899c603b9ca6bc2830e3ffaf68057f68c7d3a2dafa9ae6f481f9a1c2e"
+    },
+    {
+      "path": "tools/extract-art.cjs",
+      "sha256": "4b9ba1413606e63bf936a024a2e404f55a21d68cb47892cc3bfac22ea3c8e152"
+    },
+    {
+      "path": "tools/extract-calendar-art.cjs",
+      "sha256": "825ef16ff9089f25d2c84d59867872c3e0a019ba3081cac5ad885eadba950db4"
+    },
+    {
+      "path": "tools/extract-calendar-icon.cjs",
+      "sha256": "53a298632b966bf5966ba56b5e97fc7fe7f6921d1b961fd5521f1f9a1fe38ece"
+    },
+    {
+      "path": "tools/extract-character-art.cjs",
+      "sha256": "7509fd5b124457867cc969a87826abf033acdc14d6d6a93c338d3d4c92a7a060"
+    },
+    {
+      "path": "tools/extract-equipment-art.cjs",
+      "sha256": "75e5915f6489b8aea9e1470ac0875af48f765e9718847f361a7624c2ae41518b"
+    },
+    {
+      "path": "tools/extract-farm-art.cjs",
+      "sha256": "e7d0b15b50f9ad2334bcd538497bcd3ba9470fded6a2aae0b6880560c1e25269"
+    },
+    {
+      "path": "tools/extract-font.cjs",
+      "sha256": "2f2ef59cbdfe98bf23f5985982681a8335d8dec91ddb593c949345644831f78b"
+    },
+    {
+      "path": "tools/extract-hud.cjs",
+      "sha256": "6f69f95915220ce09a7e482bced7cd0c62e7e3c977f9021ce5844c3dd0042e2f"
+    },
+    {
+      "path": "tools/extract-item-overlays.cjs",
+      "sha256": "4db93f5b27e42223f1c3b41cec338b341bc54e86e00966d7596e14cc25c22a2a"
+    },
+    {
+      "path": "tools/extract-journal-art.cjs",
+      "sha256": "4f446aa5bfd9a858807ba6056742154be70d681c25273dbafc6a45662fa63cf4"
+    },
+    {
+      "path": "tools/extract-local-assets.cjs",
+      "sha256": "ed925c8777967063e4cfb2b769fb0775fff463a583e488e0c342d6cda9e89283"
+    },
+    {
+      "path": "tools/extract-navigation.cjs",
+      "sha256": "1a9baf2a9119699d540d3ebc8efc17d6a40efc3967e939e3d5fb2d16b06414b4"
+    },
+    {
+      "path": "tools/extract-original-ui.cjs",
+      "sha256": "511c6db78b44b67c91139a806503b3304fac17c1c2cc47c7d6312ee5a9e51bfa"
+    },
+    {
+      "path": "tools/extract-quality.cjs",
+      "sha256": "66a30ee5e10495355484bd6b9482d12fb697b2fb9ec81eb0fa2cd86d2229fe0b"
+    },
+    {
+      "path": "tools/extract-quantity-font.cjs",
+      "sha256": "27401d77816915fa1711bb44f92eb06b09502e0114889615eb823a4a59d6090a"
+    },
+    {
+      "path": "tools/extract-quest-board.cjs",
+      "sha256": "bd3039cd44dbc6eac71e77fb478dc6d9d0fd10e6233ed9c5edb4ec95aeecc9a3"
+    },
+    {
+      "path": "tools/extract-quest-icon.cjs",
+      "sha256": "c029c9eafe9ceb8830c26e8b7541a8df74abfeea8bb1e0a9a0153fe6996d1386"
+    },
+    {
+      "path": "tools/extract-settings-icon.cjs",
+      "sha256": "d6ca214fb6c535aa74b06a95faea54d233156e49aad6f9f560f5ad0676527629"
+    },
+    {
+      "path": "tools/extract-ui-audio.cjs",
+      "sha256": "be78646a4f4b719fd94bdf5b3385da6a92ba2c8136734b5971ec66555f011605"
+    },
+    {
+      "path": "tools/extract-ui.cjs",
+      "sha256": "1556e2ffd7f3a9c9c1b6bbe94dcafd76b73144076cd4baf0eb7f995d8c6630d1"
+    },
+    {
+      "path": "tools/extract-visual.cjs",
+      "sha256": "cf7113c735264bd939b4663a8020a1bfb20f860d7f5419b453c88902ff6d45cd"
+    },
+    {
+      "path": "tools/game-references.props",
+      "sha256": "1230bb051f9069134c4d0d8a659d53b375a2e63fc935fdeafa6ff9adfc9b96c8"
+    },
+    {
+      "path": "tools/inspect-thor-mods.cjs",
+      "sha256": "77379a35c8ef5fe6ec06c97087c5aa029607a1c1968b3a69ece8bd86827d3c5a"
+    },
+    {
+      "path": "tools/package-mod.ps1",
+      "sha256": "b5335abe5add8a0a5cef9ea73343f7aa8545221fb0fccaae404056c056c6ad49"
+    },
+    {
+      "path": "tools/preview.cjs",
+      "sha256": "2c4e20580d3f2dfc2ba4340afb457e7c779e30eeb200ede1af2357dfeeea772b"
+    },
+    {
+      "path": "tools/public-tests.cjs",
+      "sha256": "5d1db1c7ac8294163600e3b45ee68c8b953960555ed027f65f058b05f9537d11"
+    },
+    {
+      "path": "tools/zip-entries.cjs",
+      "sha256": "90e629b147c6a6caafabedfdb2d13843aa5ffd7bd239d26c54761076228803e6"
+    }
+  ]
+}

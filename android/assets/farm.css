@@ -1,0 +1,92 @@
+/* Farm tab. Cards, bars and rows follow the journal/quest-board paper style. */
+.farm-host{display:flex;flex-direction:column;min-width:0}
+.farm-tabs{display:flex;gap:8px;margin:2px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.farm-tabs button{flex:1;min-width:0;min-height:36px;--pixel-size:18px;font-size:18px;line-height:28px;padding:2px 8px;white-space:nowrap}
+.farm-tabs button[aria-pressed=true]{background:#e9b365!important;border-color:#8b522c!important;box-shadow:inset 0 2px #bb7e3e!important}
+
+.farm-scan{display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;margin:0 0 6px;color:var(--muted)}
+.farm-scan>img{width:16px;height:16px;object-fit:contain;image-rendering:pixelated}
+.farm-scan small{--pixel-size:12px;font-size:12px;line-height:20px}
+
+.farm-cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0 0 6px}
+.farm-cat{display:flex!important;align-items:center;gap:8px;min-width:0;min-height:44px!important;padding:4px 8px!important;text-align:left;background:#ffdfa0!important;border:2px solid #ba874b!important;box-shadow:inset 2px 2px #fff0bc,inset -2px -2px #dbaf6d!important}
+.farm-cat>img{width:28px;height:28px;flex:none;object-fit:contain;image-rendering:pixelated}
+.farm-cat-copy{display:flex;align-items:center;justify-content:space-between;gap:6px;flex:1;min-width:0}
+.farm-cat-copy small{--pixel-size:18px;font-size:18px;line-height:24px;white-space:nowrap;overflow:hidden}
+.farm-cat-copy strong{--pixel-size:24px;font-size:24px;line-height:28px;font-weight:normal}
+.farm-cat.is-clear{background:#edcf94!important;color:#796346}.farm-cat.is-clear>img{opacity:.6}
+.farm-cat[aria-pressed=true]{background:#e9b365!important;border-color:#8b522c!important;box-shadow:inset 0 2px #bb7e3e!important;color:var(--ink)}
+.farm-cat[data-cat=water]:not(.is-clear):not([aria-pressed=true]){background:#f8cf89!important;border-color:#a67138!important}
+
+.farm-place,.farm-section{display:flex!important;align-items:center;justify-content:center;gap:10px;margin:10px 0 2px!important}
+.farm-place small{--pixel-size:18px;font-size:18px;line-height:30px;color:#7b5130}
+.farm-task{min-height:60px!important;padding:5px 2px!important}
+.farm-task>img{width:40px;height:40px;image-rendering:pixelated}
+.farm-task .journal-row-copy strong{--pixel-size:24px;line-height:30px}
+.farm-task .journal-row-copy small{--pixel-size:18px;line-height:24px;color:var(--muted)}
+.farm-task[data-kind=cropDry] .journal-row-copy small,.farm-task[data-kind=hay] .journal-row-copy small,.farm-task[data-kind=petBowl] .journal-row-copy small{color:#97602d}
+.farm-task-end{flex:none;display:flex;align-items:center;margin-left:auto}
+.farm-count{--pixel-size:24px;font-size:24px;line-height:30px;font-weight:normal;min-width:28px;text-align:right}
+.farm-count.is-late{color:#a8442a}
+.farm-time{--pixel-size:18px;font-size:18px;line-height:28px;font-weight:normal;white-space:nowrap}
+.farm-empty{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px 0;color:var(--muted)}.farm-empty img{width:18px;height:18px;image-rendering:pixelated}
+.farm-none{--pixel-size:18px;font-size:18px;line-height:28px;color:var(--muted);margin:4px 2px 6px}
+.farm-note{--pixel-size:18px;font-size:18px;line-height:28px;color:#97602d;margin:12px 2px 0}
+
+.farm-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.farm-card{display:flex;align-items:center;gap:10px;min-width:0;padding:8px 10px;background:#ffdfa0;border:2px solid #ba874b;box-shadow:inset 2px 2px #fff0bc,inset -2px -2px #dbaf6d}
+.farm-card>img{width:36px;height:auto;max-height:36px;flex:none;object-fit:contain;image-rendering:pixelated}
+.farm-card-copy{display:flex;flex-direction:column;min-width:0}
+.farm-card-copy small,.farm-card-note{--pixel-size:18px;font-size:18px;line-height:24px;color:var(--muted)}
+.farm-card-copy strong{--pixel-size:24px;font-size:24px;line-height:30px;font-weight:normal}
+
+.farm-tag{flex:none;padding:0 6px;--pixel-size:18px;font-size:18px;line-height:26px;background:#f3c47f;border:1px solid #b77a3d;color:#7b3f1e}
+.farm-tag.is-known{background:#d9e3a1;border-color:#7d8f3a;color:#4b5a1c}
+
+.farm-stock{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 8px;margin-top:4px}
+.farm-stock-item:disabled{opacity:1}
+.farm-stock-item>img{width:32px;height:32px;flex:none;object-fit:contain;image-rendering:pixelated}
+.farm-stock-copy{display:flex;flex-direction:column;min-width:0;flex:1}
+.farm-stock-copy strong{--pixel-size:18px;font-size:18px;line-height:24px;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.farm-price{display:flex;align-items:center;gap:4px;--pixel-size:18px;font-size:18px;line-height:22px;color:#7b5130}.farm-price img{width:14px;height:14px}
+.farm-stock-left{position:absolute;right:6px;bottom:3px;--pixel-size:12px;font-size:12px;line-height:16px;color:#97602d}
+
+/* The bitmap font measures its host element: keep short labels on one line. */
+.farm-scan small,.farm-place span,.farm-place small,.farm-cat-copy small,.farm-cat-copy strong,.farm-tag,.farm-time,.farm-count,.farm-price span,.farm-card-copy strong,.farm-stock-left{white-space:nowrap}
+
+/* Original TV (42x28 screen, 13x13 overlay strip) at 2x; the overlay steps through its frames. */
+.farm-tv{position:relative;flex:none;display:block;width:84px;height:56px;line-height:0}
+.farm-tv>img{width:100%;height:100%;image-rendering:pixelated}
+.farm-tv-overlay{position:absolute;left:calc(var(--x)*2px);top:calc(var(--y)*2px);width:26px;height:26px;background-repeat:no-repeat;background-size:calc(var(--frames)*26px) 26px;image-rendering:pixelated;animation:farm-tv-frames calc(var(--frames)*.12s) steps(var(--frames)) infinite}
+@keyframes farm-tv-frames{to{background-position-x:calc(var(--frames)*-26px)}}
+@media(prefers-reduced-motion:reduce){.farm-tv-overlay{animation:none}}
+.farm-weather>.farm-tv{margin:-2px 0}
+
+.farm-info-title{display:flex!important;align-items:center;justify-content:center;gap:8px;margin:10px 0 4px!important}
+.farm-info-title:first-of-type{margin-top:2px!important}
+.farm-info-title>img{width:24px;height:24px;object-fit:contain;image-rendering:pixelated}
+.farm-info-title>span{white-space:nowrap}
+.farm-info-when{margin:2px 2px 4px;--pixel-size:18px;font-size:18px;line-height:26px;color:var(--muted)}
+.farm-info-row{display:flex;align-items:center;gap:10px;min-height:52px;padding:2px 2px 4px;border-bottom:1px solid var(--rule)}
+.farm-info-row>img{width:40px;height:40px;flex:none;object-fit:contain;image-rendering:pixelated}
+.farm-info-copy{flex:1;min-width:0;display:flex;flex-direction:column}
+.farm-info-copy strong{--pixel-size:24px;font-size:24px;line-height:30px;font-weight:normal;white-space:nowrap;overflow:hidden}
+.farm-info-copy small{--pixel-size:18px;font-size:18px;line-height:24px;color:var(--muted)}
+.farm-tag.is-empty{background:#f1b3a0;border-color:#a8442a;color:#7a2b18}
+.farm-luck{display:flex;align-items:center;gap:12px;padding:4px 2px 6px}
+.farm-luck-copy{flex:1;min-width:0}
+.farm-luck-copy strong{display:block;--pixel-size:24px;font-size:24px;line-height:30px;font-weight:normal;white-space:nowrap}
+.farm-luck[data-level="-2"] strong,.farm-luck[data-level="-1"] strong{color:#a8442a}.farm-luck[data-level="1"] strong,.farm-luck[data-level="2"] strong{color:#4f7a2a}
+.farm-quote{margin:2px 0 0;--pixel-size:18px;font-size:18px;line-height:26px;color:var(--muted)}
+.farm-birthday{min-height:56px!important}
+.farm-birthday>img{width:40px;height:40px}
+/* Cart stock reads like ShopMenu rows: icon, name, coin price; a bundle bag marks CC needs. */
+.farm-stock-item{position:relative;display:flex!important;align-items:center;gap:8px;min-width:0;min-height:52px!important;padding:4px 6px!important;text-align:left;background:#fff1c8!important;border:2px solid #d8a867!important;box-shadow:inset -2px -2px #efcf93!important}
+.farm-bundle{position:absolute;right:4px;top:3px;width:20px;height:20px;image-rendering:pixelated}
+.farm-stock-item.is-bundle .farm-stock-copy strong{padding-right:22px}
+/* Next season in the HUD's own season box (DayTimeMoneyBox), 3x. */
+.farm-season-icon{box-sizing:content-box;flex:none;width:36px;height:24px;border:2px solid;border-color:#5b2b2a #853605 #e7a160 #b14e05;background:#ffd787 url('art/hud-season.png') 0 calc(var(--season,0) * -24px)/36px 96px no-repeat;image-rendering:pixelated}
+/* Adventurer's Guild goals (farm extras) */
+.farm-slayer-bar{display:block;height:6px;margin-top:3px;background:#e3b36e;outline:1px solid #b77a3d}
+.farm-slayer-fill{display:block;height:100%;background:#a23b2c}
+.farm-more{width:100%;min-height:36px;margin-top:4px;--pixel-size:18px;font-size:18px;line-height:28px;color:var(--muted)}

@@ -1,0 +1,144 @@
+/* 0.10.1 original-art pass. Loaded last; removing this file and original-art.js
+   restores the approved 0.10.0 look. Frame, sidebar, page title bar, text buttons,
+   inputs, dropdowns, page type scale and refinement.css are unchanged: the original
+   textured controls were tried and read too harsh on the paper, so only elements that
+   sit into the page are taken from the game. Sources: evidence/original-ui-source.json. */
+
+/* Daily notice: the original accept button is the cream Billboard box, not salmon;
+   use the same cream control as every other button. */
+.quest-board-accept{background:#ffdfa0!important;border-color:#b77a3d!important;box-shadow:inset 1px 1px #fff0bd,inset -1px -1px #dba456!important;color:var(--ink)}
+
+/* Booleans: OptionsCheckbox (Cursors 227/236,425,9,9) beside the current state. */
+#sound-toggle,#toolbar-toggle{display:flex;align-items:center;justify-content:flex-start;gap:12px;padding:0;border:0!important;background:none!important;box-shadow:none!important;text-align:left}
+#sound-toggle:before,#toolbar-toggle:before{content:'';flex:none;width:36px;height:36px;background:url('art/check-off.png') 0 0/100% 100% no-repeat;image-rendering:pixelated}
+#sound-toggle[data-checked=true]:before,#toolbar-toggle[data-checked=true]:before{background-image:url('art/check-on.png')}
+#toolbar-toggle:disabled{opacity:.33}
+
+/* Page arrows: original left/right arrow sprites (Cursors 352/365,495,12,11), no box. */
+.pager button,.journal-month>button:first-child,.journal-month>h2+button{border:0!important;background:url('art/ui-arrow-left.png') center/36px 33px no-repeat!important;box-shadow:none!important;width:44px;min-width:44px;height:44px;min-height:44px;padding:0;font-size:0;color:transparent}
+#bag-next,.journal-month>h2+button{background-image:url('art/ui-arrow-right.png')!important}
+.pager button>*,.journal-month>button:first-child>*,.journal-month>h2+button>*{visibility:hidden}
+.pager button:disabled{opacity:.33}
+#bag .pager{height:44px}
+#bag .inventory-bottom{min-height:44px}
+
+/* Hierarchy: title bar (approved 0.10.0) > one section bar > rows. Every section
+   heading uses the lighter 0.10.0 inspect-page bar, so no page invents its own level. */
+.section-title,.journal-section-title,.target-section,.target-product>small,.resident-extra h3{display:block;background:#edbd78!important;border:1px solid #bd8b4e!important;box-shadow:none;color:var(--ink);text-align:center!important;--pixel-size:18px;font-size:18px;line-height:30px!important;padding:2px!important;margin:8px 0 6px!important}
+#settings .section-title:first-child{margin-top:0!important}
+.target-product{padding-top:4px}
+
+/* Guide items: rows size to their content instead of always reserving two name
+   lines; a row grows only when one of its names really wraps. Selection keeps the
+   0.10.0 box, which now hugs the icon and name. */
+#manual[data-journal=items] .catalog{row-gap:6px}
+#manual[data-journal=items] .catalog-item{min-height:0!important;padding:6px 8px}
+#manual[data-journal=items] .catalog-item>span{min-height:0}
+
+/* Inventory: the big partition joins the frame (see original-art.js). */
+.ui-partition{position:absolute;left:-32px;right:-32px;height:32px;pointer-events:none;z-index:2;image-rendering:pixelated;background:url('art/ui-partition-left.png') left top/32px 32px no-repeat,url('art/ui-partition-right.png') right top/32px 32px no-repeat,url('art/ui-partition-middle.png') 0 0/32px 32px repeat-x}
+.ui-partition[hidden]{display:none}
+
+/* Calendar: Billboard calendar page (LooseSprites/Billboard 0,198,301,198) at 3 physical
+   px per texture px. Weekdays and numerals are the original print; day buttons sit
+   transparently on the original 31px cells at (38+32c, 50+32r). */
+.journal-calendar{display:block!important;position:relative;width:100%;aspect-ratio:451.5/297;height:auto;margin:4px auto 0;background:url('art/calendar-board-zh.png') 0 0/100% 100% no-repeat;image-rendering:pixelated}
+html[lang=en] .journal-calendar{background-image:url('art/calendar-board-en.png')}
+.journal-calendar>.journal-weekday,.journal-calendar .journal-day-number{display:none}
+.journal-calendar>.journal-day{position:absolute;width:10.299%;height:15.657%!important;min-height:0!important;padding:2px!important;border:0!important;border-image:none!important;background:none!important;box-shadow:none!important;display:flex;justify-content:flex-end;align-items:flex-end;gap:1px}
+.journal-calendar>.journal-day.past{background:rgba(128,128,128,.25)!important}
+.journal-calendar>.journal-day[aria-pressed=true]{outline:2px solid #fff;outline-offset:1px;box-shadow:-4px 4px 0 3px rgba(0,0,0,.4)!important;z-index:1}
+.journal-calendar>.journal-day img{width:24px;height:24px;margin:0}
+.journal-calendar>.journal-day img+img{width:18px;height:18px}
+.journal-calendar>.journal-day:nth-of-type(7n+1){left:12.62458%}
+.journal-calendar>.journal-day:nth-of-type(7n+2){left:23.25581%}
+.journal-calendar>.journal-day:nth-of-type(7n+3){left:33.88704%}
+.journal-calendar>.journal-day:nth-of-type(7n+4){left:44.51827%}
+.journal-calendar>.journal-day:nth-of-type(7n+5){left:55.14950%}
+.journal-calendar>.journal-day:nth-of-type(7n+6){left:65.78073%}
+.journal-calendar>.journal-day:nth-of-type(7n){left:76.41196%}
+.journal-calendar>.journal-day:nth-of-type(-n+7){top:25.25253%}
+.journal-calendar>.journal-day:nth-of-type(n+8):nth-of-type(-n+14){top:41.41414%}
+.journal-calendar>.journal-day:nth-of-type(n+15):nth-of-type(-n+21){top:57.57576%}
+.journal-calendar>.journal-day:nth-of-type(n+22){top:73.73737%}
+.journal-month{margin:0 0 2px}
+
+/* Dropdown list: never the Android system picker. The list is drawn as the same
+   cream control as the dropdown box it opens from (0.10.0 border, fill and inner
+   highlight), with the original down-left shadow so it reads as floating; the
+   current option uses the 0.10.0 pressed tan. Text matches the box at 18px. */
+.select-control>select{pointer-events:none}
+.select-control{cursor:pointer}
+.ui-menu-layer{position:fixed;inset:0;z-index:30}
+.ui-menu{position:absolute;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;scrollbar-width:none;border:2px solid #b77a3d;background:#ffdfa0;box-shadow:inset 1px 1px #fff0bd,inset -1px -1px #dba456,-4px 4px 0 rgba(0,0,0,.4);padding:0}
+.ui-menu::-webkit-scrollbar{display:none}
+.ui-menu-option{display:flex;align-items:center;width:100%;min-height:40px;padding:0 10px!important;border:0!important;border-bottom:1px solid #e3b877!important;background:none!important;box-shadow:none!important;text-align:left;white-space:nowrap}
+.ui-menu-option:last-child{border-bottom:0!important}
+.ui-menu-option>span{--pixel-size:18px;font-size:18px;line-height:30px;white-space:nowrap}
+.ui-menu-option[aria-selected=true]{background:#e9b365!important;box-shadow:inset 0 2px #bb7e3e!important}
+.ui-menu-option:focus-visible{outline:2px solid #943b23;outline-offset:-3px}
+/* Bag action bar: item actions on the left, page tools (guide, sort) on the right, one flat
+   style. Icons keep their own proportions at whole-number scales (16px art at 24px = 3x on
+   the 2x screen; the 18x26 trash can at 2x); pressed uses the light filled bar. */
+#bag .bag-tools{gap:2px!important;min-height:44px}
+#bag .bag-tools .item-actions{gap:2px!important}
+#bag .bag-tools button{display:flex!important;align-items:center;gap:6px!important;height:38px!important;min-height:38px!important;padding:0 8px!important;border:1px solid transparent!important;background:none!important;box-shadow:none!important;color:var(--ink)}
+#bag .bag-tools button img{flex:none;width:24px!important;height:24px!important;object-fit:contain;image-rendering:pixelated}
+#bag .bag-tools #bag-trash img{width:18px!important;height:26px!important}
+#bag .bag-tools button>span{--pixel-size:18px;font-size:18px;line-height:28px;white-space:nowrap}
+#bag .bag-tools button:disabled{opacity:.45}
+#bag .bag-tools button.thor-pressed,#bag .bag-tools button.thor-tapped{background:#efbd77!important;border-color:#bd8b4e!important;box-shadow:none!important;translate:none!important;filter:none!important}
+#bag .bag-tools #related{width:auto!important;height:38px!important;padding:0 8px!important}
+#bag .bag-tools #related img{width:24px!important;height:24px!important}
+#bag .bag-tools button[hidden],#bag .bag-tools .item-actions[hidden]{display:none!important}
+/* Bag item detail follows the game tooltip's hierarchy: one large title; category, description,
+   stat lines and price all in the small font with one line height and a steady rhythm. */
+#bag .item-line>span,#bag .item-metrics span{--pixel-size:var(--detail-small);font-size:var(--detail-small);line-height:var(--detail-line)}
+#bag .item-line{min-height:var(--detail-line)}
+#bag .item-lines{margin:0 0 4px}
+/* Only long lines (e.g. long enchantment names) take a full row; short ones join the grid. */
+#bag .item-line[data-tone=enchantment],#bag .item-line[data-tone=secondary]{grid-column:auto}
+#bag .item-line.is-wide,#bag .item-line.no-icon{grid-column:1/-1}
+#bag .item-line-energy>span,#bag .item-line-health>span{color:var(--ink)}
+/* Detail sizes that render crisply (the pixel font steps at 6px): name 30, description 24,
+   category/stats/price 18. The category sits on the name row, bottom-aligned. */
+#bag .detail-top>div{display:flex;align-items:flex-end;gap:12px;min-width:0}
+/* Name back at 24px (30px crowded the panel edge on the device); a little more top room. */
+#bag #name{margin:0;flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;--pixel-size:24px;font-size:24px;line-height:32px}
+#bag #detail{border-top:0;margin-top:6px;--detail-small:18px;--detail-line:26px;padding-bottom:4px!important;padding-top:14px!important}
+#bag #item-category{--pixel-size:var(--detail-small);font-size:var(--detail-small);line-height:var(--detail-line);flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;margin:0 0 3px}
+/* Divider under the name row, matching the rule above the action bar. */
+#bag .detail-top{padding-bottom:6px;border-bottom:1px solid var(--rule)}
+#bag #description{color:var(--ink);--pixel-size:24px;font-size:24px;line-height:32px;margin:6px 0 6px;margin-top:8px}
+/* Calendar icons placed as Billboard.draw places them inside a 124px day cell (4x of 31):
+   mugshot at (48,28) 64x96, flag at (40,56) 56x48 animated 6x100ms, passive star at (12,60)
+   32x32, derby at (8,60) 40x44, balloon at (right-72,52) 32x60 bobbing. Today: blue box. */
+.journal-calendar>.journal-day>.cal-birthday,.journal-calendar>.journal-day>.cal-passive,.journal-calendar>.journal-day>.cal-derby,.journal-calendar>.journal-day>.cal-bookseller,.journal-calendar>.journal-day>.cal-festival{position:absolute!important;margin:0!important;image-rendering:pixelated;object-fit:contain;pointer-events:none}
+.journal-calendar>.journal-day>.cal-birthday{left:38.7%;bottom:0;width:51.6%!important;height:77.4%!important;object-position:bottom}
+.journal-calendar>.journal-day>.cal-birthday.is-fallback{left:41%;bottom:6%;width:46%!important;height:46%!important}
+.journal-calendar>.journal-day>.cal-festival{left:32.3%;top:45.2%;width:45.2%;height:38.7%;background:url('art/cal-festival.png') 0 0/600% 100% no-repeat;animation:cal-flag .6s steps(6,jump-none) infinite}
+@keyframes cal-flag{to{background-position-x:100%}}
+.journal-calendar>.journal-day>.cal-passive{left:9.7%;top:48.4%;width:25.8%!important;height:25.8%!important}
+.journal-calendar>.journal-day>.cal-passive.is-locked{filter:brightness(0);opacity:.3}
+.journal-calendar>.journal-day>.cal-derby{left:6.5%;top:48.4%;width:32.3%!important;height:35.5%!important}
+.journal-calendar>.journal-day>.cal-bookseller{left:41.9%;top:41.9%;width:25.8%!important;height:48.4%!important;animation:cal-balloon 2.1s ease-in-out infinite}
+@keyframes cal-balloon{0%,100%{translate:0 0}25%{translate:-2px -1px}50%{translate:0 -2px}75%{translate:2px -1px}}
+@media(prefers-reduced-motion:reduce){.journal-calendar .cal-festival,.journal-calendar .cal-bookseller{animation:none}}
+.journal-calendar>.journal-day.today{box-shadow:inset 0 0 0 2px #0000ff!important}
+.journal-calendar>.journal-day.today[aria-pressed=true]{box-shadow:inset 0 0 0 2px #0000ff,-4px 4px 0 3px rgba(0,0,0,.4)!important}
+.journal-event>img{image-rendering:pixelated}
+.journal-event>img.is-locked{filter:brightness(0);opacity:.3}
+/* A count is a small wooden plaque beside its label; a label sits muted before its value. These
+   replace "label · n" text across pages. */
+.ui-labelled{display:inline-flex;align-items:center;gap:8px;max-width:100%;min-width:0;vertical-align:middle}
+.ui-labelled-text{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ui-count{display:inline-flex;align-items:center;justify-content:center;flex:none;min-width:26px;height:24px;padding:0 6px;--pixel-size:16px;font-size:16px;line-height:24px;font-weight:normal;color:#fff3c9;background:#a8652f;box-shadow:inset 0 2px #c98445,inset 0 -2px #74401b;white-space:nowrap}
+[aria-pressed=true] .ui-count,[aria-selected=true] .ui-count{background:#74401b;box-shadow:inset 0 2px #8f5226,inset 0 -2px #522a10}
+.ui-pair{display:inline-flex;align-items:baseline;gap:12px;max-width:100%;min-width:0}
+.ui-pair-label{flex:none;color:#9a7350;white-space:nowrap}
+.ui-pair-value{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.control-label .ui-labelled{display:flex;justify-content:space-between;width:100%;height:100%}
+.ui-menu-option{gap:10px}.ui-menu-option .ui-count{margin-left:auto}
+.ui-facts{display:inline-flex;flex-wrap:wrap;align-items:center;row-gap:2px;max-width:100%;min-width:0}
+.ui-facts>*{white-space:nowrap}
+.ui-facts>*+*{margin-left:10px;padding-left:10px;border-left:2px solid rgba(155,95,45,.35)}

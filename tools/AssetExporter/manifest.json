@@ -1,0 +1,1 @@
+{"Name":"StardewDS local asset exporter","Author":"chankamman","Version":"1.0.1","UniqueID":"chankamman.StardewDS.AssetExporter","EntryDll":"AssetExporter.dll","MinimumApiVersion":"4.5.2","Description":"Local development tool: exports owned game content at the title screen. Remove after use."}

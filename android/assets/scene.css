@@ -1,0 +1,183 @@
+/* Context page scenes (scene.js): chest + backpack grids reuse the bag's slot art; shop rows reuse
+   the planner's reward box and tags. */
+.scene-head{display:flex;align-items:center;gap:10px;padding:8px 0 8px;margin-bottom:6px;border-bottom:2px solid #bd8b4e}
+.scene-head>img{width:40px;height:40px;object-fit:contain;image-rendering:pixelated;flex:none}
+.scene-head-copy{display:flex;flex-direction:column;min-width:0}
+.scene-head-copy h2{margin:0;line-height:34px;white-space:nowrap}
+.scene-head-copy small{--pixel-size:18px;line-height:26px;color:var(--muted)}
+/* 12 wide like the game's own chest menu, so chest and backpack share one screen. */
+.scene-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2px;padding:2px 0 4px}
+.scene-slot{position:relative;padding:11%!important;min-height:0!important}
+.scene-slot>img:first-child{width:100%;height:100%;object-fit:contain;image-rendering:pixelated}
+.scene-slot .scene-quality{position:absolute;left:6%;bottom:6%;width:26%;height:26%}
+/* Stack digits at 2/3 scale (2 CSS px per texel) to fit the smaller slot. */
+.scene-slot .scene-count{position:absolute;right:1px;bottom:1px;line-height:0;transform:scale(.5);transform-origin:100% 100%}
+.scene-slot.is-pending{outline:3px solid #e9b365;outline-offset:-3px;opacity:.7}
+.scene-slot:disabled{opacity:1}
+.scene-locked .scene-slot:not(:disabled){cursor:default}
+
+.scene-note{margin:8px 2px 4px;text-align:center;--pixel-size:18px;font-size:18px;line-height:26px;color:var(--muted)}
+.scene-note.is-error{color:#a8442a}
+.scene-shop-row{min-height:64px!important;gap:10px!important;padding:6px 2px!important}
+.scene-shop-row .journal-row-copy{gap:0}
+.scene-facts{--pixel-size:18px;line-height:26px!important;color:var(--muted)}
+.scene-price{flex:none;display:flex;align-items:center;gap:4px;margin-left:auto}
+.scene-price>img{width:20px;height:20px}
+.scene-price>strong{--pixel-size:24px;font-size:24px;line-height:30px;font-weight:normal;white-space:nowrap}
+/* Fishing and mines. */
+.scene-phase{margin:2px 0 6px;text-align:center;--pixel-size:24px;font-size:24px;line-height:34px;color:var(--ink)}
+.scene-fish{display:flex;align-items:center;gap:10px;padding:6px 8px;background:#ffdfa0;border:2px solid #ba874b;box-shadow:inset 2px 2px #fff0bc,inset -2px -2px #dbaf6d}
+.scene-fish-copy{display:flex;flex-direction:column;min-width:0;flex:1}
+.scene-fish-copy strong{--pixel-size:24px;font-size:24px;line-height:32px;font-weight:normal;white-space:nowrap}
+.scene-fish-tags{border:0!important;padding:2px 0 0!important}
+.scene-bar{margin:6px 0 8px!important}
+.scene-gear{padding-top:6px}
+.scene-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 6px}
+.scene-card{display:flex;align-items:center;gap:6px;min-width:0;min-height:44px;padding:4px 6px;background:#fff1c8;border:2px solid #d8a867;box-shadow:inset -2px -2px #efcf93}
+.scene-card.is-new{background:#e7efb4;border-color:#8fa24a}
+.scene-card>img{width:26px;height:26px;flex:none;object-fit:contain;image-rendering:pixelated}
+.scene-card-copy{display:flex;flex-direction:column;min-width:0;flex:1}
+.scene-card-copy strong{--pixel-size:18px;font-size:18px;line-height:22px;font-weight:normal;white-space:nowrap;overflow:hidden}
+.scene-card-copy small{--pixel-size:18px;font-size:18px;line-height:24px;color:var(--muted);white-space:nowrap}
+.scene-vitals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-bottom:2px}
+.scene-vital .target-growth-head small{--pixel-size:18px;line-height:26px}
+/* Entrance: a scene's sections step in once when it opens; slots, cards and shop rows pop in one
+   after another. --scene-t resumes the animation after a refresh. */
+[data-scene].scene-enter>*{animation:scene-in .36s steps(6) both;animation-delay:calc(var(--scene-t,0s) + var(--d,0s))}
+[data-scene].scene-enter>*:nth-child(2){--d:.06s}[data-scene].scene-enter>*:nth-child(3){--d:.12s}[data-scene].scene-enter>*:nth-child(4){--d:.18s}[data-scene].scene-enter>*:nth-child(5){--d:.24s}[data-scene].scene-enter>*:nth-child(n+6){--d:.3s}
+[data-scene].scene-enter .scene-grid>*,[data-scene].scene-enter .scene-cards>*,[data-scene].scene-enter .scene-shop-row{animation:scene-pop .3s steps(5) both;animation-delay:calc(var(--scene-t,0s) + .22s + var(--i,0) * .025s)}
+@keyframes scene-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes scene-pop{from{opacity:0;transform:scale(.6)}60%{opacity:1;transform:scale(1.08)}to{opacity:1;transform:none}}
+/* Head icons greet you once: the chest hops, the coin flips, the pickaxe swings. */
+[data-scene=chest].scene-enter .scene-head>img{animation:scene-hop .6s steps(6) both;animation-delay:calc(var(--scene-t,0s) + .15s)}
+[data-scene=shop].scene-enter .scene-head>img{animation:scene-flip .8s steps(8) both;animation-delay:calc(var(--scene-t,0s) + .15s)}
+[data-scene=mine] .scene-head>img{transform-origin:25% 85%}
+[data-scene=mine].scene-enter .scene-head>img{animation:scene-swing .7s steps(7) both;animation-delay:calc(var(--scene-t,0s) + .15s)}
+@keyframes scene-hop{0%,100%{transform:none}30%{transform:translateY(-8px)}55%{transform:translateY(0) scaleY(.85)}75%{transform:translateY(-3px)}}
+@keyframes scene-flip{0%,50%,100%{transform:none}25%,75%{transform:scaleX(.1)}}
+@keyframes scene-swing{0%,100%{transform:none}30%{transform:rotate(-38deg)}55%{transform:rotate(16deg)}78%{transform:rotate(-6deg)}}
+/* Fishing: the float bobs on the water, dips hard on a bite. */
+.scene-phase.is-bite{color:#a8442a;animation:scene-shake .32s steps(2) infinite}
+@keyframes scene-bob{0%,100%{transform:none}50%{transform:translateY(3px)}}
+@keyframes scene-bite{0%{transform:translate(-2px,7px)}100%{transform:translate(2px,3px)}}
+@keyframes scene-cast{from{opacity:0;transform:translateY(-26px)}70%{opacity:1;transform:translateY(4px)}to{opacity:1;transform:none}}
+@keyframes scene-ripple{0%{transform:scaleX(.6);opacity:.9}100%{transform:scaleX(1.3);opacity:.2}}
+@keyframes scene-shake{0%{transform:translateX(-2px)}100%{transform:translateX(2px)}}
+@keyframes scene-glow{0%,100%{box-shadow:inset 2px 2px #fff0bc,inset -2px -2px #dbaf6d}50%{box-shadow:inset 2px 2px #fff0bc,inset -2px -2px #dbaf6d,0 0 0 3px #ffe27a}}
+@media(prefers-reduced-motion:reduce){[data-scene] *,[data-scene].scene-enter>*,.scene-water:before{animation:none!important}}
+/* Chest: a head with how full it is and what it holds, then the chest and the backpack as two
+   framed boxes like the game's chest menu, with a strip between them saying what a tap does. */
+.chest-head{display:flex;align-items:center;gap:12px;margin:4px 0 8px;padding:8px 10px;background:#fbe2aa;border:2px solid #c59556;box-shadow:inset 0 -3px 0 #efcd8a}
+.chest-head>img{width:44px;height:44px;flex:none;object-fit:contain;image-rendering:pixelated}
+.chest-head-copy{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.chest-title{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.chest-title h2{margin:0;--pixel-size:24px;font-size:24px;line-height:30px;white-space:nowrap}
+.chest-space{--pixel-size:14px;font-size:14px;line-height:20px;color:var(--muted);white-space:nowrap}
+.chest-meter{display:block;height:10px;background:#e0b06a;border:2px solid #8b522c;box-shadow:inset 0 2px 0 #c28a4a}
+.chest-meter i{display:block;height:100%;background:linear-gradient(#9ada62 0 50%,#6bb43f 50%)}
+.chest-meter[data-full=true] i{background:linear-gradient(#ff9a6a 0 50%,#e2563a 50%)}
+.chest-facts{display:flex;flex-wrap:wrap;gap:4px}
+.chest-facts small{--pixel-size:12px;font-size:12px;line-height:18px;padding:0 6px;background:#fff1cc;border:1px solid #d3a661;white-space:nowrap}
+.chest-panel .scene-grid{padding:0;gap:2px}
+.chest-bag-title .chest-space{margin-left:auto;color:#f3d39b}
+.chest-transfer[data-state=locked] .chest-arrows{opacity:.4;filter:grayscale(1)}
+.chest-transfer[data-state=moving] .chest-arrows{animation:chest-swap .5s steps(2) infinite}
+@keyframes chest-swap{50%{transform:scaleY(-1)}}
+@media(prefers-reduced-motion:reduce){.chest-arrows{animation:none!important}}
+/* Mines: the elevator track, backpack supplies and the Guild's slayer goals. */
+.mine-track{margin:8px 0 4px;padding:8px 10px;background:#fbe2aa;border:2px solid #c59556}
+.mine-track-label{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.mine-track-label img{width:18px;height:18px;image-rendering:pixelated}
+.mine-track-label small{--pixel-size:14px;font-size:14px;line-height:20px;color:#5a3418;white-space:nowrap}
+.mine-track-label .mine-track-count{margin-left:auto;color:var(--muted)}
+.mine-cells{display:grid;grid-template-columns:repeat(24,minmax(0,1fr));gap:2px}
+.mine-cell{position:relative;height:12px;background:#d9b27a;box-shadow:inset 0 -2px 0 #b8844a}
+.mine-cell.is-open{background:#8fb0d6;box-shadow:inset 0 -2px 0 #5f7fae}
+.mine-cell.is-mark:after{content:'';position:absolute;right:-2px;top:-3px;width:2px;height:18px;background:#8b522c}
+.mine-cell.is-here{background:#ffd23a;box-shadow:inset 0 -2px 0 #e0a92e,0 0 0 2px #6b3a1c;animation:mine-here 1s steps(2) infinite}
+@keyframes mine-here{50%{background:#fff1a0}}
+.mine-kit{border:0!important;padding:0!important}
+.mine-goals{display:flex;flex-direction:column;gap:6px}
+.mine-goal-top{display:flex;justify-content:space-between;gap:8px}
+.mine-goal-bar{display:block;height:8px;background:#e0b06a;border:2px solid #8b522c}
+.mine-goal-bar i{display:block;height:100%;background:linear-gradient(#ff7a6a 0 50%,#d8443a 50%)}
+.mine-goal:not(:has(.mine-goal-reward)){padding-left:8px}
+@media(prefers-reduced-motion:reduce){.mine-cell.is-here{animation:none!important}}
+/* Chest, larger: 9 slots a row (bigger than the game's 12 so icons read on the small screen); the
+   backpack label and hint at normal sizes. The decorative head keeps its compact size. */
+[data-scene=chest] .scene-grid{grid-template-columns:repeat(9,minmax(0,1fr));gap:3px}
+[data-scene=chest] .scene-slot .scene-count{transform:scale(.6667)}
+.chest-panel{background:#9a5b2c;border:2px solid #5a2e14;box-shadow:inset 0 0 0 2px #c07a40,2px 2px 0 rgba(58,32,14,.25);padding:8px}
+.chest-bag-title{display:flex;align-items:center;margin:0 2px 6px;gap:8px}
+.chest-bag-title img{object-fit:contain;image-rendering:pixelated;width:24px;height:24px}
+.chest-bag-title small{color:#fff3d6;--text-shadow:#4a2410;white-space:nowrap;--pixel-size:18px;font-size:18px;line-height:26px}
+.chest-transfer{display:flex;align-items:center;justify-content:center;margin:8px 0;gap:10px}
+.chest-transfer .scene-note{margin:0;white-space:nowrap;--pixel-size:18px;font-size:18px;line-height:26px}
+.chest-arrows{flex:none;background:url(art/chest-transfer.svg) 0 0/100% 100%;image-rendering:pixelated;width:30px;height:25px}
+/* Readable where it matters: supplies and slayer goals at normal sizes; the elevator caption stays small. */
+.mine-food{margin:2px 0 6px;color:#5a3418;--pixel-size:18px;font-size:18px;line-height:26px}
+.mine-claim{margin:2px 0 6px;padding:4px 8px;background:#e7efb4;border:2px solid #8fa24a;color:#3c5a1c;--pixel-size:18px;font-size:18px;line-height:26px}
+.mine-goal-top small{white-space:nowrap;--pixel-size:18px;font-size:18px;line-height:26px}
+.mine-goal-top .mine-goal-count{color:var(--muted);--pixel-size:14px;font-size:14px}
+.mine-goal{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:3px;padding:6px 8px 6px 40px;background:#fff1c8;border:2px solid #d8a867;padding-left:44px}.mine-goal-reward{position:absolute;left:8px;top:50%;object-fit:contain;image-rendering:pixelated;width:28px;height:28px;margin-top:-14px}
+/* The floor's monsters: two columns, icon, count and health, drops, slayer goal. */
+.mine-monsters{grid-template-columns:repeat(2,minmax(0,1fr))}
+.mine-monster{align-items:flex-start;padding:6px 8px}
+.mine-monster .mine-monster-icon{width:32px;height:32px;margin-top:2px}
+.mine-monster.is-slayer{border-color:#c86a44}
+.mine-slayer{color:#a8442a!important}
+.mine-drops{display:flex;gap:3px;margin-top:2px}.mine-drops img{width:18px;height:18px;object-fit:contain;image-rendering:pixelated}
+/* Fishing: each phase its own colour; the catch is a small celebration (gold words, the fish over a
+   turning burst of light, twinkling stars). Stepped motion, off under reduced motion like the rest. */
+.scene-phase.is-cast,.scene-phase.is-wait{color:#3b6a8a}
+.scene-phase.is-reel{color:#3f7a1c}
+.scene-catch{display:flex;flex-direction:column;align-items:center;margin:6px 0 8px;padding:10px 12px 12px;background:linear-gradient(#fff6d0,#ffe0a0);border:2px solid #ba874b;box-shadow:inset 2px 2px #fffbe6,inset -2px -2px #e2b46a}
+.scene-catch-title{margin:0;white-space:nowrap;--pixel-size:36px;font-size:36px;line-height:48px;color:#ffd23f;--text-shadow:#b0601c;filter:drop-shadow(2px 0 0 #5b2b0e) drop-shadow(-2px 0 0 #5b2b0e) drop-shadow(0 2px 0 #5b2b0e) drop-shadow(0 -2px 0 #5b2b0e);animation:scene-catch-pop .5s steps(5) both}
+.scene-catch-stage{position:relative;display:grid;place-items:center;width:136px;height:120px;margin:2px 0}
+.scene-catch-rays{position:absolute;left:50%;top:50%;width:136px;height:136px;margin:-68px 0 0 -68px;border-radius:50%;background:repeating-conic-gradient(#ffd23f 0 10deg,transparent 10deg 30deg);-webkit-mask:radial-gradient(circle,#000 35%,transparent 70%);mask:radial-gradient(circle,#000 35%,transparent 70%);animation:scene-rays 9s steps(36) infinite}
+.scene-catch-fish{position:relative;width:80px;height:80px;object-fit:contain;image-rendering:pixelated;animation:scene-catch-fish .6s steps(6) both,scene-catch-float 1.6s steps(4) .6s infinite}
+.scene-sparkle{position:absolute;width:27px;height:27px;background:url(art/scene-sparkle.svg) 0 0/100% 100%;image-rendering:pixelated;animation:scene-twinkle 1.2s steps(3) infinite;animation-delay:calc(var(--i) * -.3s)}
+.scene-sparkle:nth-of-type(1){left:0;top:10px}.scene-sparkle:nth-of-type(2){right:-4px;top:0;width:36px;height:36px}
+.scene-sparkle:nth-of-type(3){right:6px;bottom:6px}.scene-sparkle:nth-of-type(4){left:10px;bottom:0;width:18px;height:18px}
+.scene-catch-name{white-space:nowrap;--pixel-size:24px;font-size:24px;line-height:32px;font-weight:normal}
+.scene-catch .scene-fish-tags{justify-content:center;padding-top:6px!important}
+.target-chip.is-first{background:#ffe27a;border-color:#c98a1c}.target-chip.is-first small{color:#6b3d00}
+.target-chip.is-empty img{opacity:.35;filter:grayscale(1)}.target-chip.is-empty small{color:var(--muted)}
+@keyframes scene-catch-pop{0%{transform:scale(.3);opacity:0}60%{transform:scale(1.15);opacity:1}100%{transform:none;opacity:1}}
+@keyframes scene-catch-fish{0%{transform:translateY(28px) scale(.5);opacity:0}70%{transform:translateY(-6px) scale(1.1);opacity:1}100%{transform:none;opacity:1}}
+@keyframes scene-catch-float{50%{transform:translateY(-4px)}}
+@keyframes scene-rays{to{transform:rotate(360deg)}}
+@keyframes scene-twinkle{0%,100%{transform:scale(.4);opacity:.35}50%{transform:scale(1);opacity:1}}
+/* Fishing: the pond stage (scene.js pond). One set of nodes from the cast to the catch; the phase
+   (data-phase) decides what the bobber, line, shadow and meter do. Pixel steps throughout. */
+.fish-stage{position:relative;height:216px;margin:4px 0 8px;overflow:hidden;border:2px solid #5b3a1e;box-shadow:inset 0 0 0 2px #e8b56a;image-rendering:pixelated;--wl:58%;--bx:55%}
+/* The pond itself is one pixel picture (pond.js), 1 art pixel = 2 CSS pixels. */
+.pond-canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated}
+.fish-meter{position:absolute;left:96px;right:24px;bottom:16px;height:20px;z-index:4;background:#2a1a0c;border:2px solid #5b3a1e;box-shadow:inset 0 0 0 2px #120a04}
+.fish-meter-fill{position:absolute;left:2px;top:2px;bottom:2px;width:calc((100% - 4px) * var(--p));background:linear-gradient(#a6ec6c 0 50%,#54b52e 50%);transition:width .4s steps(4)}
+.fish-meter-fish{position:absolute;top:-18px;left:calc((100% - 36px) * var(--p));width:36px;height:36px;object-fit:contain;image-rendering:pixelated;transition:left .4s steps(4);animation:fish-wiggle .3s steps(2) infinite}
+.fish-meter-chest{position:absolute;right:-10px;top:-22px;width:36px;height:36px;object-fit:contain;image-rendering:pixelated;filter:saturate(.5) brightness(.8)}
+.fish-meter-chest.is-got{filter:none;animation:fish-chest .8s steps(4) infinite}
+.fish-banner{position:absolute;left:0;right:0;top:4px;margin:0;z-index:6;text-align:center;white-space:nowrap;--pixel-size:36px;font-size:36px;line-height:48px;color:#ffd23f;--text-shadow:#b0601c;filter:drop-shadow(2px 0 0 #5b2b0e) drop-shadow(-2px 0 0 #5b2b0e) drop-shadow(0 2px 0 #5b2b0e) drop-shadow(0 -2px 0 #5b2b0e);animation:scene-catch-pop .5s steps(5) .35s both}
+@keyframes fish-wiggle{50%{transform:translateY(-3px) rotate(8deg)}}
+@keyframes fish-chest{50%{transform:translateY(-3px)}}
+/* Under the pond: the fish on the line, then bait and tackle as two equal cards. */
+.fish-card{display:flex;align-items:center;gap:12px;margin-bottom:8px;padding:8px 10px;background:#ffdfa0;border:2px solid #ba874b;box-shadow:inset 2px 2px #fff0bc,inset -2px -2px #dbaf6d}
+.fish-card.is-caught{background:#fff2b8;border-color:#e0a92e;box-shadow:inset 2px 2px #fffbe6,inset -2px -2px #f3cf6a}
+.fish-gear{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
+.fish-gear-item{display:flex;align-items:center;gap:10px;min-width:0;padding:6px 10px;background:#fff1c8;border:2px solid #d8a867;box-shadow:inset -2px -2px #efcf93}
+.fish-gear-item.is-empty{opacity:.6}
+.fish-gear-item>img{width:32px;height:32px;flex:none;object-fit:contain;image-rendering:pixelated}
+.fish-gear-copy{display:flex;flex-direction:column;min-width:0;flex:1}
+.fish-gear-copy strong{--pixel-size:18px;font-size:18px;line-height:24px;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fish-gear-copy small{--pixel-size:18px;font-size:18px;line-height:24px;color:var(--muted);white-space:nowrap}
+.fish-wear{display:block;height:8px;margin-top:2px;background:#e7c98e;border:2px solid #b8844a}
+.fish-wear i{display:block;height:100%;background:#54b52e}.fish-wear.is-low i{background:#e2463a}
+@media(prefers-reduced-motion:reduce){.fish-stage *{animation:none!important;transition:none!important}}
+
+/* The live minigame (reel.js): the bar sprite at 2x on the right of a taller pond; the stand-in meter goes. */
+.fish-stage[data-phase=reel]{height:316px}
+.reel-live{position:absolute;right:28px;top:6px;z-index:6;width:74px;height:300px;image-rendering:pixelated;filter:drop-shadow(2px 2px rgba(42,26,12,.45))}
+.reel-live[hidden]{display:none}
+.fish-stage .reel-live:not([hidden])~.fish-meter{display:none}
+.scene-note:empty{display:none}

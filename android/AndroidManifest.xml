@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="io.github.chankamman_dev.stardewds" android:versionCode="95" android:versionName="0.11.1-dev.55">
+ <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="35"/>
+ <uses-permission android:name="android.permission.INTERNET"/>
+ <application android:label="StardewDS" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:allowBackup="false" android:usesCleartextTraffic="true">
+ <activity android:name=".MainActivity" android:launchMode="singleTask" android:exported="true" android:resizeableActivity="true" android:configChanges="orientation|screenSize|keyboardHidden|uiMode"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity>
+ <activity android:name=".WikiReaderActivity" android:exported="false" android:resizeableActivity="true" android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|uiMode"/>
+ </application>
+</manifest>

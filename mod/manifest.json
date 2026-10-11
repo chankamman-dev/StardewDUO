@@ -1,0 +1,16 @@
+{
+  "Name": "StardewDS Bridge",
+  "Author": "chankamman",
+  "Version": "0.10.1-dev.42",
+  "Description": "Independent snapshots, native world maps and authenticated inventory controls. No save commands.",
+  "UniqueID": "chankamman.StardewDS",
+  "EntryDll": "StardewThor.ReadOnly.dll",
+  "MinimumApiVersion": "4.5.2",
+  "UpdateKeys": [],
+  "Dependencies": [
+    {
+      "UniqueID": "Platonymous.Portraiture",
+      "IsRequired": false
+    }
+  ]
+}

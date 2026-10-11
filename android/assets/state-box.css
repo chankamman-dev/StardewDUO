@@ -1,0 +1,8 @@
+/* Full-page state (state-box.js): same centred icon + title + hint on every page, like the
+   bag's own placeholder. Short "nothing here" lines inside lists stay .journal-empty. */
+.state-box{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:300px;padding:16px 24px;text-align:center}
+.state-box>img{width:48px;height:48px;object-fit:contain;image-rendering:pixelated}
+.state-box>.state-title{margin:6px 0 0;--pixel-size:24px;font-size:24px;line-height:34px;color:var(--ink)}
+.state-box>.state-hint{max-width:100%;--pixel-size:18px;font-size:18px;line-height:28px;color:var(--muted)}
+.journal-empty{text-align:center}
+.state-box>.state-title,.state-box>.state-hint{align-self:stretch;text-align:center}

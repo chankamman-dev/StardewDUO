@@ -1,0 +1,54 @@
+/* Final 0.5 visual contract: original THICK outer frame; 48 physical px reading
+   text on 1240x1080; native tabs follow the original menu seam and inward press.
+   Keep these values stable when changing other pages. */
+:root{--paper:#f9d38d;--paper-light:#ffe0a1;--muted:#89552e;--frame-main:24px;--text-shadow:#ce9c5f;--pixel-size:24px}
+button,.book,.slot,input,select{image-rendering:pixelated}
+.shell{padding:4px}.workspace{grid-template-columns:minmax(0,1fr) 59.5px}
+/* Standard reading matches Mistria's 12 source px x4 on Thor. Auxiliary x3. */
+h1,h2,h3,strong,#description,#guide-detail>p{--pixel-size:24px;font-size:24px;line-height:34px}
+small,.tag,.unknown,.section-title,summary{--pixel-size:18px;line-height:28px}
+.large #description,.large #guide-detail>p{--pixel-size:30px;font-size:30px;line-height:44px}
+/* Inventory alone owns the date/money/time strip. */
+.hud{height:32px;padding:0 0 3px;gap:8px;--pixel-size:18px}.hud-date{flex:1}#date{width:auto}#source-mark{width:32px;--pixel-size:12px}
+.hud-value{display:flex;align-items:center;gap:5px;flex:none}.hud-value img{width:16px;height:16px}.hud-value.time{margin-left:8px}#money,html[lang=en] #money{width:111px}#clock,html[lang=en] #clock{width:64px}html[lang=en] #source-mark{width:37px}
+/* Centered compact header, small original icon, capacity at the right. */
+.book-heading{position:relative;height:40px;min-height:40px;padding:0 6px;margin:4px 0 6px;background:#efbd77;border:2px solid #bd8042;gap:6px}
+.book-heading img{display:block;width:24px;height:26px}.book-heading h1{position:absolute;left:85px;right:85px;text-align:center;--pixel-size:24px;line-height:34px;pointer-events:none}
+#page-meta{margin-left:auto;--pixel-size:18px;line-height:30px;max-width:96px}
+/* Latest ORIGINAL screenshot supersedes the PS seam: one source pixel of dark
+   separation when idle; selection presses LEFT by two source pixels, over the
+   outermost frame edge. Original GameMenu also draws the tabs AFTER the box.
+   Native grid 16x16 -> 56 logical -> 112 physical, 7px/source pixel.
+   Full paper center is source (6,8): logical (21,28). No clipping compensation,
+   fabricated connector, icon-only movement, or vertical selection movement. */
+.book{border-image:url('art/frame-main.png') 48 stretch;background:var(--paper);z-index:1}.tabs{z-index:2;gap:0;padding-top:4px}
+.tabs button,.tabs button[aria-current=true]{width:56px;height:56px;min-height:56px;margin-left:3.5px;background:url('art/tab-original-right.png') left center/56px 56px no-repeat;border:0;padding:0;transform:none}
+.tabs button[aria-current=true]{transform:translateX(-7px)}.tabs button[aria-current=true]:before{display:none}
+.tabs img,.tabs [data-page=manual] img,.tabs button[aria-current=true] img{position:absolute;left:21px;top:28px;transform:translate(-50%,-50%);width:30px;height:30px;object-fit:contain}
+.tabs [data-page=bag] img{width:26px;height:33px}.tabs [data-page=people] img{width:28px;height:30px}
+.page{padding-bottom:0}#bag{display:flex;flex-direction:column}#slots{flex:none;gap:4px;padding:2px 0 8px}
+#detail,.profile #person-detail,.profile #guide-detail{border:0;border-image:none;background:none;margin:0;padding:8px 2px}
+#detail{border-top:2px solid #c08c4e;flex:1}.detail-top{min-height:46px;gap:10px}#detail>.detail-top{border:0;padding:0}.detail-top>img{width:36px;height:36px}.detail-top h2{--pixel-size:24px;line-height:34px}
+#description,#guide-detail>p{margin-top:8px;line-height:34px}.detail-foot{border:0;margin-top:5px;padding:0}.detail-foot button{--pixel-size:18px;min-height:34px}.inventory-bottom{flex:none}
+.bag-tools{display:flex;align-items:center;gap:6px;order:10;padding-top:5px;margin-top:4px;border-top:1px solid var(--rule);flex:none}.bag-tools img{width:24px;height:28px}.bag-tools button:disabled{opacity:.5}
+/* Small controls use a quiet bevel; content does not repeat the outer frame. */
+button:not(.slot):not(.person):not(.catalog-item):not(.map-pin):not([data-page]),input,select{border-image:none;border-width:2px;border-color:#b77a3d;background:#ffdfa0;box-shadow:inset 1px 1px #fff0bd,inset -1px -1px #dba456}
+#person-back,#guide-back,.bag-tools button,.detail-foot button{background:none!important;border:0!important;box-shadow:none!important}
+.section-tools{margin:0 0 5px;gap:6px;min-height:40px}input,select{height:40px;min-height:40px;padding:0 7px}.control-label{left:10px;right:10px;top:2px;bottom:2px;--pixel-size:18px;line-height:30px}.select-control:after{top:15px;right:10px}.game-control.select-control,html[lang=en] .section-tools .select-control{flex-basis:168px;max-width:168px}
+/* Resident overview: identity and daily checks left; five-heart rows right. */
+.person{min-height:100px;padding:8px 3px;gap:12px;border-bottom:2px solid #c08c4e;position:relative}.person>img{width:64px;height:64px;border:0;outline:2px solid #b77a3d;background:#edbc78}.person strong{--pixel-size:24px;line-height:34px}.person small{--pixel-size:18px;line-height:28px}.person>span{align-self:center}.person[aria-pressed=true]{background:#ffdda0}
+.person-summary{display:flex;flex-direction:column;gap:2px}.person .birthday-small{--pixel-size:18px;line-height:28px}.person .heart-meter{max-width:100px;width:100px;flex:0 0 100px;align-self:center;gap:4px}
+.heart-meter{display:flex;gap:4px;align-items:center;flex-wrap:wrap}.heart-meter img{width:16px;height:14px;flex:none}.heart-meter .locked{opacity:.3}.heart-meter.unknown{opacity:.4}
+.daily-marks{display:flex;gap:12px;align-items:center}.daily-marks>span{display:flex;gap:4px;align-items:center;flex:none}.daily-marks img{width:20px;height:20px;object-fit:contain}.daily-marks .check{width:16px;height:16px}.daily-marks small,.person .social-unavailable{--pixel-size:18px;line-height:28px;color:var(--muted);white-space:nowrap}.daily-state{font-size:18px}.person .heart-meter img,.person .daily-marks img{border:0;background:transparent}
+.profile #person-detail{padding:9px 3px}.person-header{gap:18px;align-items:flex-start}.person-header .portrait-large{width:144px;height:144px;border:0;margin:3px;outline:3px solid #c39358;background:#edbc78}.person-copy h2{--pixel-size:24px;line-height:34px}.person-facts{grid-template-columns:76px minmax(0,1fr);gap:4px 8px;margin-top:7px}.person-facts dt,.person-facts dd{--pixel-size:18px;line-height:28px}.large .person-facts dt,.large .person-facts dd{--pixel-size:18px;line-height:28px}
+.relationship{margin-top:12px;padding:8px 0 3px;gap:8px}.relationship p,.large .relationship p{--pixel-size:24px;line-height:34px}#person-detail>.unknown,.large #person-detail>.unknown{--pixel-size:18px;line-height:28px;border:0;margin-top:8px;padding:0}
+.profile-social{margin-top:14px;border-top:2px solid #c08c4e;padding-top:8px}.profile-social .heart-meter{max-width:none;margin:5px 0 9px;gap:5px}.profile-social .heart-meter img{width:21px;height:18px}.social-facts{display:grid;grid-template-columns:1fr;gap:4px}.social-facts p{--pixel-size:18px;font-size:18px;line-height:28px;display:flex;gap:8px;align-items:center}.social-facts img{width:24px;height:24px}.social-facts span{--pixel-size:18px;min-width:0;display:block;flex:1}.social-caption{--pixel-size:18px;line-height:28px;color:var(--muted)}
+.catalog{gap:4px}.catalog-item{min-height:112px;padding:6px 5px;gap:3px}.catalog-item>span,.large .catalog-item>span{--pixel-size:24px;line-height:34px}.large .catalog-item{min-height:112px}.catalog-item[aria-pressed=true]{border-color:#bc8248;background:#ffdfa0}.catalog-item img{width:48px;height:48px}
+.profile #guide-detail{margin-top:6px}#guide-detail .detail-top{padding:5px 0 10px;border-bottom:2px solid #c08c4e}#guide-detail .detail-top img{width:44px;height:44px}.guide-price{font-size:24px!important;--pixel-size:24px!important}
+.settings-row{padding:5px 1px;min-height:65px}.settings-row h3{--pixel-size:24px;line-height:34px}.settings-row p{--pixel-size:18px}.section-title{--pixel-size:18px;line-height:30px}.settings-row .tag,summary{--pixel-size:18px}#setting-language{height:40px;min-height:40px;--pixel-size:18px}
+body[data-current-page=map] .book-heading{display:none}#map{display:flex;flex-direction:column;overflow:hidden}.map-toolbar{display:flex;align-items:center;gap:4px;height:44px;flex:none;padding-bottom:5px}.map-toolbar h2{flex:1;min-width:0;--pixel-size:24px;line-height:34px;white-space:nowrap}.map-toolbar button{width:40px;height:38px;min-height:38px;padding:5px;border-width:1px!important}.map-toolbar img{width:24px;height:24px;display:block;margin:auto}
+.map-frame{position:relative;flex:1;min-height:0;width:100%;border:0;margin:0;overflow:hidden;background:#80a272;touch-action:none;cursor:grab;user-select:none}.map-frame:active{cursor:grabbing}#map-canvas{position:absolute;will-change:left,top}#map-image{width:100%;height:100%;display:block;pointer-events:none}#map-pins{inset:0}.map-pin[aria-pressed=true] .map-pin-label{display:none}.map-pin:before{background:#ffed9c;border:1px solid #764324;box-shadow:1px 1px #9a6638;transform:rotate(45deg);width:6px;height:6px;left:19px;top:19px}.map-pin[aria-pressed=true]:before{background:#ffb821;outline:1px solid #fff0b0}#map>.detail{margin:0;padding:2px 0 0;border:0;flex:none;min-height:28px}#map>.detail h2{display:none}#map>.detail small:last-child{--pixel-size:18px;line-height:28px;margin:0}
+.bag-tools button{display:flex;align-items:center;gap:5px;height:40px;min-height:40px;border:0;background:none;padding:0 6px;flex:none}.bag-tools button span{--pixel-size:18px;display:block;white-space:nowrap;flex:none}.bag-tools small{flex:1;--pixel-size:12px;min-width:0}
+#person-back,#guide-back{min-height:34px;line-height:30px;padding:0!important;--pixel-size:18px;border:0;width:104px;white-space:nowrap;flex:none}
+html[lang=en] .person-facts{grid-template-columns:92px minmax(0,1fr)}
+.person-facts dt{white-space:nowrap}

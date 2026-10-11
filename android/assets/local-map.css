@@ -1,0 +1,32 @@
+/* Local map: canvases share the world map's viewport, pins and controls. */
+.local-map-layer{position:absolute;image-rendering:pixelated;pointer-events:none}
+.map-cluster-picker .map-local-open{flex:1 1 100%;justify-content:center;background:#efbd77!important}
+.local-map-state[hidden]{display:none}
+/* Farm-page highlight: one static overlay above the chunks, below pins; pulses on the compositor. */
+.local-map-focus{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;image-rendering:pixelated;animation:local-map-focus 1.1s ease-in-out infinite alternate}
+@keyframes local-map-focus{from{opacity:1}to{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.local-map-focus{animation:none}}
+.local-map-focus-chip{position:absolute;left:8px;top:8px;z-index:5;display:flex;align-items:center;gap:6px;max-width:calc(100% - 16px);padding:0 0 0 10px;background:#ffdfa0;border:2px solid #b77a3d;line-height:normal}
+.local-map-focus-chip[hidden]{display:none}
+.local-map-focus-chip>span{--pixel-size:18px;font-size:18px;line-height:32px;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.local-map-focus-chip>button{flex:none;width:36px!important;min-width:36px!important;height:32px!important;min-height:0!important;padding:0!important;border:0!important;border-left:2px solid #b77a3d!important;box-shadow:none!important;background:#efbd77!important;--pixel-size:18px;font-size:18px;line-height:32px}
+#map-canvas>#map-pins{z-index:2}
+/* Map viewport sits in the game's menu frame (3px source edge at 2x). */
+#map .map-frame{border:6px solid transparent!important;border-image:url('art/frame-tooltip.png') 12 stretch!important;image-rendering:pixelated;box-sizing:border-box}
+/* Local map name on the SpriteText scroll banner, bottom centre, like the in-game map. */
+
+.local-map-state{position:absolute;left:8px;z-index:5;padding:2px 8px;--pixel-size:18px;font-size:18px;line-height:28px;background:#ffdfa0;border:2px solid #b77a3d;pointer-events:none;bottom:54px}
+/* Group counts in the outlined stack digits; residents still loading are a small quiet dot. */
+.map-cluster-digits{position:absolute;right:-2px;bottom:-4px;pointer-events:none;line-height:0}
+.map-avatar-pending{width:8px!important;height:8px!important;border-radius:50%;transform:none!important;background:#f6dca4!important;border:2px solid #7a4a2c!important;opacity:.85}
+
+/* Place | world: one sunken wooden track, the view in use a raised light tile; same height as the
+   toolbar buttons. The place name heads the toolbar with a pin. */
+.map-toolbar .map-modes{display:flex;flex:none;height:38px;padding:3px;gap:3px;background:#e2a764;border:1px solid #8a5426;box-shadow:inset 2px 2px #b97a3c,inset -1px -1px #f0c483}
+.map-toolbar .map-modes[hidden]{display:none}
+.map-toolbar .map-modes>button{width:auto;min-width:54px;height:100%;min-height:0;padding:0 10px;display:flex;align-items:center;justify-content:center;border:0!important;background:transparent!important;box-shadow:none!important}
+.map-toolbar .map-modes>button>span{--pixel-size:18px;font-size:18px;line-height:24px;white-space:nowrap;color:#5b2b1a;opacity:.6}
+.map-toolbar .map-modes>button[aria-pressed=true]{background:#fff1c8!important;box-shadow:inset 0 -2px #e0b878,0 1px #8a5426!important}
+.map-toolbar .map-modes>button[aria-pressed=true]>span{opacity:1}
+#map .map-toolbar #map-area{display:flex;align-items:center;gap:8px;min-width:0;margin:0;--pixel-size:24px;font-size:24px;line-height:32px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#map .map-toolbar #map-area::before{content:"";flex:none;width:24px;height:24px;background:url(art/pin.svg) center/contain no-repeat;image-rendering:pixelated}

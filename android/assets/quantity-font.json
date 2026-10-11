@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "texture": "art/stack-digits.png",
+  "digits": "0123456789",
+  "glyph": {
+    "width": 5,
+    "height": 7
+  },
+  "scale": 3,
+  "backingScale": 2,
+  "advance": 14,
+  "nativeAdvance": "floor(5 * scale) - 1",
+  "shadow": "Baked into original texture; no extra shadow, outline, tint, or smoothing",
+  "sourceRectangle": {
+    "x": 368,
+    "y": 56,
+    "width": 50,
+    "height": 7
+  }
+}

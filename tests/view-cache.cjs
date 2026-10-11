@@ -1,0 +1,10 @@
+const vm=require('vm'),fs=require('fs'),assert=require('assert/strict');
+let now=100,ready=true,entered=100;const context={window:null,page:'map',Date:{now:()=>now},performance:{now:()=>now},render:()=>{},model:{status:()=>ready?'ready':'stale',snapshot:{session:'a',world:{location:'Town'},tracking:{player:{x:1},maps:[{}],residents:[{id:'a'}]}}}};
+context.window=context;context.TrackingDemand={enteredAt:()=>entered};vm.createContext(context);vm.runInContext(fs.readFileSync('android/assets/tracking-display.js','utf8'),context);
+const read=()=>context.TrackingDisplay.read();assert.equal(read().player.x,1);
+context.model.snapshot.tracking={player:null,maps:[{}],residents:[]};assert.equal(read().player.x,1);assert.equal(context.model.snapshot.tracking.player,null);
+now=2101;assert.equal(read().player,null);now=3000;entered=3000;context.model.snapshot.world.location='Beach';assert.equal(read().player,null);
+context.model.snapshot.tracking.player={x:2};read();context.model.snapshot.tracking.player=null;context.model.snapshot.session='b';assert.equal(read().player,null);
+context.model.snapshot.tracking.player={x:3};read();context.model.snapshot.tracking.player=null;ready=false;assert.equal(read(),null);ready=true;assert.equal(read().player,null);
+context.model.snapshot.tracking.player={x:4};read();context.model.snapshot.tracking.player=null;context.page='people';assert.equal(read().player,null);
+console.log('PASS warm display: bounded lifetime, same location/save, disconnected invalidation, immutable snapshot, map only');

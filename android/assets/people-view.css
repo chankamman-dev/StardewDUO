@@ -1,0 +1,54 @@
+/* The 24px resident name and approved outer frame remain unchanged. */
+#people>.section-tools{gap:5px}
+#people .section-tools .select-control{flex-basis:132px;max-width:132px}
+.people-view-switch{display:flex;flex:none;gap:2px}
+.people-view-button{width:36px;height:40px;min-height:40px;flex:none;display:flex;align-items:center;justify-content:center;padding:0}
+.people-view-button[aria-pressed=true]{background:#e7b369!important;box-shadow:inset 2px 2px #b77a3d,inset -1px -1px #fff0bd!important}
+.people-view-icon{display:grid;width:20px;height:20px;color:#70421f;pointer-events:none}
+.people-view-icon-grid{grid-template-columns:repeat(2,8px);grid-template-rows:repeat(2,8px);gap:4px}
+.people-view-icon-grid i{border:2px solid currentColor;background:#ffe9b3;box-shadow:1px 1px #ce9c5f}
+.people-view-icon-list{grid-template-columns:1fr;grid-template-rows:repeat(3,4px);gap:4px}
+.people-view-icon-list i{border-left:4px solid currentColor;border-right:12px solid currentColor;box-shadow:1px 1px #ce9c5f}
+#people[data-people-view=grid]:not(.profile) #people-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 4px;padding:4px 2px}
+#people[data-people-view=grid] .person{flex-direction:column;justify-content:flex-start;min-width:0;min-height:110px;padding:4px 3px 3px;gap:5px;border:0;text-align:center}
+#people[data-people-view=grid] .person>img{width:64px;height:64px;flex:none;outline:2px solid #b77a3d;background:#edbc78}
+#people[data-people-view=grid] .person-summary{display:block;flex:none;width:100%;min-width:0}
+#people[data-people-view=grid] .person strong{--pixel-size:24px;font-size:24px;line-height:34px;overflow-wrap:anywhere;white-space:normal;text-align:center}
+#people[data-people-view=grid] .person .birthday-small,#people[data-people-view=grid] .person .daily-marks,#people[data-people-view=grid] .person>.heart-meter{display:none}
+#people[data-people-view=grid] .person[aria-pressed=true]{background:none}
+/* 0.10.1: grid names use the 18px auxiliary size so six-character names (德米特里厄斯)
+   fit one line in a quarter-width tile; the social list and profile keep 24px names. */
+#people[data-people-view=grid] .person strong{--pixel-size:18px;font-size:18px;line-height:28px}
+
+.people-view-icon-compact{grid-template-columns:repeat(2,8px);grid-template-rows:repeat(2,7px);gap:4px}.people-view-icon-compact i{border:1px solid currentColor;border-left-width:3px;background:#ffe9b3}
+#people[data-people-view=compact]:not(.profile) #people-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:4px 2px}
+#people[data-people-view=compact] .person{display:flex;align-items:center;gap:6px;min-width:0;min-height:52px;padding:5px!important;border:2px solid #bf8d4f!important;background:#fbe0a4;box-shadow:inset 1px 1px #fff0bd;text-align:left}
+#people[data-people-view=compact] .person>img{width:36px;height:36px;outline:0;margin:0;object-fit:contain;background:none}
+#people[data-people-view=compact] .person-summary{min-width:0;flex:1}
+#people[data-people-view=compact] .person strong{--pixel-size:18px;font-size:18px;line-height:24px;overflow-wrap:anywhere}
+#people[data-people-view=compact] .birthday-small,#people[data-people-view=compact] .daily-marks,#people[data-people-view=compact] .person>.heart-meter{display:none}
+#people[data-people-view=compact] .person>.compact-social{display:flex;flex:0 0 48px;gap:6px;width:48px;align-self:center}
+.compact-mark{position:relative;width:21px;height:26px;display:block;flex:none}.compact-mark>img{width:20px;height:20px;object-fit:contain}.compact-mark>.compact-check{position:absolute;right:-1px;bottom:0;width:10px;height:10px}.compact-mark.unknown{opacity:.4}
+
+#people[data-people-view=compact] .compact-mark img{border:0;outline:0;background:transparent;box-shadow:none}.people-view-icon-compact{grid-template-columns:repeat(2,9px);grid-template-rows:repeat(2,5px);gap:5px 2px}
+/* Sort picker and pins: pinned villagers lead the list, marked in the corner. */
+#people .section-tools .people-sort-control{flex-basis:112px;max-width:112px}
+#people .person[data-pinned=true]::after{content:"";position:absolute;top:calc(50% - 38px);left:53px;width:20px;height:20px;background:url(art/pin.svg) center/contain no-repeat;image-rendering:pixelated;pointer-events:none}
+#person-detail .person-header{position:relative}
+#person-detail .person-header h2{padding-right:120px}
+.person-pin{position:absolute;top:0;right:0;display:flex;align-items:center;gap:6px;min-height:40px;padding:4px 12px;--pixel-size:18px;font-size:18px;line-height:24px}
+.person-pin img{width:20px;height:20px;image-rendering:pixelated;opacity:.45}
+.person-pin span{white-space:nowrap}
+.person-pin[aria-pressed=true]{background:#e7b369!important;box-shadow:inset 2px 2px #b77a3d,inset -1px -1px #fff0bd!important}
+.person-pin[aria-pressed=true] img{opacity:1}
+/* The pin sits on the portrait's top-right corner in each view. */
+#people[data-people-view=grid] .person[data-pinned=true]::after{top:0;left:calc(50% + 18px)}
+#people[data-people-view=compact] .person[data-pinned=true]::after{top:calc(50% - 24px);left:33px;width:16px;height:16px}
+/* Portrait view: faces only, five across at 3× the 64 px portrait on the Thor (2 device px per unit),
+   edge to edge with the tools row above; the name is the button's label. */
+#people[data-people-view=grid]:not(.profile) #people-list{grid-template-columns:repeat(5,96px);grid-auto-rows:96px;justify-content:space-between;gap:6px 0;padding:4px 0}
+#people[data-people-view=grid] .person{min-height:0;padding:0;gap:0}
+#people[data-people-view=grid] .person>img{width:96px;height:96px;outline-offset:-2px}
+#people[data-people-view=grid] .person-summary{display:none}
+#people[data-people-view=grid] .person[data-pinned=true]::after{top:4px;left:auto;right:4px}
+#people[data-people-view=grid] .person>.spoiler-portrait{width:96px;height:96px;outline-offset:-2px}

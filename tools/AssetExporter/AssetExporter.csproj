@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup><TargetFramework>net6.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable></PropertyGroup>
+ <Import Project="../../tools/game-references.props" />
+ <ItemGroup><Compile Include="../../tests/GameProbe/Exporter.cs" Link="Exporter.cs"/><Compile Include="../../mod/Png.cs" Link="Png.cs"/></ItemGroup>
+</Project>

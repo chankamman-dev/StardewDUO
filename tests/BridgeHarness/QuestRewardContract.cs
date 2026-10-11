@@ -1,0 +1,6 @@
+using System.Text.Json;
+using StardewThor.Bridge;
+internal static class QuestRewardContract
+{
+ public static void Run(){int count=0;void Check(bool ok,string text){if(!ok)throw new Exception(text);count++;}var hub=new ControlHub(new string('c',64));string Body(Command c)=>JsonSerializer.Serialize(c,BridgeServer.Json);var claim=new Command(Guid.NewGuid().ToString("N"),1,"quest-session",1,"claim-quest",QuestKey:new string('a',64));Check(hub.Submit(Body(claim)).State=="queued"&&hub.TryTake(out _),"claim enqueued");hub.Complete(new(claim.Id,"applied","ok",1));Check(hub.Submit(Body(claim)).State=="applied"&&!hub.TryTake(out _),"duplicate returns receipt");Check(hub.Submit(Body(claim with{QuestKey=new string('b',64)})).Code=="id-conflict","payload cannot change");foreach(var bad in new[]{claim with{QuestKey=null},claim with{QuestKey="wrong"},claim with{Amount=1},claim with{From=0},claim with{BoardKey=new string('b',64)},claim with{RecipeId="Torch"},claim with{ToolbarHidden=true},claim with{Action="sort"}})Check(hub.Submit(Body(bad with{Id=Guid.NewGuid().ToString("N"),Order=2})).State=="rejected","mixed/invalid fields rejected");Check(!new ControlState(true,"ready",0).QuestRewards,"old capability false");Console.WriteLine($"{count} quest reward contract checks passed");}
+}

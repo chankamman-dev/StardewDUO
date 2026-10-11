@@ -1,0 +1,68 @@
+/* Thor buddy (thor-buddy.js) on full-page states. One SVG unit is 4 CSS px, so every move is a
+   whole number of units and every animation is stepped: pixels jump like the game's sprites
+   instead of sliding. All delays add --tb-t, the buddy's shared clock, so a redraw continues
+   the same frame. */
+.thor-buddy{position:relative;width:144px;height:160px;margin:-16px 0 -6px;flex:none}
+.thor-buddy>svg{display:block;width:144px;height:160px;overflow:visible}
+.thor-buddy .tb-screen{image-rendering:pixelated}
+.thor-buddy .tb-body,.thor-buddy .tb-shadow{transform-box:fill-box;transform-origin:50% 100%}
+
+/* Entrance: drops in from above, squashes on landing, settles. The shadow grows as it lands. */
+.thor-buddy .tb-body{animation:tb-drop .72s steps(12,end) var(--tb-t,0s) both}
+.thor-buddy .tb-shadow{opacity:.2;animation:tb-shadow .72s steps(12,end) var(--tb-t,0s) both}
+@keyframes tb-drop{
+ 0%{transform:translateY(-14px);opacity:0}
+ 10%{opacity:1}
+ 38%{transform:translateY(0) scale(1,1)}
+ 48%{transform:translateY(0) scale(1.1,.86)}
+ 64%{transform:translateY(-3px) scale(.96,1.05)}
+ 80%{transform:translateY(0) scale(1.04,.96)}
+ 100%{transform:none;opacity:1}}
+@keyframes tb-shadow{0%{transform:scale(.4,1);opacity:0}38%{transform:scale(1,1);opacity:.2}48%{transform:scale(1.12,1)}100%{transform:none;opacity:.2}}
+
+/* Idle: the lid nods one pixel and the eyes blink every four seconds. */
+.thor-buddy .tb-lid{animation:tb-nod 2.4s steps(1,end) var(--tb-t,0s) infinite}
+@keyframes tb-nod{0%,50%{transform:none}50.01%,100%{transform:translateY(-1px)}}
+.thor-buddy .tb-open{animation:tb-blink-open 4s steps(1,end) calc(var(--tb-t,0s) - 1.2s) infinite}
+.thor-buddy .tb-shut{opacity:0;animation:tb-blink-shut 4s steps(1,end) calc(var(--tb-t,0s) - 1.2s) infinite}
+@keyframes tb-blink-open{0%,93%{opacity:1}93.01%,97%{opacity:0}97.01%,100%{opacity:1}}
+@keyframes tb-blink-shut{0%,93%{opacity:0}93.01%,97%{opacity:1}97.01%,100%{opacity:0}}
+
+/* Loading: eyes look left and right across the screen; the lower screen flickers as it reads. */
+.tb-loading .tb-eyes{animation:tb-scan 1.6s steps(1,end) var(--tb-t,0s) infinite}
+@keyframes tb-scan{0%{transform:translateX(-2px)}25%{transform:translateX(-1px)}37.5%{transform:none}50%{transform:translateX(1px)}62.5%{transform:translateX(2px)}75%{transform:translateX(1px)}87.5%{transform:none}100%{transform:translateX(-1px)}}
+.tb-loading .tb-lid{animation-duration:1.2s}
+.tb-loading .tb-screen{animation:tb-flicker 1.2s steps(1,end) var(--tb-t,0s) infinite}
+@keyframes tb-flicker{0%,60%{opacity:1}60.01%,80%{opacity:.55}80.01%,100%{opacity:1}}
+
+/* Asleep (not connected, lost connection): the lid sinks with slow breathing, z's drift up,
+   the lower screen dims. Saving is the same sleep with a little moon: the game's night. */
+.tb-sleep .tb-lid,.tb-saving .tb-lid{animation:tb-breathe 3.2s steps(1,end) var(--tb-t,0s) infinite}
+@keyframes tb-breathe{0%,55%{transform:none}55.01%,100%{transform:translateY(1px)}}
+.tb-sleep .tb-screen,.tb-saving .tb-screen{opacity:.4}
+.thor-buddy .tb-z{animation:tb-z 3.2s steps(4,end) var(--tb-t,0s) infinite;opacity:0}
+.thor-buddy .tb-z1{animation-delay:calc(var(--tb-t,0s) - 1.6s)}
+@keyframes tb-z{0%{transform:translate(0,1px);opacity:0}15%{opacity:1}70%{opacity:1}100%{transform:translate(1px,-2px);opacity:0}}
+.tb-saving .tb-moon{animation:tb-twinkle 1.6s steps(1,end) var(--tb-t,0s) infinite}
+@keyframes tb-twinkle{0%,70%{opacity:1}70.01%,100%{opacity:.5}}
+
+/* Needs a newer mod: a sweat drop slides down the cheek. */
+.tb-update .tb-drop{animation:tb-sweat 2s steps(6,end) var(--tb-t,0s) infinite}
+@keyframes tb-sweat{0%{transform:translateY(-2px);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateY(3px);opacity:0}}
+
+/* Data it cannot read: a "?" hops over its head and the lid tilts back and forth. */
+.tb-confused .tb-question{animation:tb-hop 1.4s steps(1,end) var(--tb-t,0s) infinite}
+@keyframes tb-hop{0%,70%{transform:none}70.01%,85%{transform:translateY(-1px)}85.01%,100%{transform:none}}
+.tb-confused .tb-lid{animation:tb-tilt 2.8s steps(1,end) var(--tb-t,0s) infinite}
+@keyframes tb-tilt{0%,50%{transform:translateX(-1px)}50.01%,100%{transform:translateX(1px)}}
+
+@media(prefers-reduced-motion:reduce){.thor-buddy *{animation:none!important}.thor-buddy .tb-z{opacity:1}}
+
+/* First start: the 'connecting' box waits half a second before showing, so a quick first reply
+   never flashes a state at all. */
+.state-box.is-first{animation:tb-first 0s .5s both}
+@keyframes tb-first{from{visibility:hidden}to{visibility:visible}}
+/* Bag page without a bag: the shared state box instead of its own placeholder; the organize and
+   trash row has nothing to act on, so it goes away. */
+#bag.no-bag .bag-tools,#bag.no-bag #bag-mode{display:none}
+#bag-placeholder>.state-box{width:100%}

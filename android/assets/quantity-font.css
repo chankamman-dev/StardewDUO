@@ -1,0 +1,6 @@
+/* Original Cursors tiny digits, independent of the Fusion body-text renderer. */
+.stack-digits{display:inline-block;vertical-align:middle;image-rendering:pixelated;image-rendering:crisp-edges;pointer-events:none;flex:none;max-width:none;filter:none;text-shadow:none}
+.stack-quantity{display:inline-flex;align-items:center;justify-content:flex-end;gap:5px;white-space:nowrap;pointer-events:none;text-shadow:none;filter:none}
+.stack-quantity .stack-prefix{display:inline-block;flex:none;margin:0;--pixel-size:18px;line-height:26px;color:var(--muted)}
+.slot .count.stack-quantity{right:6px;bottom:4px;width:auto;min-width:0;height:21px;line-height:0;overflow:visible;z-index:1}
+#detail-count.stack-quantity{width:90px;height:30px;min-height:30px;line-height:30px;flex:none}
