@@ -33,12 +33,57 @@
 
 ## What it does
 
-- **Inventory**: the game's layout, quality and stats, stack stepping, sorting, and item actions confirmed by the game's own receipt.
-- **Map & villagers**: world and local maps, villager positions, gift and talk status, profiles, schedules and gift tastes.
-- **Quests & farm**: take notice-board requests, claim rewards, completed history, birthdays and festivals, to-dos, a harvest calendar and a crop profit calculator.
-- **Guide & character**: item collection, crafting, equipment, vanilla and mod skills, collections, story events, Community Center bundles and a Wiki reader.
-- **Mod support**: runtime item and villager catalogues, hide what you haven't discovered yet, families and relationships, farm extras, plus a mod list and a way to open GMCM settings on the top screen. Each adapter is tied to the versions it was checked against and says so when it can't read something.
-- **Context**: what you're facing, moving whole stacks between chests, shops, fishing, mine floors, the end-of-day summary and a morning briefing; switching to it automatically can be set per kind.
+The lower screen has eight tabs, top to bottom:
+
+**🎒 Inventory**
+- The game's 6 × 2 pages, expandable to every slot; held slot, quality stars, stacks and watering-can water just as in game.
+- Item description, category, sell price, and stats for weapons, food and equipment.
+- Drag to swap, split and merge stacks, sort, drop or trash a chosen amount. Every action is confirmed by the game's own receipt; nothing is faked from a tap.
+- Jump to the item in the guide.
+
+**🗺️ Map**
+- World map and a local map of where you are; drag, zoom, follow the player.
+- Every villager's live position as a pixel head, grouped when they overlap.
+
+**❤️ Villagers**
+- List or portrait grid; search, filter by region, sort and pin.
+- Hearts, birthdays, whether you've talked today, gifts this week.
+- Profiles: where they are now, today's schedule, family and friends, gift tastes and their story events.
+
+**❗ Quests & calendar**
+- Active quests and special orders; take today's notice-board request from the lower screen, claim rewards, keep a completed history.
+- The season's calendar: birthdays, festivals, the bookseller and more.
+- Story events, filtered by villager and place, with their trigger conditions and whether you've seen them.
+
+**🌱 Farm**
+- Today's chores: unwatered crops, ready crops and machines, animals.
+- Tomorrow and news: weather, luck, the traveling cart, birthdays, family.
+- Harvest calendar: when what you've planted will be ready.
+- Crop profit planner: compare what's worth planting by season and days left.
+
+**📘 Guide**
+- Item catalogue: search, categories, favourites and recently viewed.
+- Crafting: known recipes with material and space checks, craft 1–99 times or the most you can (cooking is read-only).
+- Character: equipment, vanilla and mod skills with XP.
+- Collections, Community Center bundles (Joja route too) and a built-in Wiki reader.
+
+**🔍 Context**: follows the game on its own (each kind can be switched off)
+- What you're facing: villagers, crops, machines, animals, placed objects.
+- An open chest: move whole stacks from the lower screen.
+- Shops, fishing, mine floors.
+- At night the day's shipment; in the morning a briefing with weather, luck, birthdays and chores.
+- Dialogue (**dev builds**): what a villager is saying in the English original; tap a word for its meaning, save it, have it read aloud. A way to learn English as you play.
+- Fishing log (**dev builds**): an old angler's notebook with the fish worth catching here, what's on the line and what you caught.
+
+**🎮 Settings**
+- 中文 / English, text size, sounds, dim when idle (**dev builds**), hide the game's toolbar.
+- Hide what you haven't discovered: unmet villagers, unknown items and gift tastes, locked map areas, unseen story events and uncollected collection entries, each on its own.
+- Mod manager: the loaded mods with notes; mods with GMCM settings can be configured from the lower screen.
+- Pairing, asset import and connection diagnostics.
+
+**Mod support**: items, villagers, skills and farm content added by mods are read at run time, limited to versions that were checked; when something can't be read, it says so.
+
+**Notebook style** (**dev builds**): a leather cover, stacked pages and fabric tabs, with a page turn when you switch tabs; Settings can switch back to the original game-menu look.
 
 ## What you need
 
