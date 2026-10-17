@@ -1,4 +1,4 @@
-<h1 align="center">StardewDS — Stardew Valley on two screens</h1>
+<h1 align="center">StardewDUO — Stardew Valley on two screens</h1>
 
 <p align="center"><a href="README.md">中文</a> · <b>English</b></p>
 
