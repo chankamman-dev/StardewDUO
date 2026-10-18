@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="docs/public/INSTALL.md">Install &amp; pair</a> · <a href="docs/public/BUILD.md">Build</a> · <a href="docs/public/RELEASE.md">Release status</a> · <a href="PRIVACY.md">Privacy</a> · <a href="CONTRIBUTING.md">Contributing</a> · <a href="THIRD_PARTY_NOTICES.md">Third-party notices</a>
+  <a href="docs/public/INSTALL.en.md">Install &amp; pair</a> · <a href="docs/public/BUILD.md">Build</a> · <a href="docs/public/RELEASE.md">Release status</a> · <a href="PRIVACY.md">Privacy</a> · <a href="CONTRIBUTING.md">Contributing</a> · <a href="THIRD_PARTY_NOTICES.md">Third-party notices</a>
 </p>
 
 ## A look around
@@ -79,18 +79,27 @@ The lower screen has eight tabs, top to bottom:
 - 中文 / English, text size, sounds, dim when idle (**dev builds**), hide the game's toolbar.
 - Hide what you haven't discovered: unmet villagers, unknown items and gift tastes, locked map areas, unseen story events and uncollected collection entries, each on its own.
 - Mod manager: the loaded mods with notes; mods with GMCM settings can be configured from the lower screen.
-- Pairing, asset import and connection diagnostics.
+- Installing and updating the companion mod, importing assets from the game, pairing confirmed on the top screen, and connection diagnostics.
 
 **Mod support**: items, villagers, skills and farm content added by mods are read at run time, limited to versions that were checked; when something can't be read, it says so.
 
 **Notebook style** (**dev builds**): a leather cover, stacked pages and fabric tabs, with a page turn when you switch tabs; Settings can switch back to the original game-menu look.
 
-## What you need
+## Install
 
-- Your own PC copy of *Stardew Valley*, running on the Thor through Cinderbox with SMAPI. The Android mobile edition is not a target.
-- The lower-screen App and its companion SMAPI mod; see [Install &amp; pair](docs/public/INSTALL.md).
-- Public APKs ship none of the game's art, sound or offline text: you build a private asset ZIP from your own game and import it.
-- Browsing works unpaired; inventory, crafting, reward and chest actions need pairing with a key on your machine. Writing in multiplayer is not supported. There are no endpoints for saving, loading or running arbitrary scripts.
+Everything happens on the Thor; no PC needed, about five minutes:
+
+1. Install `StardewDS-<version>.apk` on the Thor and open it on the lower screen.
+2. Quit the game, tap **Install** on the setup page and pick `StardewValley` in the folder picker: the App puts its built-in companion mod into the game's Mods folder.
+3. Start the game on the top screen with Cinderbox (SMAPI) and stay on the title screen.
+4. Tap **From game** on the lower screen: the game makes the assets on the spot, and the App checks them and opens.
+5. To act on items from the lower screen, tap **Pair** in **Settings → Local files**, load a save and confirm with ✓ on the top screen.
+
+Full steps, updating and troubleshooting are in [Install &amp; pair](docs/public/INSTALL.en.md). This flow comes with App 0.11.1-dev.77 (bundled mod 0.10.1-dev.59), not yet released; older versions still make the asset pack on a PC, as the guide's appendix describes.
+
+- You need your own PC copy of *Stardew Valley*, running on the Thor through Cinderbox with SMAPI. The Android mobile edition is not a target.
+- The App ships none of the game's art, sound or text: your own game makes the assets on the device, and they stay there, never uploaded.
+- Browsing works unpaired; inventory, crafting, reward and chest actions need pairing, and the key reaches the lower screen only after you confirm on the top screen. Writing in multiplayer is not supported. There are no endpoints for saving, loading or running arbitrary scripts.
 
 This project is not affiliated with ConcernedApe, Nintendo or AYN.
 
@@ -109,6 +118,6 @@ npm ci
 npm run test:public
 ~~~
 
-These tests are self-contained and need no game assets. Parameters for game-dependent builds and asset generation are in the [build](docs/public/BUILD.md) and [install](docs/public/INSTALL.md) docs (Chinese). The source is MIT; Fusion Pixel Font stays under OFL 1.1. The game and its assets are not covered by the MIT license.
+These tests are self-contained and need no game assets. Parameters for game-dependent builds and asset generation are in the [build](docs/public/BUILD.md) (Chinese) and [install](docs/public/INSTALL.en.md) docs. The source is MIT; Fusion Pixel Font stays under OFL 1.1. The game and its assets are not covered by the MIT license.
 
 The internal repository keeps the development history; this public source is exported from it by an allowlist into a clean directory, never by pushing the internal history. See [GitHub upload](docs/public/GITHUB.md).
